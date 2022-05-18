@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./WinWallForm.css";
 
 function WinWallForm() {
@@ -14,6 +15,8 @@ function WinWallForm() {
       end_date:"",
     });
 
+    const navigate = useNavigate();
+  
     const handleChange = (event) => {
         const { id, value } = event.target;
         setWinwall((prevWinwall) => ({
@@ -27,6 +30,8 @@ function WinWallForm() {
         event.preventDefault();
         try {
           const res = await fetch(`${process.env.REACT_APP_API_URL}win-walls/`, {
+          // const res = await fetch(`http://127.0.0.1:8000/win-walls/`, {
+
             method: "post",
             headers: {
               "Content-Type": "application/json",
@@ -40,30 +45,39 @@ function WinWallForm() {
             start_date: winwall.start_date,
             end_date: winwall.end_date
               
-         
-  
             }),
           });
           const data = await res.json();
-          console.log(data);
+
+          // Send user to a new win wall pge URL after clicking the 'create' button
+          navigate(`/win-wall/${data.id}/`);
+          
         } catch (err) {
           console.log(err);
         }
-      };
+    };
   
-      if (!token || token===null || token===undefined || token==="undefined") {
+    
+      if (token != null) {
           return (
-            <Link to="/login">Please login to create a project</Link>
+            <Link to="/login">Please login to create a win wall.</Link>
           );
       }
-      
-    
     
     return (
         
         <form>
-        <div>
+       <div>
+        <label className="form-text" htmlFor="name">Name: </label>
+        <input
+            type="text"
+            id="name"
+            placeholder="Name"
+            onChange={handleChange}
+          />
+        </div>
 
+        <div>
             <select id="collection" onChange={handleChange}>
                 <option value="">--Choose a collection--</option>
                 <option value={1}>SheCodes HTML 1 Day Workshop</option>
@@ -72,15 +86,17 @@ function WinWallForm() {
         </div>
 
         <div>
+        <label className="form-text" htmlFor="image">Cover image: </label>
         <input
-            type="text"
-            id="name"
-            placeholder="Name"
+            type="url"
+            id="image"
+            placeholder="Enter a cover image URL"
             onChange={handleChange}
           />
         </div>
             
         <div>
+        <label className="form-text" htmlFor="start_date">Start date: </label>
         <input
             type="date"
             id="start_date"
@@ -90,6 +106,7 @@ function WinWallForm() {
         </div>
             
         <div>
+        <label className="form-text" htmlFor="end_date">End date: </label>
         <input
             type="date"
             id="end_date"
