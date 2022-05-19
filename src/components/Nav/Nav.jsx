@@ -25,7 +25,7 @@ function Nav() {
     }
 
     const navigateToSignUp = () => {
-        navigate("users/register")
+        navigate("/sign-up")
     }
 
     // Handlers and Auth Checks
