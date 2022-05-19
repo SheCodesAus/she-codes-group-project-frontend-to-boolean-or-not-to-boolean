@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 function WinWallPage() {
 
 
-    const [winwallData, setWinwallData] = useState();
+    const [WinwallData, setWinwallData] = useState();
     const { id } = useParams();
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
@@ -14,13 +14,20 @@ function WinWallPage() {
          })
             .then((data) => {
          setWinwallData(data);
+         console.log("data", data);
+        //  console.log("title", title);
          });
     }, []);
 
 
+    if (!WinwallData) {
+        return <h3>Loading..</h3>;
+    }
+
     return (
         <div>
-            <h1>This is a palceholder for "win wall name" {winwallData.title}</h1>
+            <h1>Win wall Title:  {WinwallData.title} </h1>
+            <img src={WinwallData.image} alt="winwall hero image" />
 
         </div>
     )
