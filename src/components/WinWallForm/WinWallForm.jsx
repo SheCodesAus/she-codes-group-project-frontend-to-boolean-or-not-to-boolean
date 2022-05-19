@@ -62,7 +62,7 @@ function WinWallForm() {
     };
   
     
-      if (token != null) {
+    if (!token || token===null || token===undefined || token==="undefined") {
           return (
             <Link to="/login">Please login to create a win wall.</Link>
           );
@@ -72,7 +72,7 @@ function WinWallForm() {
         
         <form>
        <div>
-        <label className="form-text" htmlFor="name">Name: </label>
+        <label className="form-text" htmlFor="title">Title: </label>
         <input
             type="text"
             id="title"
