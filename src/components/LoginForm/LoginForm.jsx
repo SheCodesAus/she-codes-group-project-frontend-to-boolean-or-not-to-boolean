@@ -37,10 +37,22 @@ const handleSubmit = async (event) => {
         );
         const data = await response.json();
         console.log(data)
+
         window.localStorage.setItem("token", data.token);    
         window.localStorage.setItem("username", credentials.username);
         window.localStorage.setItem("id", data.id);
-        navigate("/")  
+        if (data.token===undefined) {
+          console.log("invalid credentials")
+          return (
+            <>
+            <h2>Incorrect Login Details</h2>
+            <h2>Please Try Again</h2>
+            </>
+          )
+        }
+        else {
+          navigate(`/profile-page/${data.id}`);  
+        }
         } catch (err) {
         console.log(err);
       }

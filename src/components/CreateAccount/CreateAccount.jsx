@@ -7,11 +7,11 @@ function CreateAccountForm() {
   // State
   const [register, setRegister] = useState({
     "username": "",
-	"password": "",
-	"password2": "",
-	"email": "",
-	"first_name": "",
-	"last_name": "",
+	  "password": "",
+	  "password2": "",
+	  "email": "",
+	  "first_name": "",
+	  "last_name": "",
     "avatar": "",
     "bio": "",
     "social_link": ""
@@ -67,7 +67,7 @@ function CreateAccountForm() {
         }
       else {
       // THIS IS HOW YOU NAVIGATE AUTOMATICALLY
-        navigate(`/users/${data.data.id}`);
+        navigate(`/profile-page/${data.data.id}`);
       }
       } catch (err) {
         console.log(err);
