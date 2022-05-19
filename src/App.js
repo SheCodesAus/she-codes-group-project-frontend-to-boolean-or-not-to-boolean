@@ -23,8 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/create-collection/" element={<CreateWinWallPage />} />
-          <Route path="/win-walls/:id/" element={<WinWallPage />} />
+          <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
+          <Route path="/win-wall/:id/" element={<WinWallPage />} />
 
         </Routes>
     </>
