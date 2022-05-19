@@ -26,7 +26,7 @@ const handleSubmit = async (event) => {
     if (credentials.username && credentials.password) {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}api-token-auth/`,
+          `${process.env.REACT_APP_API_URL}users/authenticate/`,
           {
             method: "post",
             headers: {

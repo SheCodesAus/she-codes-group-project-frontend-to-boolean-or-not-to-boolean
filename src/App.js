@@ -18,8 +18,7 @@ function App() {
   return (
     <Router>
     <>
-      {/* placeholder for when Nav is ready */}
-      {/* <Nav /> */}
+      <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
