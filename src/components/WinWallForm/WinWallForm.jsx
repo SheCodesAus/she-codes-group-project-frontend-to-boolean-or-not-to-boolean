@@ -9,10 +9,12 @@ function WinWallForm() {
   
   const [winwall, setWinwall] = useState({
       collection: "",
-      name: "",
+      title: "",
       image: "",
       start_date: "",
-      end_date:"",
+      end_date: "",
+      is_open: "",
+      is_exported: "",
     });
 
     const navigate = useNavigate();
@@ -40,17 +42,19 @@ function WinWallForm() {
             body: JSON.stringify({
               
             collection: winwall.collection,
-            name: winwall.name,
+            title: winwall.title,
             image: winwall.image,
             start_date: winwall.start_date,
-            end_date: winwall.end_date
+            end_date: winwall.end_date,
+            is_open: true,
+            is_exported: false,
               
             }),
           });
           const data = await res.json();
 
           // Send user to a new win wall pge URL after clicking the 'create' button
-          navigate(`/win-wall/${data.id}/`);
+          // navigate(`${process.env.REACT_APP_API_URL}win-wall/${id}`);
           
         } catch (err) {
           console.log(err);
@@ -71,8 +75,8 @@ function WinWallForm() {
         <label className="form-text" htmlFor="name">Name: </label>
         <input
             type="text"
-            id="name"
-            placeholder="Name"
+            id="title"
+            placeholder="Give your win wall a name"
             onChange={handleChange}
           />
         </div>

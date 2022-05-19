@@ -9,7 +9,6 @@ function WinWallPage() {
     const { id } = useParams();
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
-        // fetch(`http://127.0.0.1:8000/win-wall/${id}/`)
         .then((results) => {
         return results.json();
          })
@@ -21,7 +20,8 @@ function WinWallPage() {
 
     return (
         <div>
-        <h1>This is a palceholder for "win wall name" {winwallData.name}</h1>
+            <h1>This is a palceholder for "win wall name" {winwallData.name}</h1>
+
         </div>
     )
     
