@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 function WinWallPage() {
 
 
-    const [winwallData, setWinwallData] = useState({ allWinWalls: [] });
+    const [winwallData, setWinwallData] = useState();
     const { id } = useParams();
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
@@ -20,7 +20,7 @@ function WinWallPage() {
 
     return (
         <div>
-            <h1>This is a palceholder for "win wall name" {winwallData.name}</h1>
+            <h1>This is a palceholder for "win wall name" {winwallData.title}</h1>
 
         </div>
     )
