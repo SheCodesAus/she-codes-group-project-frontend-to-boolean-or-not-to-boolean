@@ -55,7 +55,7 @@ function WinWallForm() {
 
           // Send user to a new win wall pge URL after clicking the 'create' button
           // navigate(`${process.env.REACT_APP_API_URL}win-wall/${id}`);
-          
+          navigate(`/win-wall/${data.id}/`); 
         } catch (err) {
           console.log(err);
         }
