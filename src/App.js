@@ -14,6 +14,7 @@ import CreateWinWallPage from "./pages/CreateWinWallPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 
 //routes will need to be reviewed and updated as pages are added
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />
+          <Route path="/profile-page/:id/edit-profile" element={<EditProfilePage />} />
         </Routes>
     </>
     </Router>
