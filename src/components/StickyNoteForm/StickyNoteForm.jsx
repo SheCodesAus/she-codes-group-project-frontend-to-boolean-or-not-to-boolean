@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./StickyNoteForm.css";
 
-function StickyNoteForm({ winwallId }) {
+function StickyNoteForm({ win_wallId }) {
   // State
   const token = window.localStorage.getItem("token");
+  const navigate = useNavigate();
   const [stickynote, setStickynote] = useState({
     win_comment: "",
   });
@@ -27,7 +29,7 @@ function StickyNoteForm({ winwallId }) {
           Authorization: `Token ${token}`,
         },
         body: JSON.stringify({
-          winwallId: winwallId,
+          win_wall_id: win_wallId,
           win_comment: stickynote.win_comment,
          
          
@@ -35,6 +37,7 @@ function StickyNoteForm({ winwallId }) {
       });
       const data = await res.json();
       console.log(data);
+      navigate(`/win-wall/${win_wallId}/`); 
     } catch (err) {
       console.log(err);
     }
@@ -47,21 +50,24 @@ function StickyNoteForm({ winwallId }) {
   }
 
   return (
-    <form className="all-forms">
-     
       <div>
-        <label htmlFor="win_comment">win_comment:</label>
-        <input
-          type="text"
-          id="win_comment"
-          placeholder="Enter your Win Comment"
+    <form className="sticky-note">
+     
+      
+        {/* <label htmlFor="win_comment">win_comment:</label> */}
+        <textarea
+        
+        
+          placeholder="Enter your Win!"
           onChange={handleChange}
         />
-      </div>
-      <button type="submit" onClick={handleSubmit} className="all-btn">
-        Post
-      </button>
+     
+      
     </form>
+    <button type="submit" onClick={handleSubmit} className="sticky-note-btn">
+    Post
+  </button>
+  </div>
   );
 }
 

@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
+import CreateStickyPage from "./pages/CreateStickyPage";
 
 //routes will need to be reviewed and updated as pages are added
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
 
         </Routes>
     </>
