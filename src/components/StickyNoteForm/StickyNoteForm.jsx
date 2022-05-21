@@ -57,7 +57,7 @@ function StickyNoteForm({ win_wallId }) {
         {/* <label htmlFor="win_comment">win_comment:</label> */}
         <textarea
         
-        
+          id="win_comment"
           placeholder="Enter your Win!"
           onChange={handleChange}
         />
