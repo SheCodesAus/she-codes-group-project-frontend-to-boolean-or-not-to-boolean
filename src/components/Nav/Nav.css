@@ -1,6 +1,18 @@
+/* body * {
+    color:                      hsla(210, 100%, 100%, 0.88)     !important;
+    background:                 hsla(210, 100%,  50%, 0.33)       !important;
+    outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
+}
+
+.debug-center {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+} */
+
 .navbar-items {
     height: 80px;
-    display: flex;
+    display  : flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
@@ -13,9 +25,23 @@
     cursor: pointer;
     text-decoration: none;
 }
+
 .navbar-logo span {
     color: black;
 }
+
+.logo-img {
+    width: 4rem;
+    height: 4rem;
+    padding: 0rem 1rem;
+    margin-right: 2rem;
+}
+
+.logo-text {
+    margin-right: 1rem;
+    width: 80%;
+}
+
 .fa-robot {
     color: black;
 }
@@ -133,9 +159,10 @@ i.profile-link {
         left: 0;
         transform: translate(5%, 65%);
     }
-    .navbar-logo h1 {
+
+    /* .navbar-logo h1 {
         font-size: 1.8rem;
-    }
+    } */
 
     .menu-icon {
         display: block;
