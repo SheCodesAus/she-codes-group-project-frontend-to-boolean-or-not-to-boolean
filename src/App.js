@@ -10,6 +10,8 @@ import "./index.css";
 // pages
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import CreateCollectionPage from "./pages/CreateCollectionPage"
+import CollectionPage from "./pages/CollectionPage"
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
@@ -27,6 +29,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
+          <Route path="/create-collection/" element={<CreateCollectionPage />} />
+          <Route path="/collection/:id/" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />
           <Route path="/profile-page/:id/edit-profile" element={<EditProfilePage />} />
