@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import { Button } from "./Button/ChangingButton";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from '../images/win-wall-logo-optimized.svg'
 
 // Styles
 import "./Nav.css";
-
+// import "src/index.css"
+// import "./src/debug.css"
 function Nav() {
 
     // Hamburger State
@@ -84,16 +86,19 @@ function Nav() {
 
     return(
         <nav className="navbar-items">
-            <Link className="navbar-logo" to="/"><h1>Win Wall</h1></Link>
-            
-            <div className="menu-icon" onClick={handleClick}>
+            {/* Logo section */}
+            {/* <Link className="navbar-logo" to="/"> */}
+                <img  className="logo-img" src={Logo}></img>
+                <h1 className="logo-text">Win Wall</h1>
+            {/* </Link> */}
+            <container className="menu-icon" onClick={handleClick}>
                 <li className={
                     // Hamburger Menu
                     isMenuExpanded 
                     ? 'fas fa-times' 
                     : 'fas fa-bars'}>
                 </li>
-            </div>
+            </container>
 
             <ul className={
                 isMenuExpanded 
