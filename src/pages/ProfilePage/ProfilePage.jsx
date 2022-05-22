@@ -4,6 +4,10 @@ import { useParams } from "react-router-dom";
 // Imports
 import { Link } from "react-router-dom";
 
+//components
+import AsyncCSVUser from "../../components/ExportCSV/ExportCSVUser";
+import AsyncCSVStickyNote from "../../components/ExportCSV/ExportCSVStickyNote";
+
 function ProfilePage() {
     // State
     const [userData, setUserData] = useState();
@@ -55,6 +59,15 @@ function ProfilePage() {
             <div className="edit-button-div">
                 <button className="edit-profile-button"><Link to="edit-profile">Edit Profile</Link></button>
             </div>
+
+            {/* user export CSV to be set for admin? - TBA... */}
+            {/* Export user data */}
+
+            {/* Export Sticky note data */}
+            <AsyncCSVStickyNote />
+            {/* Export User data */}
+            <AsyncCSVUser />
+            
         </div>
     );
 }
