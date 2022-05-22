@@ -53,4 +53,5 @@ global styling vriables that can be used across all styling files */
 
 body {
   margin: 0 auto;
+  font-family: var(--main-font);
 }
