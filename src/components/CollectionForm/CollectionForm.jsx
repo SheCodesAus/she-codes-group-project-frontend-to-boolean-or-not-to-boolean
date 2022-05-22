@@ -53,11 +53,11 @@ function CollectionForm() {
     };
   
     
-    if (!token || token===null || token===undefined || token==="undefined") {
-          return (
-            <Link to="/login">Please login to create a Collection.</Link>
-          );
-      }
+    // if (!token || token===null || token===undefined || token==="undefined") {
+    //       return (
+    //         <Link to="/login">Please login to create a Collection.</Link>
+    //       );
+    //   }
     
     return (
         
