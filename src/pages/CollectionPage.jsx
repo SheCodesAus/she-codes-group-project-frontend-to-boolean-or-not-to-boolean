@@ -12,7 +12,7 @@ function CollectionPage() {
         return results.json();
          })
             .then((data) => {
-         setWinwallData(data);
+         setCollectionData(data);
 
          });
 
