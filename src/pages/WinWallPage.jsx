@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import StickyNoteCard from "../components/StickyNoteCard/StickyNoteCard";
+import "./WinWallPage.css";
 
 
 function WinWallPage() {
@@ -35,13 +36,16 @@ function WinWallPage() {
         </div>
         {/* adding sticky notes to winwall page */}
 
-        <div>
+        <div className="sticky-section">
         <h3>StickyNotes</h3>
-            <div>
+        <div className="sticky-board">
+      
+    
             {WinwallData.stickynotes.map((stickynoteData, key) => {
             return <StickyNoteCard key={key} stickynoteData={stickynoteData} />;
             })}
-            </div>
+    
+        </div>
         </div>
         </div>
     )

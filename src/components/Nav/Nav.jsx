@@ -91,14 +91,15 @@ function Nav() {
                 <img  className="logo-img" src={Logo}></img>
                 <h1 className="logo-text">Win Wall</h1>
             {/* </Link> */}
-            <container className="menu-icon" onClick={handleClick}>
+            {/* change container to div as it was causing errors  */}
+            <div className="menu-icon" onClick={handleClick}>
                 <li className={
                     // Hamburger Menu
                     isMenuExpanded 
                     ? 'fas fa-times' 
                     : 'fas fa-bars'}>
                 </li>
-            </container>
+            </div>
 
             <ul className={
                 isMenuExpanded 
