@@ -17,7 +17,6 @@ import CreateStickyPage from "./pages/CreateStickyPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 
-
 //routes will need to be reviewed and updated as pages are added
 function App() {
   return (
