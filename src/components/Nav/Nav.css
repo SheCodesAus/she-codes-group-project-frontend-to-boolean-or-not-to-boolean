@@ -1,4 +1,4 @@
-/* body * {
+body * {
     color:                      hsla(210, 100%, 100%, 0.88)     !important;
     background:                 hsla(210, 100%,  50%, 0.33)       !important;
     outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
@@ -8,7 +8,7 @@
     display:            flex;
     justify-content:    center;
     align-items:        center;
-} */
+}
 
 .navbar-items {
     height: 80px;
@@ -78,6 +78,7 @@ i.profile-link {
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
+
 .profile-link:hover {
     cursor: not-allowed;
 }

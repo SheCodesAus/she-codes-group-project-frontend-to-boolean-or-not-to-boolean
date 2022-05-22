@@ -5,20 +5,28 @@ import { Button } from "./Button/ChangingButton";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../images/win-wall-logo-optimized.svg'
 
+//icons
+//icons that can be used for hamburger menu imported from react
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
+
 // Styles
 import "./Nav.css";
-// import "src/index.css"
-// import "./src/debug.css"
+
+//function for nav bar
 function Nav() {
 
     // Hamburger State
-    const [isMenuExpanded, setMenuExpanded] = useState(false);
+    const [isMenuExpanded, 
+        setMenuExpanded] = 
+        useState(false);
 
     // Navigation Links
     const navigate = useNavigate();
 
     const navigateToLogin = () => {
-        navigate("/login/")
+        navigate
+        ("/login/")
     }
 
     const navigateToProfile = () => {
@@ -45,11 +53,32 @@ function Nav() {
 
         const className = "nav-links-mobile";
 
-        const loginButton = <Button className={className} onClick={navigateToLogin}>Login</Button>;
-        const signOutButton = <Button className={className} onClick={handleSignOut}>Sign Out</Button>;
+        const loginButton = 
+        <Button 
+        className={className} 
+        onClick={navigateToLogin}>
+            Login
+        </Button>;
 
-        const loginLink = <button className={className} onClick={handleSignOut}>Login</button>;
-        const signOutLink = <button className={className} onClick={handleSignOut}>Sign Out</button>
+        const signOutButton = 
+        <Button 
+        className={className} 
+        onClick={handleSignOut}>
+            Sign Out
+        </Button>;
+
+        const loginLink = 
+        <button 
+        className={className}
+        onClick={handleSignOut}>
+            Login
+        </button>;
+
+        const signOutLink = 
+        <button className={className} 
+        onClick={handleSignOut}>
+            Sign Out
+        </button>;
 
         // Check is the user logged in (yes => show sign out) (no => show login)
         if (isBurgerMenu) {
@@ -66,8 +95,18 @@ function Nav() {
     const profileLink = (profileLinkVisible) => {
         const authenticatedUser = window.localStorage.getItem("token");
 
-        const profileButton = <button className="nav-links" onClick={navigateToProfile}>Profile</button>;
-        const signUpButton = <button className="nav-links" onClick={navigateToSignUp}>Sign Up</button>;
+        const profileButton = 
+        <button 
+        className="nav-links" 
+        onClick={navigateToProfile}>
+            Profile
+        </button>;
+
+        const signUpButton = 
+        <button className="nav-links" 
+        onClick={navigateToSignUp}>
+            Sign Up
+        </button>;
 
         if (profileLinkVisible) {
             return authenticatedUser
@@ -80,37 +119,114 @@ function Nav() {
     const handleClick = () => {
         setMenuExpanded(!isMenuExpanded)
     };
+    // const closeMenu = () => {
+    //     setMenuExpanded(false)
+    // }
+
+    const [navbarOpen, setNavbarOpen] = useState(false)
+
+    const handleToggle = () => {
+        setNavbarOpen(!navbarOpen)
+      }
+    
     const closeMenu = () => {
+        // setNavbarOpen(false), 
         setMenuExpanded(false)
-    }
+      }
 
     return(
         <nav className="navbar-items">
             {/* Logo section */}
-            {/* <Link className="navbar-logo" to="/"> */}
-                <img  className="logo-img" src={Logo}></img>
-                <h1 className="logo-text">Win Wall</h1>
-            {/* </Link> */}
-            <container className="menu-icon" onClick={handleClick}>
-                <li className={
-                    // Hamburger Menu
-                    isMenuExpanded 
-                    ? 'fas fa-times' 
-                    : 'fas fa-bars'}>
-                </li>
-            </container>
-
-            <ul className={
-                isMenuExpanded 
-                ? 'nav-menu active' 
-                : 'nav-menu'}>
-                    <Link className="nav-links" to="/" onClick={() => closeMenu()}>Collections</Link>
-                    {profileLink(true)}
-                    {checkUser(false)}
-            </ul>
+            {/* used href rather than link to get the logo and text to stay in the same line as nav */}
+            <a href="/"><img  
+            className="logo-img" 
+            src={Logo}></img></a>
+            <a href="/" 
+            className="logo-text">Win Wall</a>                    
+            <ul 
+                className={`nav-menu 
+                ${isMenuExpanded 
+                ? "nav-menu active" 
+                : handleToggle}`}>
+                <Link 
+                // link takes you to home
+                    to="/" 
+                    className="nav-links" 
+                    onClick={
+                        () => navigate()
+                    }
+                >
+                    HomePage
+                </Link>
+                <Link 
+                // takes you to login page
+                    to="/login"
+                    className="nav-links"
+                    onClick={
+                        () => navigate()
+                    }
+                >
+                    Login
+                </Link>
+                <Link 
+                // Should be to 'collections' 
+                // not sure on the correct link here - to be confirmed
+                    to="/win-walls/"
+                    className="nav-links"
+                    onClick={
+                        () => navigate()
+                    }
+                >
+                    Collections
+                </Link>
+                {profileLink(true)}
+                {checkUser(false)} 
+            </ul>   
             {checkUser(true)}
+
+                <button 
+                    onClick={handleToggle}>
+                    {navbarOpen ? (
+                    <FiMenu
+                    style={{ color: "var(--secondary-color)", 
+                    width: "30px", 
+                    height: "30px" }} />
+                ) : (
+                    <MdClose 
+                    style={{ color: "var(--secondary-color)", 
+                    width: "30px", 
+                    height: "30px" }} />
+                )}
+                </button>  
+
         </nav>
     )
 };
 
 export default Nav;
+
+{/* 
+previous code
+<container className="menu-icon" 
+onClick={handleClick}>
+<li className={
+    // Hamburger Menu
+    isMenuExpanded 
+    ? 'fas fa-times' 
+    : 'fas fa-bars'}>
+</li>
+</container>
+
+<ul className={
+isMenuExpanded 
+? 'nav-menu active' 
+: 'nav-menu'}>
+
+    <Link 
+    className="nav-links" 
+    to="/" onClick={() => 
+        closeMenu()}>Collections</Link>
+    {profileLink(true)}
+    {checkUser(false)}        
+</ul>
+{checkUser(true)} */}
