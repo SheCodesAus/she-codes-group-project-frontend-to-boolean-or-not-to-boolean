@@ -28,7 +28,7 @@ function CollectionForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}win-walls/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}collections/`, {
 
             method: "post",
             headers: {
@@ -46,7 +46,7 @@ function CollectionForm() {
           });
           const data = await res.json();
 
-         navigate(`/win-wall/${data.id}/`); 
+         navigate(`/collection/${data.id}/`); 
         } catch (err) {
           console.log(err);
         }
