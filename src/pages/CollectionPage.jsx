@@ -1,58 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
-import CollectionCard from "../components/CollectionCard/CollectionCard"
+import {Link} from "react-router-dom";
+import WinWallCard from "../components/WinWallCard/WinWallCard"
 
 function CollectionPage(props) {
 
+  const [collectionList, setCollectionList] = useState();
+  const { id } = useParams();
 
-//    STATES
-    const [collectionList, setCollectionList] = useState([]);
+  useEffect(() => {
+      fetch(`${process.env.REACT_APP_API_URL}collection/${id}/`)
+      .then((results) => {
+      return results.json();
+       })
+      .then((data) => {
+      setCollectionList(data);        
+      });
 
-//    HOOKS
-    const { id } = useParams();
+  }, []);
+
+  // If no win wall yet, then display this message:
     
-
-//    ACTIONS & HELPERS
-useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}collections/`)
-    .then((results) => {
-    return results.json();
-    })
-    .then((data) => {
-    setCollectionList(data);
- });
-
-}, []);
-
-// If no collection yet, then display this message:
-    // const { collectionData } = props
-    // if (!collectionData) {
+  if (!collectionList) {
     
+    return (
+      <div>
+        <h1>{collectionList.title} </h1>
+        <h1>You don't have any win walls yet...</h1>
+        
+        <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
+        </div>
+        )
+};
 
-    //     return (
-    //         <div>
-    //         <h1>You don't have any collection yet...</h1>
-            
-    //         <Link to={`/create-collection/`}>Create your first collection!</Link>
-    //         </div>
-    //         )
-    // };
+// If win wall exists, then display them in a list:
 
-// If collection exists, then display them in a list:
-return (
+  return (
+  
+  // <div>
     <div>
-     <h1>Collections</h1>   
-    <h2>Here are your latest collections of digital win walls.</h2>
-        
-    <div className="collection-card--list">
-    {collectionList.map((collectionData, key) => {
-    return<CollectionCard key={key} collectionData={collectionData}/>;            })}
+        <h1>{collectionList.title}</h1>
+        <p>Browse {collectionList.title}’s latest digital win walls.</p> 
     </div>
-        
-</div>               
-)
+    
+  //   <div className="winwall-card--list">
+  //     {collectionList.map((winwallData, key) => {
+  //     return<WinWallCard key={key} winwallData={winwallData}/>;            })}
+  //   </div>
+  // </div>
+  )
+  
 }
-
+      
 export default CollectionPage;
-
