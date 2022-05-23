@@ -32,7 +32,8 @@ function App() {
           <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
           <Route path="/create-collection/" element={<CreateCollectionPage />} />
-          <Route path="/collection/:id/" element={<CollectionPage />} />
+          <Route path="/collections/" element={<CollectionPage />} />
+          <Route path="/collection/:id" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />
