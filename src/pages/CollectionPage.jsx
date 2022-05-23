@@ -21,22 +21,22 @@ function CollectionPage(props) {
 
   // If no win wall yet, then display this message:
     
-  if (!collectionList) {
+//   if (!collectionList) {
     
-    return (
-      <div>
-        <h1>{collectionList.title} </h1>
-        <h1>You don't have any win walls yet...</h1>
+//     return (
+//       <div>
+//         <h1>{collectionList.title} </h1>
+//         <h1>You don't have any win walls yet...</h1>
         
-        <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
-        </div>
-        )
-};
+//         <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
+//         </div>
+//         )
+// };
 
 // If win wall exists, then display them in a list:
 
   return (
-  
+    // <h1>Hi</h1>
   // <div>
     <div>
         <h1>{collectionList.title}</h1>
