@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import CollectionCard from "../components/CollectionCard/CollectionCard"
+import CreateCollectionCard from "../components/CreateCollectionCard/CreateCollectionCard"
+
 
 function CollectionListPage(props) {
 
@@ -53,10 +55,18 @@ return (
      <h1>Collections</h1>   
     <h2>Here are your latest collections of win walls.</h2>
         
-    <div className="collection-card--list">
+            
     {collectionList.map((collectionData, key) => {
-    return<CollectionCard key={key} collectionData={collectionData}/>;            })}
-    </div>
+        return (
+        <div className="collection-card--list">
+        {/* <CreateCollectionCard /> */}
+        <CollectionCard key={key} collectionData={collectionData} />
+        </div>
+    )
+        
+        
+    })}
+    
         
 </div>               
 )

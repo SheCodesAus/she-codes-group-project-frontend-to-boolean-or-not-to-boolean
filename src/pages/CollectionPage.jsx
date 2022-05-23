@@ -36,12 +36,12 @@ function CollectionPage(props) {
 // If win wall exists, then display them in a list:
 
   return (
-  
+   <h1>Under debugging</h1>
   // <div>
-    <div>
-        <h1>{collectionList.title}</h1>
-        <p>Browse {collectionList.title}’s latest digital win walls.</p> 
-    </div>
+    // <div>
+    //     <h1>{collectionList.title}</h1>
+    //     <p>Browse {collectionList.title}’s latest digital win walls.</p> 
+    // </div>
     
   //   <div className="winwall-card--list">
   //     {collectionList.map((winwallData, key) => {
