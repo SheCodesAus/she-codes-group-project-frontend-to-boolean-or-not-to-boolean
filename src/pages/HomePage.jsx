@@ -1,10 +1,18 @@
 // Home page
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+import QRGenerator from "../components/QRCode/QRCode"
 
 //styles
 import "../index.css"
+
 function HomePage() {
-    return <h3>Under Construction..</h3>;
+    return <>
+        <h3>
+        Under Construction..
+        </h3>;
+        <QRGenerator />
+    </>
 }
 
 export default HomePage;
