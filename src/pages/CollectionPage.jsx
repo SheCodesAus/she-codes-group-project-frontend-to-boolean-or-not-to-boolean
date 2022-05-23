@@ -1,40 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {Link} from "react-router-dom";
+import WinWallCard from "../components/WinWallCard/WinWallCard"
 
+function CollectionPage(props) {
 
-function CollectionPage() {
+  const [collectionList, setCollectionList] = useState();
+  const { id } = useParams();
+
+  useEffect(() => {
+      fetch(`${process.env.REACT_APP_API_URL}collection/${id}/`)
+      .then((results) => {
+      return results.json();
+       })
+      .then((data) => {
+      setCollectionList(data);        
+      });
+
+  }, []);
+
+  // If no win wall yet, then display this message:
     
-    const [CollectionData, setCollectionData] = useState();
-    const { id } = useParams();
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}collection/${id}/`)
-        .then((results) => {
-        return results.json();
-         })
-            .then((data) => {
-         setCollectionData(data);
-
-         });
-
-    }, []);
-
-
-     if (!CollectionData) {
-         return <h3>Loading..</h3>;
-     }
-
+  if (!collectionList) {
+    
     return (
-        <div>
-        <div>
-            <h1>Collection Title:  {CollectionData.title} </h1>
-            <img src={CollectionData.image} alt="collection cover image" />
-
+      <div>
+        <h1>{collectionList.title} </h1>
+        <h1>You don't have any win walls yet...</h1>
+        
+        <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
         </div>
-        {/* adding all collection tiles */}
+        )
+};
 
-        </div>
-    )
+// If win wall exists, then display them in a list:
+
+  return (
+  
+  // <div>
+    <div>
+        <h1>{collectionList.title}</h1>
+        <p>Browse {collectionList.title}’s latest digital win walls.</p> 
+    </div>
     
-}   
-
+  //   <div className="winwall-card--list">
+  //     {collectionList.map((winwallData, key) => {
+  //     return<WinWallCard key={key} winwallData={winwallData}/>;            })}
+  //   </div>
+  // </div>
+  )
+  
+}
+      
 export default CollectionPage;

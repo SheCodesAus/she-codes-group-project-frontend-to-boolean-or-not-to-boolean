@@ -171,7 +171,7 @@ function Nav() {
                 <Link 
                 // Should be to 'collections' 
                 // not sure on the correct link here - to be confirmed
-                    to="/win-walls/"
+                    to="/collections/"
                     className="nav-links"
                     onClick={
                         () => navigate()

@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./WinWallForm.css";
 
-function WinWallForm() {
+function WinWallForm( {collectionId}) {
 
   const token = window.localStorage.getItem("token");
   
@@ -15,6 +15,7 @@ function WinWallForm() {
       end_date: "",
       is_open: "",
       is_exported: "",
+      
     });
 
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ function WinWallForm() {
             },
             body: JSON.stringify({
               
-            collection: winwall.collection,
+            collection_id: collectionId,
             title: winwall.title,
             image: winwall.image,
             start_date: winwall.start_date,
@@ -84,8 +85,8 @@ function WinWallForm() {
         <div>
             <select id="collection" onChange={handleChange}>
                 <option value="">--Choose a collection--</option>
-                <option value={1}>SheCodes HTML 1 Day Workshop</option>
-                <option value={2}>SheCodes Python 1 Day Workshop</option>
+            <option>{collectionId.collection.title}</option>
+            <option value={2}>SheCodes Python 1 Day Workshop</option>
             </select>
         </div>
 
