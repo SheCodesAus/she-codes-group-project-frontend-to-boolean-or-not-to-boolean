@@ -1,0 +1,57 @@
+.navBar {
+    padding: 50px;
+  }
+  
+  .navBar button {
+    background: transparent;
+    border: none;
+    display: flex;
+    position: fixed; 
+    right: 40px;
+    top: 40px; 
+    z-index: 10; 
+    cursor: pointer;
+    }
+  
+  .menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background-color: var(--primary-shadow);
+    left: 0; 
+    bottom: 0;
+    /* height: 40vh;  */
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    /* z-index: 9; */
+  }
+  
+  .menuNav.showMenu {
+    padding-top: 2rem;
+    width: 100vh;
+    /* min-width: 100%; */
+    /* max-width: 100%; */
+  }
+  
+  .menuNav:Link:first-child {
+    padding-top: 10rem;
+  }
+  
+  .menuNav a {
+    display: block;
+    padding: 10px 50px;
+    margin: 10px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .logo {
+    width: 40%;
+    height: 40%;
+  }
+  
+  
