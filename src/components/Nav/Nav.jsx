@@ -1,9 +1,9 @@
 // Nav Page
 // Imports
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./Button/ChangingButton";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from '../images/win-wall-logo-optimized.svg'
+import Logo from '../images/win-wall-logo-optimized.svg';
 
 //icons
 //icons that can be used for hamburger menu imported from react
@@ -12,6 +12,7 @@ import { FiMenu } from "react-icons/fi";
 
 // Styles
 import "./Nav.css";
+import "./Hamburger.css"
 
 //function for nav bar
 function Nav() {
@@ -119,20 +120,50 @@ function Nav() {
     const handleClick = () => {
         setMenuExpanded(!isMenuExpanded)
     };
-    // const closeMenu = () => {
-    //     setMenuExpanded(false)
-    // }
+    const closeMenuExpaded = () => {
+        setMenuExpanded(false)
+    }
 
+    //hamburger menu handlers
     const [navbarOpen, setNavbarOpen] = useState(false)
 
     const handleToggle = () => {
         setNavbarOpen(!navbarOpen)
-      }
+    }
+
+    // const handleHamburger = () => {
+    //     setNavbarOpen(navbarOpen)
+    // }
     
     const closeMenu = () => {
-        // setNavbarOpen(false), 
-        setMenuExpanded(false)
-      }
+        setNavbarOpen(false)
+        setMenuExpanded(false)      
+    }
+
+    // responsive nav
+    // const Navigation = () => {
+    //     const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    //     const [showMobileNavMenu, setshowMobileNavMenu] = useState(false);
+    
+    //     useEffect(() => {
+    //         const handleResize = () => {
+    //             if (window.innerWidth > 767) {
+    //                 setshowMobileNavMenu(false);
+    //                 setMobileNavOpen(false);
+    //             } else if (window.innerWidth < 767 ) {
+    //                 setshowMobileNavMenu(true);
+    //             }
+    //         };
+    //             window.addEventListener('resize', handleResize);
+    
+    //         return () => {
+    //             window.removeEventListener('resize', handleResize);
+    //         }
+       
+    //     }, []);
+    // }
+    // const MediaQuery = require('react-responsive');
+
 
     return(
         <nav className="navbar-items">
@@ -147,7 +178,7 @@ function Nav() {
                 className={`nav-menu 
                 ${isMenuExpanded 
                 ? "nav-menu active" 
-                : handleToggle}`}>
+                : handleClick}`}>
                 <Link 
                 // link takes you to home
                     to="/" 
@@ -181,52 +212,58 @@ function Nav() {
                 </Link>
                 {profileLink(true)}
                 {checkUser(false)} 
-            </ul>   
-            {checkUser(true)}
+                {checkUser(true)}
 
-                <button 
-                    onClick={handleToggle}>
+            </ul>   
+            {/* //need to add code to remove/add nav classes based on screen size */}
+            {/* //need to add code to remove/add nav links on click */}
+            <button className="navBar"
+                    onClick={handleToggle}>                    
                     {navbarOpen ? (
-                    <FiMenu
-                    style={{ color: "var(--secondary-color)", 
+                    <MdClose
+                    style={{ color: "var(--secondary)", 
                     width: "30px", 
                     height: "30px" }} />
                 ) : (
-                    <MdClose 
-                    style={{ color: "var(--secondary-color)", 
+                    <FiMenu 
+                    style={{ color: "var(--secondary)", 
                     width: "30px", 
                     height: "30px" }} />
                 )}
                 </button>  
-
+                <ul
+                    className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    <Link 
+                        to="/" 
+                        className="active-link" 
+                        onClick={() => closeMenu()}
+                    >
+                        HomePage
+                    </Link>
+                    <Link 
+                        to="/login"
+                        className="active-link"
+                        onClick={() => closeMenu()}
+                    >
+                        Login
+                    </Link>
+                    <Link 
+                    // Should be to 'collections' 
+                    // not sure on the correct link here - to be confirmed
+                    to="/win-walls/"
+                    className="active-link"
+                    onClick={
+                        () => closeMenu()
+                    }
+                    >
+                        Collections
+                    </Link>
+                {profileLink(true)}
+                {checkUser(false)} 
+                {/* {checkUser(true)} */}
+            </ul>    
         </nav>
     )
 };
 
 export default Nav;
-
-{/* 
-previous code
-<container className="menu-icon" 
-onClick={handleClick}>
-<li className={
-    // Hamburger Menu
-    isMenuExpanded 
-    ? 'fas fa-times' 
-    : 'fas fa-bars'}>
-</li>
-</container>
-
-<ul className={
-isMenuExpanded 
-? 'nav-menu active' 
-: 'nav-menu'}>
-
-    <Link 
-    className="nav-links" 
-    to="/" onClick={() => 
-        closeMenu()}>Collections</Link>
-    {profileLink(true)}
-    {checkUser(false)}        
-</ul>
-{checkUser(true)} */}
