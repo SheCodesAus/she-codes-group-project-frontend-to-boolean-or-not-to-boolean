@@ -25,7 +25,7 @@ class AsyncCSVStickyNote extends Component {
   
     getUserList = async () => {
         // need to confirm correct link for this and if I need to configure DRF
-      const res = await fetch('https://shielded-wildwood-05412.herokuapp.com//sticky-note/');
+      const res = await fetch('https://shielded-wildwood-05412.herokuapp.com/sticky-note/');
         return await res.json();
     }
   

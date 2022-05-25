@@ -59,13 +59,8 @@ function ProfilePage() {
             <div className="edit-button-div">
                 <button className="edit-profile-button"><Link to="edit-profile">Edit Profile</Link></button>
             </div>
-
-            {/* user export CSV to be set for admin? - TBA... */}
-            {/* Export user data */}
-
-            {/* Export Sticky note data */}
+            {/* Need to write code that shows onlny for admin */}
             <AsyncCSVStickyNote />
-            {/* Export User data */}
             <AsyncCSVUser />
             
         </div>

@@ -29,6 +29,10 @@ class AsyncCSVUser extends Component {
     return await res.json();
   }
 
+  // fetch => {
+
+  
+  
   downloadReport = async () => {
     const data = await this.getUserList();
     this.setState({ data: data }, () => {
