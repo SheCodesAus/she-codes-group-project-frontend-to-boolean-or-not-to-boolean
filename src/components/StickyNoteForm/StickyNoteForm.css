@@ -11,7 +11,9 @@
     height: 300px;
     object-fit: cover;
 } */
-
+    body {
+        display: flex;
+    }
 
    
   
@@ -19,12 +21,13 @@
   p {
     font-size: 1rem;
     font-weight: normal;
-  }
+     }
    
 
   .sticky-note{
       border: none;
-  }
+    }
+
   .sticky-note-btn{
     /* display:flex;
     flex-direction: column;
@@ -34,8 +37,17 @@
     line-height: 1.5;
     /* border-radius: 10px; */
     background-color: antiquewhite;
-  }
+    }
  
+    .formErrors{
+    display: flexbox;
+    align-content: center;
+    }
+
+    .formErrors p{
+    align-self: center;
+    }
+
   form textarea {
     text-decoration:none;
     border: 1px;
@@ -54,7 +66,7 @@
 
   form textarea:hover,form textarea:focus{
     box-shadow:10px 10px 7px rgba(183, 123, 70, 0.7);
-    transform: scale(1.25);
+    /* transform: scale(1.25); */
     position:relative;
     border-color:#000;
     z-index:5;

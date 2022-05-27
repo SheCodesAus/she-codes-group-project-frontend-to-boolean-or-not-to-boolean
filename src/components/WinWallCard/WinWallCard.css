@@ -1,0 +1,38 @@
+.winwall--list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.winwall-card {
+    width: 25%;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px gray;
+    text-align: center;
+}
+
+.winwall-card img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.winwall-card--link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid;
+    border-color: black;
+    background-color: #CA7A1B;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 2%;
+}
+
+h3{
+    font-size: 20px;
+    
+}

@@ -1,0 +1,18 @@
+.hero {
+    height: 500px;
+    width: 100%;
+    color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
+    text-align: center;
+}
+
+.hero-highlight {
+    font-family: var(--highlight-text);
+    font-size: 80px;
+    text-shadow: var(--hero-highlight);
+}
+
+/* make sure you check your index.css */

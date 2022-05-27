@@ -6,16 +6,16 @@ function StickyNoteCard(props) {
     // or ProjectCard({ projectData })
     const { stickynoteData } = props;
     return (
-        <div>
-        <div className="stickynote-card">
+       
+        <div className="stickynote-area">
            
-        <ul>
-            <li>
+    
+            <div className="stickynote-card">
              <p>{stickynoteData.win_comment}</p> 
-            </li>
-        </ul>
+            </div>
+        
 
-        </div>
+       
         <div>
         <Link to={`/project/${stickynoteData.id}`}></Link>
         </div>

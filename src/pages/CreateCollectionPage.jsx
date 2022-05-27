@@ -9,7 +9,7 @@ function CreateCollectionPage() {
     <div>
             <h1>Create a new Collection</h1>
             <CollectionForm />
-        </div>
+    </div>
         
     )
 }

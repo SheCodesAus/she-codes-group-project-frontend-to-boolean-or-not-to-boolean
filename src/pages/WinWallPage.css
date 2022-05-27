@@ -1,0 +1,26 @@
+body {
+    display: flex;
+}
+
+.sticky-section{
+    display: flex;
+    align-content: center;
+    width: 100em;
+}
+
+.sticky-board{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content:baseline; */
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: center;
+    margin-top: 10px;
+    width: 90em;
+  }
+
+textarea {
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-size: medium;
+}
