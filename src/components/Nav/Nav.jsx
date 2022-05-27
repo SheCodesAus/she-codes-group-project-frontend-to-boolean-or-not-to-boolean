@@ -218,7 +218,7 @@ function Nav() {
             </ul>   
             {/* //need to add code to remove/add nav classes based on screen size */}
             {/* //need to add code to remove/add nav links on click */}
-            <button className="navBar"
+            <button className="navBar nav-hamburger"
                     onClick={handleToggle}>                    
                     {navbarOpen ? (
                     <MdClose
