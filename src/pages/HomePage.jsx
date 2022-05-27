@@ -10,12 +10,13 @@ import "../index.css"
 
 function HomePage() {
     return <>
-                <Hero />
-
-        <h3>
+    <div>
+        <Hero />
+    </div>
+    <h3>
         Under Construction..
-        </h3>;
-        {/* <QRGenerator /> */}
+    </h3>;
+        <QRGenerator />
     </>
 }
 

@@ -67,11 +67,11 @@ button {
     padding: 0.5rem 1rem;
 }
 
-button.nav-links {
+/* button.nav-links {
     font-size: 1.2rem;
     color: black;
     text-decoration: none;
-}
+} */
 
 i.profile-link {
     color: black;
@@ -96,6 +96,12 @@ i.profile-link {
     display: none;
 }
 
+@media screen and (min-width: 959px) {
+    button.navBar {
+        display: none;
+    }
+    
+}
 @media screen and (max-width: 960px) {
     .navbar-items {
         position: relative;
