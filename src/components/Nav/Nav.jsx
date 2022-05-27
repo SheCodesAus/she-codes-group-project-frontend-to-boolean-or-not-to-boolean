@@ -199,6 +199,7 @@ function Nav() {
                 >
                     Login
                 </Link>
+                
                 <Link 
                 // Should be to 'collections' 
                 // not sure on the correct link here - to be confirmed

@@ -1,6 +1,8 @@
 // Home page
 import React from "react";
 
+//components
+import Hero from "../components/Hero/Hero";
 import QRGenerator from "../components/QRCode/QRCode"
 
 //styles
@@ -8,9 +10,12 @@ import "../index.css"
 
 function HomePage() {
     return <>
-        <h3>
+    <div>
+        <Hero />
+    </div>
+    <h3>
         Under Construction..
-        </h3>;
+    </h3>;
         <QRGenerator />
     </>
 }

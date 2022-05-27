@@ -1,13 +1,28 @@
-//QRCode
-// import QRCode from "qrcode.react";
-
-// export default function QRGenerator() {
-//     <div style={{ marginTop: 200, display: "flex",flexDirection: "row" }}>
-//         <div>
-//             <QRCode
-//                 value="https://shrouded-wave-23056.herokuapp.com/sticky-note/"style={{ marginRight: 50 }}/>
-//             <p>Create a sticky note and share your feedback</p>
-//         </div>
-//     </div>
-// }
-
+import QRCode from "qrcode.react";
+export default function QRGenerator() {
+   return (
+      <div style={{ marginTop: 200, display: "flex",flexDirection: "row" }}>
+         <div>
+            <QRCode
+               value="https://www.entertexthere/"style={{ marginRight: 50 }}/>
+            <p>Text area eg plus </p>
+         </div>
+      <div>
+          <QRCode value="https://www.entertexthere/" style={{marginRight: 50 }} />
+          <p>Text area eg workshop </p>
+      </div>
+      <div>
+          <QRCode value="https://entertexthere/" style={{marginRight: 50 }} />
+          <p>Text area eg shecodes 1 day</p>
+      </div>
+      <div>
+          <QRCode value="https://www.entertexthere/" style={{ marginRight: 50 }}/>
+          <p>Text area eg more </p>
+      </div>
+      <div>
+          <QRCode value="https://entertexthere/" style={{marginRight: 50 }} />
+          <p>Text area eg some more codes </p>
+         </div>
+      </div>
+   );
+}
