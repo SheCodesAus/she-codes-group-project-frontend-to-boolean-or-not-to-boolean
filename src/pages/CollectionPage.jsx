@@ -41,7 +41,7 @@ return (
     <div>
       
   <div>
-  <h1>Test</h1>
+  <h1>{CollectionData.title}</h1>
   <p>Browse {CollectionData.title} latest win walls.</p> 
   </div>
     
