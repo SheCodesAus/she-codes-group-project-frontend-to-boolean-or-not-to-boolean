@@ -3,55 +3,64 @@
   }
   
   .navBar button {
-    background: transparent;
-    border: none;
+    position: fixed;    
+  }
+
+  .navBar {
+    border: unset;
+    padding: 10px;
     display: flex;
-    position: fixed; 
-    right: 40px;
-    top: 40px; 
+    right: 20px;
+    top: 20px; 
     z-index: 10; 
+    margin-right: 20px;
     cursor: pointer;
-    }
+    background: transparent;  
+  }
   
   .menuNav {
     overflow-y: scroll;
     list-style: none;
     position: fixed;
     top: 0;
-    background-color: var(--primary-shadow);
+    background-color: var(--secondary);
     left: 0; 
     bottom: 0;
-    /* height: 40vh;  */
     width: 0;
     overflow: hidden;
     max-width: 290px;
-    /* z-index: 9; */
   }
   
   .menuNav.showMenu {
     padding-top: 2rem;
     width: 100vh;
-    /* min-width: 100%; */
+    /* min-width: 100%;  */
     /* max-width: 100%; */
   }
   
-  .menuNav:Link:first-child {
-    padding-top: 10rem;
-  }
-  
-  .menuNav a {
+  .menuNav a,
+  .menuNav button {
     display: block;
-    padding: 10px 50px;
+    padding: 10px;
     margin: 10px;
     text-decoration: none;
-    color: var(--secondary-color);
-    text-transform: uppercase;
+    color: var(--p-dark);
     font-weight: bold;
+    font-size: 20px;
+    border: unset;
   }
-  
-  .logo {
-    width: 40%;
-    height: 40%;
+
+  .menuNav button {
+    border: unset;
   }
-  
+
+  .menuNav a:hover,
+  .menuNav button:hover {
+    background-color: var(--p-dark);
+    color: var(--light-font);
+    font-weight: var(--bolder-font);
+    font-size: 30px;
+    border: unset;
+  }
+
   

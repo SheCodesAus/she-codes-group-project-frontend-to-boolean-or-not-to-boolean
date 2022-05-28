@@ -43,7 +43,11 @@ class AsyncCSVStickyNote extends Component {
   
       return (
         <div>
-          <input type="button" value="Export to CSV (Async)" onClick={this.downloadReport} />
+          <input 
+          className="btn" 
+          type="button" 
+          value="Export to CSV (Async)" 
+          onClick={this.downloadReport} />
           <CSVLink
             headers={headers}
             filename="Clue_Mediator_Report_Async.csv"

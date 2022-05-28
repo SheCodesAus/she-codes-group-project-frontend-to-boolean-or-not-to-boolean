@@ -131,39 +131,10 @@ function Nav() {
         setNavbarOpen(!navbarOpen)
     }
 
-    // const handleHamburger = () => {
-    //     setNavbarOpen(navbarOpen)
-    // }
-    
     const closeMenu = () => {
         setNavbarOpen(false)
         setMenuExpanded(false)      
     }
-
-    // responsive nav
-    // const Navigation = () => {
-    //     const [mobileNavOpen, setMobileNavOpen] = useState(false);
-    //     const [showMobileNavMenu, setshowMobileNavMenu] = useState(false);
-    
-    //     useEffect(() => {
-    //         const handleResize = () => {
-    //             if (window.innerWidth > 767) {
-    //                 setshowMobileNavMenu(false);
-    //                 setMobileNavOpen(false);
-    //             } else if (window.innerWidth < 767 ) {
-    //                 setshowMobileNavMenu(true);
-    //             }
-    //         };
-    //             window.addEventListener('resize', handleResize);
-    
-    //         return () => {
-    //             window.removeEventListener('resize', handleResize);
-    //         }
-       
-    //     }, []);
-    // }
-    // const MediaQuery = require('react-responsive');
-
 
     return(
         <nav className="navbar-items">
@@ -189,7 +160,7 @@ function Nav() {
                 >
                     HomePage
                 </Link>
-                <Link 
+                {/* <Link 
                 // takes you to login page
                     to="/login"
                     className="nav-links"
@@ -198,7 +169,7 @@ function Nav() {
                     }
                 >
                     Login
-                </Link>
+                </Link> */}
                 
                 <Link 
                 // Should be to 'collections' 
@@ -218,7 +189,7 @@ function Nav() {
             </ul>   
             {/* //need to add code to remove/add nav classes based on screen size */}
             {/* //need to add code to remove/add nav links on click */}
-            <button className="navBar"
+            <button className="navBar nav-hamburger"
                     onClick={handleToggle}>                    
                     {navbarOpen ? (
                     <MdClose
@@ -241,13 +212,13 @@ function Nav() {
                     >
                         HomePage
                     </Link>
-                    <Link 
+                    {/* <Link 
                         to="/login"
                         className="active-link"
                         onClick={() => closeMenu()}
                     >
                         Login
-                    </Link>
+                    </Link> */}
                     <Link 
                     // Should be to 'collections' 
                     // not sure on the correct link here - to be confirmed
