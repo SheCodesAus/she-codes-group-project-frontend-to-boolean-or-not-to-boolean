@@ -24,15 +24,16 @@ global styling vriables that can be used across all styling files */
 /* glow font
   glow effect for highlight text:
   assign glow font as - text-shadow: var(--glow-font); */
-  --glow-font:
-  0 0 7px var(--bg-light),
-  0 0 10px var(--light-font),
-  0 0 21px var(--light-font),
-  0 0 42px var(--light-font),
-  0 0 82px var(--dark-font),
-  0 0 92px var(--dark-font),
-  0 0 102px var(--dark-font),
-  0 0 151px var(--dark-font);
+
+  --hero-highlight:
+      0 0 7px var(--bg-light),
+      0 0 10px var(--bg-light),
+      0 0 21px var(--s-dark),
+      0 0 42px var(--s-dark),
+      0 0 82px var(--s-light),
+      0 0 92px var(--s-light),
+      0 0 102px var(--secondary),
+      0 0 151px var(--secondary);
 
   /*colours primary */
   --primary: #8246af;
@@ -51,6 +52,13 @@ global styling vriables that can be used across all styling files */
   --box-shadow-secondary: 0px 2px 15px 2px var(--s-dark);
 }
 
+html div{
+  margin: 0 auto;
+  width: 100%;
+}
 body {
   margin: 0 auto;
+  width: 100%;
+  font-family: var(--main-font);
+  font-size: 20px;
 }

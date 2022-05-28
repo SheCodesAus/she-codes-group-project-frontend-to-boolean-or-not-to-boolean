@@ -8,19 +8,39 @@ function StickyNoteForm({ win_wallId }) {
   const navigate = useNavigate();
   const [stickynote, setStickynote] = useState({
     win_comment: "",
+    is_win_comment_valid: false,
+    error_message: ""
   });
+
+let validateField = (win_comment, value) => {
+    let errorMsg = null;
+    switch (win_comment) {
+      case "win_comment":
+        if (!value) errorMsg = "Please enter your Win Comment.";
+        else if (value.length > 200 )errorMsg = 'Max Length is 200';
+        break;
+  }
+    return errorMsg;
+    };
 
   // Actions and Helpers
   const handleChange = (event) => {
     const { id, value } = event.target;
+    let errorMessage = validateField(id, value);
+    let isValid = errorMessage == null;
     setStickynote((prevStickynote) => ({
       ...prevStickynote,
       [id]: value,
+      is_win_comment_valid : isValid,
+      error_message : errorMessage
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if(!stickynote.is_win_comment_valid) return;
+
     try {
       const res = await fetch(`${process.env.REACT_APP_API_URL}sticky-note/`, {
         method: "post",
@@ -62,11 +82,14 @@ function StickyNoteForm({ win_wallId }) {
           onChange={handleChange}
         />
      
-      
+        
     </form>
+    <div className="formErrors">
+        <p>{stickynote.is_win_comment_valid ? '' : stickynote.error_message}</p>
+    </div>
     <button type="submit" onClick={handleSubmit} className="sticky-note-btn">
     Post
-  </button>
+    </button>
   </div>
   );
 }

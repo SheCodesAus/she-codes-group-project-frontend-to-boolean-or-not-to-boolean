@@ -10,13 +10,15 @@ import "./index.css";
 // pages
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import CreateCollectionPage from "./pages/CreateCollectionPage"
+import CollectionPage from "./pages/CollectionPage"
+import CollectionListPage from "./pages/CollectionListPage"
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
 import CreateStickyPage from "./pages/CreateStickyPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
-
 
 //routes will need to be reviewed and updated as pages are added
 function App() {
@@ -29,6 +31,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
+          <Route path="/create-collection/" element={<CreateCollectionPage />} />
+          <Route path="/collections/" element={<CollectionListPage />} />
+          <Route path="/collection/:id" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />

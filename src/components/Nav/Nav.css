@@ -11,40 +11,48 @@
 } */
 
 .navbar-items {
-    height: 80px;
+    /* height: 80px; */
     display  : flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     font-size: 1.2rem;
 }
 
-.navbar-logo {
+nav,
+.logo-text,
+.nav-links {
+    text-decoration: none;
+}
+
+/* .navbar-logo {
     color: black;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
-}
+} */
 
-.navbar-logo span {
+/* .navbar-logo span {
     color: black;
-}
+} */
 
 .logo-img {
-    width: 4rem;
-    height: 4rem;
-    padding: 0rem 1rem;
-    margin-right: 2rem;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem 2rem;
+    /* margin-right: 2rem; */
 }
 
 .logo-text {
     margin-right: 1rem;
     width: 80%;
+    font-weight: var(--bolder-font);
+    font-size: 4rem;
 }
 
-.fa-robot {
+/* .fa-robot {
     color: black;
-}
+} */
 
 .nav-menu {
     display: grid;
@@ -52,39 +60,56 @@
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 65vw;
+    padding: 2rem;
+    /* width: 65vw; */
     justify-content: end;
-    margin-right: 2rem;
+    /* margin-right: 15px; */
 }
 
 button {
     cursor: pointer;
 }
 
-.nav-links {
+.btn,
+button.nav-links {
+    background-color: var(--secondary);
+    padding: 10px 25px;
+    border-radius: 25px;
+    width: 100px;
+    border: unset;
+    font-family: var(--main-font);
+    cursor: pointer;
+}
+
+.btn:hover,
+button.nav-links:hover {
+    background-color: var(--p-light);
+}
+/* .nav-links {
     color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
-}
+} */
 
-button.nav-links {
+/* button.nav-links {
     font-size: 1.2rem;
     color: black;
     text-decoration: none;
-}
+} */
 
-i.profile-link {
+/* i.profile-link {
     color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
-}
+} */
+
 .profile-link:hover {
     cursor: not-allowed;
 }
 
-.fa-bars {
+/* .fa-bars {
     color: black;
-}
+} */
 
 .nav-links-mobile {
     display: none;
@@ -95,49 +120,26 @@ i.profile-link {
     display: none;
 }
 
+@media screen and (min-width: 959px) {
+    button.navBar {
+        display: none;
+    }
+    
+}
 @media screen and (max-width: 960px) {
     .navbar-items {
         position: relative;
     }
 
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 530px;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-    }
+    .nav-menu { 
+            display: none;
+    }  
 
-    .nav-menu.active {
-        background-image: linear-gradient(180deg, white 0%, white 74%);
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 1;
-    }
-
-    .nav-links {
-        text-align: center;
-        padding: 1.5rem;
-        width: 100%;
-        display: table;
-        margin: auto;
-        border-radius: 4px;
-        width: 50%;
-        text-decoration: none;
-        color: black;
-        font-size: 1.5rem;
-    }
-
-    .nav-links:hover {
+    /* .nav-links:hover {
         color: black;
         border-radius: 4px;
         width: 50%;
-    }
+    } */
 
     button.nav-links {
         text-align: center;
@@ -153,18 +155,18 @@ i.profile-link {
         background: none;
     }
 
-    .navbar-logo {
+    /* .navbar-logo {
         position: absolute;
         top: 0;
         left: 0;
         transform: translate(5%, 65%);
-    }
+    } */
 
     /* .navbar-logo h1 {
         font-size: 1.8rem;
     } */
 
-    .menu-icon {
+    /* .menu-icon {
         display: block;
         position: absolute;
         top: 0;
@@ -172,12 +174,13 @@ i.profile-link {
         transform: translate(-100%, 66%);
         font-size: 1.8rem;
         cursor: pointer;
-    }
+        background-color: aqua;
+    } */
 
-    .fa-times {
+    /* .fa-times {
         color: black;
         font-size: 2rem;
-    }
+    } */
 
     .nav-links-mobile {
         display: block;
@@ -185,14 +188,14 @@ i.profile-link {
         padding: 1.5rem;
         margin: 2rem auto;
         border-radius: 4px;
-        width: 80%;
+        /* width: 80%; */
         text-decoration: none;
         color: black;
         font-size: 1.5rem;
         border: none;
     }
 
-    Button {
+    /* Button {
         display: none;
-    }
+    } */
 }
