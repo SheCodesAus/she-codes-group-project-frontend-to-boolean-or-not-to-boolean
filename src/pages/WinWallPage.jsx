@@ -41,7 +41,8 @@ function WinWallPage() {
       
     
             {WinwallData.stickynotes.map((stickynoteData, key) => {
-            return <StickyNoteCard key={key} stickynoteData={stickynoteData} />;
+            return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
+            />;
             })}
     
         </div>

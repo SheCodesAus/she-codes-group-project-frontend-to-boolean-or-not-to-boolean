@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./WinWallForm.css";
 
-function WinWallForm( {}) {
+
+function WinWallForm() {
 
   const token = window.localStorage.getItem("token");
   

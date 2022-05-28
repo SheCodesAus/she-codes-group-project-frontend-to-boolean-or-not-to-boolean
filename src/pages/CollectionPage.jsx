@@ -26,18 +26,21 @@ function CollectionPage() {
 
   // If no win wall yet, then display this message:
     
-// if (!CollectionData) {
-//   return (
-//           <div>
-//           <h1>{CollectionData.title}</h1>
-//           <p>You don't have any win walls in this collection yet...</p>
-//             <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
-//           </div>)}
+//   if (!collectionList) {
+    
+//     return (
+//       <div>
+//         <h1>{collectionList.title} </h1>
+//         <h1>You don't have any win walls yet...</h1>
+        
+//         <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
+//         </div>
+//         )
+// };
 
 // If win wall exists, then display them in a list:
 
-return (
-  
+  return (
     <div>
       
   <div>

@@ -1,0 +1,66 @@
+.navBar {
+    padding: 50px;
+  }
+  
+  .navBar button {
+    position: fixed;    
+  }
+
+  .navBar {
+    border: unset;
+    padding: 10px;
+    display: flex;
+    right: 20px;
+    top: 20px; 
+    z-index: 10; 
+    margin-right: 20px;
+    cursor: pointer;
+    background: transparent;  
+  }
+  
+  .menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background-color: var(--secondary);
+    left: 0; 
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+  }
+  
+  .menuNav.showMenu {
+    padding-top: 2rem;
+    width: 100vh;
+    /* min-width: 100%;  */
+    /* max-width: 100%; */
+  }
+  
+  .menuNav a,
+  .menuNav button {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: var(--p-dark);
+    font-weight: bold;
+    font-size: 20px;
+    border: unset;
+  }
+
+  .menuNav button {
+    border: unset;
+  }
+
+  .menuNav a:hover,
+  .menuNav button:hover {
+    background-color: var(--p-dark);
+    color: var(--light-font);
+    font-weight: var(--bolder-font);
+    font-size: 30px;
+    border: unset;
+  }
+
+  
