@@ -10,7 +10,14 @@ import Bin from "../components/images/icons/remove-circle.png";
 function WinWallPage() {
 
     const token = window.localStorage.getItem("token");
-    const isUserLoggedin = !(token === null || token === undefined || token === "undefined")
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+    const Approver = window.localStorage.getItem("is_approver");
+   
+    const isAdmin = (Admin == true)
+    const isApprover = (Approver == true)
+    const isSuperUser = (SuperUser == true)
+
     const [WinwallData, setWinwallData] = useState();
     const { id } = useParams();
     useEffect(() => {
@@ -87,7 +94,7 @@ function WinWallPage() {
         }
       };
     
-      if (isUserLoggedin) {
+      if (isSuperUser || isAdmin || isApprover) {
 
     return (
         <div>

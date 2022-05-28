@@ -8,9 +8,18 @@ import Pencil from "../images/icons/edit-pencil-slant.png";
 function StickyNoteCard(props) {
     // or ProjectCard({ projectData })
     const token = window.localStorage.getItem("token");
-    const isUserLoggedin = !(token === null || token === undefined || token === "undefined")
+    const UserId = window.localStorage.getItem("id");
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+    const Approver = window.localStorage.getItem("is_approver");
+   
+    const isAdmin = (Admin == true)
+    const isApprover = (Approver == true)
+    const isSuperUser = (SuperUser == true)
+    
     // const { id } = useParams();
     const { stickynoteData } = props;
+    const isOwner = (UserId == stickynoteData.owner)
 
     const handleSubmitApprove = async (event) => {
         event.preventDefault();
@@ -60,7 +69,7 @@ function StickyNoteCard(props) {
         }
       };
 
-    if (isUserLoggedin) {
+    if (isSuperUser || isAdmin || isApprover) {
     
     return (
        
@@ -68,14 +77,8 @@ function StickyNoteCard(props) {
            
     
             <div className="stickynote-card">
-             <p>{stickynoteData.win_comment}</p> 
+             <p>{stickynoteData.win_comment}</p>
 
-             <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
-            <button className="icon-button">
-                <img src={Pencil} />
-            </button>
-            </Link>
-             
             <button type="submit" onClick={handleSubmitApprove} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Circle} />
@@ -83,7 +86,15 @@ function StickyNoteCard(props) {
             <button type="submit" onClick={handleSubmitArchive} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} />
+            </button> 
+
+             <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
+            <button className="icon-button">
+                <img src={Pencil} />
             </button>
+            </Link>
+             
+            
             
         
             </div>
@@ -95,6 +106,32 @@ function StickyNoteCard(props) {
         </div>
     );
     }
+    else if (isOwner) {
+    
+        return (
+           
+            <div className="stickynote-area">
+               
+        
+                <div className="stickynote-card">
+                 <p>{stickynoteData.win_comment}</p> 
+    
+                 <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
+                <button className="icon-button">
+                    <img src={Pencil} />
+                </button>
+                </Link>
+                 
+                </div>
+            
+    
+           
+            <div>
+            </div>
+            </div>
+        );
+        }
+
     else {
         return (
        
