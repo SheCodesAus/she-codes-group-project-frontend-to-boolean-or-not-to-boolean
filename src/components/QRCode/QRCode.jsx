@@ -1,9 +1,14 @@
 import QRCode from "qrcode.react";
 export default function QRGenerator() {
    return (
-      <div style={{ marginTop: 200, display: "flex",flexDirection: "row" }}>
+      <div 
+         style={{ marginTop: 200, 
+         display: "flex",
+         flexDirection: "row", 
+         color: "var(--primary)" }}>
          <div>
             <QRCode
+               className="qr-code"
                value="https://www.entertexthere/"style={{ marginRight: 50 }}/>
             <p>Text area eg plus </p>
          </div>

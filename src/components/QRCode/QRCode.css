@@ -1,4 +1,6 @@
 .qr-code {
     padding: 50px;
     margin: 500px;
+    color: var(--primary);
+    background-color: var(--primary);
 }
