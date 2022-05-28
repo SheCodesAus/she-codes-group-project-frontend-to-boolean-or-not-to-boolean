@@ -19,6 +19,7 @@ import SignUpPage from "./pages/SignUpPage";
 import CreateStickyPage from "./pages/CreateStickyPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
+import EditCollectionPage from "./pages/EditCollectionPage";
 
 //routes will need to be reviewed and updated as pages are added
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/create-collection/" element={<CreateCollectionPage />} />
           <Route path="/collections/" element={<CollectionListPage />} />
           <Route path="/collection/:id" element={<CollectionPage />} />
+          <Route path="/collection/:id/edit" element={<EditCollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />

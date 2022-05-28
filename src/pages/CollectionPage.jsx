@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom";
 import WinWallCard from "../components/WinWallCard/WinWallCard"
 
-function CollectionPage(props) {
+function CollectionPage() {
 
-  const [collectionList, setCollectionList] = useState();
+  const [CollectionData, setCollectionData] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -13,41 +13,44 @@ function CollectionPage(props) {
       .then((results) => {
       return results.json();
        })
-      .then((data) => {
-      setCollectionList(data);        
+        .then((data) => {
+          setCollectionData(data);
+          console.log("data", data);
       });
 
   }, []);
 
+  // if (!CollectionData) {
+  //   return <h3>Loading..</h3>;
+
+
   // If no win wall yet, then display this message:
     
-  if (!collectionList) {
-    
-    return (
-      <div>
-        <h1>{collectionList.title} </h1>
-        <h1>You don't have any win walls yet...</h1>
-        
-        <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
-        </div>
-        )
-};
+// if (!CollectionData) {
+//   return (
+//           <div>
+//           <h1>{CollectionData.title}</h1>
+//           <p>You don't have any win walls in this collection yet...</p>
+//             <Link to={`/create-win-wall/`}>Create your first win wall!</Link>
+//           </div>)}
 
 // If win wall exists, then display them in a list:
 
-  return (
-   <h1>Under debugging</h1>
-  // <div>
-    // <div>
-    //     <h1>{collectionList.title}</h1>
-    //     <p>Browse {collectionList.title}’s latest digital win walls.</p> 
-    // </div>
+return (
+  
+    <div>
+      
+  <div>
+  <h1>Test</h1>
+  <p>Browse {CollectionData.title} latest win walls.</p> 
+  </div>
     
-  //   <div className="winwall-card--list">
-  //     {collectionList.map((winwallData, key) => {
-  //     return<WinWallCard key={key} winwallData={winwallData}/>;            })}
-  //   </div>
-  // </div>
+    {/* <div className="winwall-card--list">
+      {CollectionData.map((winwallData, key) => {
+      return<WinWallCard key={key} winwallData={winwallData}/>;            })}
+    </div>
+   */}
+    </div>
   )
   
 }
