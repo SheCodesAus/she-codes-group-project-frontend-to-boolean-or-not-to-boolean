@@ -20,6 +20,14 @@ body {
     width: 90em;
   }
 
+
+.icon-button img{
+    height: 3rem;
+    display: flex;
+    align-self: flex-end;
+
+}
+
 textarea {
     font-family: "Comic Sans MS", "Comic Sans";
     font-size: medium;
