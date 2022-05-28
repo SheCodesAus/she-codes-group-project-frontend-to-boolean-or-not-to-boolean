@@ -16,7 +16,8 @@ import CollectionListPage from "./pages/CollectionListPage"
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
-import CreateStickyPage from "./pages/CreateStickyPage";
+import CreateStickyPage from "./pages/StickyNotesPage/CreateStickyPage";
+import EditStickyPage from "./pages/StickyNotesPage/EditStickyPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/collection/:id" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
+          <Route path="/edit-sticky-note/win-wall/:id/" element={<EditStickyPage />} />
           <Route path="/profile-page/:id" element={<ProfilePage />} />
           <Route path="/profile-page/:id/edit-profile" element={<EditProfilePage />} />
         </Routes>
