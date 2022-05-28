@@ -13,9 +13,9 @@ function StickyNoteCard(props) {
     const Admin = window.localStorage.getItem("is_shecodes_admin");
     const Approver = window.localStorage.getItem("is_approver");
    
-    const isAdmin = (Admin == true)
-    const isApprover = (Approver == true)
-    const isSuperUser = (SuperUser == true)
+    const isAdmin = (Admin == 'true')
+    const isApprover = (Approver == 'true')
+    const isSuperUser = (SuperUser == 'true')
     
     // const { id } = useParams();
     const { stickynoteData } = props;

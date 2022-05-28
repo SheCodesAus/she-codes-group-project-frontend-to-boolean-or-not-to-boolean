@@ -14,9 +14,9 @@ function WinWallPage() {
     const Admin = window.localStorage.getItem("is_shecodes_admin");
     const Approver = window.localStorage.getItem("is_approver");
    
-    const isAdmin = (Admin == true)
-    const isApprover = (Approver == true)
-    const isSuperUser = (SuperUser == true)
+    const isAdmin = (Admin == 'true')
+    const isApprover = (Approver == 'true')
+    const isSuperUser = (SuperUser == 'true')
 
     const [WinwallData, setWinwallData] = useState();
     const { id } = useParams();
@@ -94,7 +94,7 @@ function WinWallPage() {
         }
       };
     
-      if (isSuperUser || isAdmin || isApprover) {
+    if (isSuperUser || isAdmin || isApprover) {
 
     return (
         <div>
