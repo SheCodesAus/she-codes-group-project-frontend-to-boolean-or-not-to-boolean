@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom";
 import WinWallCard from "../components/WinWallCard/WinWallCard"
 
-function CollectionPage(props) {
+function CollectionPage() {
 
-  const [collectionList, setCollectionList] = useState();
+  const [CollectionData, setCollectionData] = useState();
   const { id } = useParams();
 
   useEffect(() => {
@@ -13,11 +13,16 @@ function CollectionPage(props) {
       .then((results) => {
       return results.json();
        })
-      .then((data) => {
-      setCollectionList(data);        
+        .then((data) => {
+          setCollectionData(data);
+          console.log("data", data);
       });
 
   }, []);
+
+  // if (!CollectionData) {
+  //   return <h3>Loading..</h3>;
+
 
   // If no win wall yet, then display this message:
     
@@ -36,18 +41,19 @@ function CollectionPage(props) {
 // If win wall exists, then display them in a list:
 
   return (
-    // <h1>Hi</h1>
-  // <div>
     <div>
-        <h1>{collectionList.title}</h1>
-        <p>Browse {collectionList.title}’s latest digital win walls.</p> 
-    </div>
+      
+  <div>
+  <h1>{CollectionData.title}</h1>
+  <p>Browse {CollectionData.title} latest win walls.</p> 
+  </div>
     
-  //   <div className="winwall-card--list">
-  //     {collectionList.map((winwallData, key) => {
-  //     return<WinWallCard key={key} winwallData={winwallData}/>;            })}
-  //   </div>
-  // </div>
+    {/* <div className="winwall-card--list">
+      {CollectionData.map((winwallData, key) => {
+      return<WinWallCard key={key} winwallData={winwallData}/>;            })}
+    </div>
+   */}
+    </div>
   )
   
 }

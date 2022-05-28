@@ -21,7 +21,6 @@ function WinWallPage() {
             .then((data) => {
          setWinwallData(data);
          console.log("data", data);
-        //  console.log("title", title);
          });
 
     }, []);
