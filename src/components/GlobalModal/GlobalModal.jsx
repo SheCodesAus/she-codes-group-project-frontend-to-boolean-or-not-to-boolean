@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ReactDom from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
+// import ReactDom from 'react-dom';
 
 //styles
 import "./GlobalModal.css";
@@ -20,7 +20,8 @@ const Modal = props => {
         }
     }, [])
 
-        
+    const ReactDOM = require('react-dom')
+     
     // code to return a modal
     return ReactDOM.createPortal(
         <CSSTransition 
