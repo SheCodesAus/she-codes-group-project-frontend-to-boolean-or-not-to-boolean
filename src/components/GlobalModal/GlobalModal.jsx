@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { CSSTransition } from 'react-transition-group';
-// import ReactDom from 'react-dom';
 
 //styles
 import "./GlobalModal.css";
