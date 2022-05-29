@@ -1,0 +1,24 @@
+/* 
+.cupcake-404 {
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    padding: 50px;
+} */
+
+.error {
+    height: 1000px;
+    width: 100%;
+    color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: linear-gradient(to top, #3204fdba, #9907facc), url("./cupcakes.avif") no-repeat center;
+    text-align: center;
+}
+
+/* .hero-highlight {
+    font-family: var(--highlight-text);
+    font-size: 80px;
+    text-shadow: var(--hero-highlight);
+} */
