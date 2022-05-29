@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,  Switch, BrowserRouter } from "react-router-dom";
 
 //components
 import Nav from "./components/Nav/Nav";
@@ -16,6 +16,7 @@ import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
+import PageNotFound from "./pages/ErrorPage/PageNotFound";
 
 // Admin Specific Pages:
 import CreateCollectionPage from "./pages/CreateCollectionPage"
@@ -34,6 +35,7 @@ function App() {
         <Routes>
           {/* Any User Pages */}
           <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<PageNotFound />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
           <Route path="/collections/" element={<CollectionListPage />} />
