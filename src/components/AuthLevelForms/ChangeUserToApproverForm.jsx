@@ -12,10 +12,10 @@ function ChangeUserToApproverForm({user}) {
 
     // Actions
     const handleChange = (event) => {
-        const { id, value } = event.target;
+        const { id, checked } = event.target;
         setAuthLevel((prevAuthLevel) => ({
             ...prevAuthLevel,
-            [id]: value,
+            [id]: checked,
         }));
     };
 
@@ -43,41 +43,27 @@ function ChangeUserToApproverForm({user}) {
                 const data = await res.json()
                 console.log(data);
 
-                navigate(`/profile/${user.id}/`);               
+                navigate('/shecodes-user-list/');
+                // navigate(`/profile/${user.id}/`);               
             } catch(err) {
                 console.log(err);
             }
         }
     }
 
-    const formFields = [
-        {
-            id: "is_approver",
-            label: "Make Mentor/Volunteer a WinWall Approver: ",
-            placeholder: "Tick if Approver",
-            type: "checkbox",
-         },
-    ]
-
     return (
         <div className="form">
             <h1>Make Mentor/Volunteer a WinWall Approver</h1>
         <form>
-            {formFields.map((field, key) => {
-                    return (
-                    <div key={`${key}-${field.id}`}>
-                        <label htmlFor={field.id}>
-                            {field.label}
-                        </label>
-                        <input
-                            type={field.type}
-                            id={field.id}
-                            placeholder={field.placeholder}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    )
-                })}
+        <div className="form-item">
+                <label htmlFor="description">Make Approver: </label>
+                <input
+                    type="checkbox"
+                    id="is_approver"
+                    checked={editAuthLevel.is_approver}
+                    onChange={handleChange}
+                />
+            </div>
             <div className="edit-auth-div">
                 <button className="edit-auth-button" type="submit" onClick={handleSubmit}>
                     Make Approver
