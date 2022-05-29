@@ -8,9 +8,11 @@ import AsyncCSVUser from "../components/ExportCSV/ExportCSVUser";
 import Hero from "../components/Hero/Hero";
 import QRGenerator from "../components/QRCode/QRCode"
 import Modal from "../components/GlobalModal/GlobalModal";
+import Footer from "../components/Footer/Footer";
 
 //styles
 import "../index.css"
+import "./HomePage.css"
 
 export default function HomePage() {
     //function for shoing modal
@@ -19,7 +21,7 @@ export default function HomePage() {
     return <>
         {/* start hero section */}
         <div>
-        <Hero />
+            <Hero />
         </div>
         {/* end hero section */}
 
@@ -32,16 +34,24 @@ export default function HomePage() {
             <p>This is modal body</p>
             <Modal />
         </div>
-        {/* end modal button */}
+            {/* end modal button */}
+        <div>
+            {/* start export csv */}
+            <AsyncCSVUser />
+            <AsyncCSVStickyNote />
+            {/* end export csv */}
+        </div>
 
-        {/* start export csv */}
-        <AsyncCSVUser />
-        <AsyncCSVStickyNote />
-        {/* end export csv */}
-       
-        {/* start QR generator */}
-        <QRGenerator />
-        {/* end QR Generator */}
+        <div>
+            {/* start QR generator */}
+            <QRGenerator />
+            {/* end QR Generator */}
+
+        </div>
+            <section>
+                <Footer />
+            </section>
+
 
     </>
 

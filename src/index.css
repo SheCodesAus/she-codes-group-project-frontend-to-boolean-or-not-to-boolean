@@ -52,13 +52,16 @@ global styling vriables that can be used across all styling files */
   --box-shadow-secondary: 0px 2px 15px 2px var(--s-dark);
 }
 
-html div{
+html body {
   margin: 0 auto;
-  width: 100%;
-}
-body {
-  margin: 0 auto;
-  width: 100%;
   font-family: var(--main-font);
   font-size: 20px;
 }
+
+body div{
+  margin: 0 auto;
+  width: 100%;
+}
+
+
+
