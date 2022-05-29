@@ -41,6 +41,7 @@ const handleSubmit = async (event) => {
         window.localStorage.setItem("token", data.token);    
         window.localStorage.setItem("username", credentials.username);
         window.localStorage.setItem("id", data.id);
+
         if (data.token===undefined) {
           console.log("invalid credentials")
           return (
@@ -50,7 +51,23 @@ const handleSubmit = async (event) => {
             </>
           )
         }
+
         else {
+          const userResponse = await fetch(
+            `${process.env.REACT_APP_API_URL}users/${data.id}/`,
+            {
+              method: "get",
+              headers: {
+                Authorization: `Token ${data.token}`,
+              }
+            }
+          );
+          const userdata = await userResponse.json();
+          // console.log(userdata)
+
+          window.localStorage.setItem("is_approver", userdata.is_approver);
+          window.localStorage.setItem("is_shecodes_admin", userdata.is_shecodes_admin);
+          window.localStorage.setItem("is_superuser", userdata.is_superuser);
           navigate(`/profile-page/${data.id}`);  
         }
         } catch (err) {
