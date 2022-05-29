@@ -5,7 +5,7 @@ import React, { useState } from "react";
 //components
 import AsyncCSVStickyNote from "../components/ExportCSV/ExportCSVStickyNote";
 import AsyncCSVUser from "../components/ExportCSV/ExportCSVUser";
-import Hero from "../components/Hero/Hero";
+import Hero from "../components/Hero/HeroHome";
 import QRGenerator from "../components/QRCode/QRCode"
 import Modal from "../components/GlobalModal/GlobalModal";
 
@@ -39,9 +39,6 @@ export default function HomePage() {
         <AsyncCSVStickyNote />
         {/* end export csv */}
        
-        {/* start QR generator */}
-        <QRGenerator />
-        {/* end QR Generator */}
 
     </>
 
