@@ -33,7 +33,7 @@ function EditProfilePage(){
         <>
         <div className="edit-act-container">
             <div id="editprofile-form">
-                    <h1>Edit Your Your Profile</h1>
+                <h1>Edit Your Your Profile</h1>
             </div>
             <EditProfileForm user={userData} />
         </div>

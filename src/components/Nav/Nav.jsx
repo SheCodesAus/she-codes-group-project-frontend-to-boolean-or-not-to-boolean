@@ -32,7 +32,7 @@ function Nav() {
 
     const navigateToProfile = () => {
         let id = window.localStorage.getItem("id")
-        navigate(`/profile-page/${id}`)
+        navigate(`/profile/${id}`)
     }
 
     const navigateToSignUp = () => {

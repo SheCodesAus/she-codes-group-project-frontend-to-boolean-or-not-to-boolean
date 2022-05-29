@@ -66,8 +66,8 @@ function CreateAccountForm() {
           );
         }
       else {
-      // THIS IS HOW YOU NAVIGATE AUTOMATICALLY
-        navigate(`/profile-page/${data.data.id}`);
+        // Navigate directly to User Profile
+        navigate(`/profile/${data.data.id}`);
       }
       } catch (err) {
         console.log(err);
