@@ -191,6 +191,19 @@ function Nav() {
                 >
                     Collections
                 </Link>
+
+                <Link 
+                // Should be to 'collections' 
+                // not sure on the correct link here - to be confirmed
+                    to="/win-walls/"
+                    className="nav-links"
+                    onClick={
+                        () => navigate()
+                    }
+                >
+                    WinWalls
+                </Link>
+
                 {profileLink(true)}
                 {checkUser(false)} 
                 {checkUser(true)}
@@ -214,6 +227,9 @@ function Nav() {
                 </button>  
                 <ul
                     className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    <a href="/"><img  
+                    className="logo-img logo-img-hamburger" 
+                    src={Logo}></img></a>
                     <Link 
                         to="/" 
                         className="active-link" 
@@ -231,7 +247,7 @@ function Nav() {
                     <Link 
                     // Should be to 'collections' 
                     // not sure on the correct link here - to be confirmed
-                    to="/win-walls/"
+                    to="/collections/"
                     className="active-link"
                     onClick={
                         () => closeMenu()
@@ -239,6 +255,18 @@ function Nav() {
                     >
                         Collections
                     </Link>
+
+                    <Link 
+
+                    to="/win-walls/"
+                    className="active-link"
+                    onClick={
+                        () => closeMenu()
+                    }
+                    >
+                        WinWalls
+                    </Link>
+                    
                 {profileLink(true)}
                 {checkUser(false)} 
                 {/* {checkUser(true)} */}
