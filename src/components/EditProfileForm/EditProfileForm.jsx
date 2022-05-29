@@ -47,7 +47,7 @@ function EditProfileForm({user}) {
                 const data = await res.json()
                 console.log(data);
 
-                navigate(`/profile-page/${user.id}/`);               
+                navigate(`/profile/${user.id}/`);               
             } catch(err) {
                 console.log(err);
             }

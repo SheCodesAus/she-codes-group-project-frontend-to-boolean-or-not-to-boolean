@@ -68,7 +68,7 @@ const handleSubmit = async (event) => {
           window.localStorage.setItem("is_approver", userdata.is_approver);
           window.localStorage.setItem("is_shecodes_admin", userdata.is_shecodes_admin);
           window.localStorage.setItem("is_superuser", userdata.is_superuser);
-          navigate(`/profile-page/${data.id}`);  
+          navigate(`/profile/${data.id}`);  
         }
         } catch (err) {
         console.log(err);
