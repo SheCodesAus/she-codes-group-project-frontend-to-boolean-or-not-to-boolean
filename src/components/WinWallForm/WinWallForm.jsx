@@ -8,12 +8,23 @@ function WinWallForm() {
 
   const token = window.localStorage.getItem("token");
   
-  // const [collectionList, setCollectionList] = useState({
-  //   collection_id:""
-  // })
+  const [collectionList, setCollectionList] = useState({ collections: [] })
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}collections/`)
+    .then((results) => {
+    return results.json();
+     })
+        .then((data) => { 
+         console.log("Data", data)
+     setCollectionList(data);
+     });
+}, []);
+
   
   const [winwall, setWinwall] = useState({
-      collection: "",
+      collection_id: "",
       title: "",
       image: "",
       start_date: "",
@@ -21,8 +32,8 @@ function WinWallForm() {
       is_open: "",
       is_exported: "",
       
-    });
-
+  });
+  
     const navigate = useNavigate();
   
     const handleChange = (event) => {
@@ -86,14 +97,14 @@ function WinWallForm() {
           />
         </div>
 
-        {/* <div>
-            <select id="collection" onChange={handleChange}>
+        <div>
+            <select id="collection_id" onChange={handleChange}>
                 <option value="">--Choose a collection--</option>           
-            {collectionList.map((coll) => (
-              <option key={coll.id} value={coll.id}> {coll.title} </option>
+            {collectionList.map((item) => (
+              <option key={item.id} value={item.id}> {item.title} </option>
             ))}
             </select>
-        </div> */}
+        </div>
 
         <div>
         <label className="form-text" htmlFor="image">Cover image: </label>
