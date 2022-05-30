@@ -1,38 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, useParams } from "react-router-dom";
-import "./EditCollectionForm.css";
 
-function EditCollectionForm({ collection }) {
+
+function EditWinWallForm({ winwall }) {
   
     const token = window.localStorage.getItem("token");
-    const [editCollection, setEditCollection] = useState(collection);
+    const [editWinwall, setEditWinwall] = useState(winwall);
     const navigate = useNavigate();
     const { id } = useParams();
 
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}collection/${id}/`)
+        fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
         .then((results) => {
-            console.log("results",results);    
         return results.json();
         })
         
         .then((data) => {
-            setEditCollection(data);
+            setEditWinwall(data);
         });
       
         }, [id]);
     
         
-        if (!editCollection) {
+        if (!editWinwall) {
             return <h3>Loading..</h3>;
         }
     
     const handleChange = (event) => {
         const { id, value } = event.target;
-        setEditCollection((prevEditCollection) => ({
-          ...prevEditCollection,
+        setEditWinwall((prevEditWinwall) => ({
+          ...prevEditWinwall,
           [id]: value,
         }));
     };
@@ -41,21 +40,21 @@ function EditCollectionForm({ collection }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}collection/${editCollection.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}collection/${editWinwall.id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
               Authorization: `Token ${token}`,
             },
             body: JSON.stringify({
-              title: editCollection.title,
-              image: editCollection.image,
+              title: editWinwall.title,
+              image: editWinwall.image,
     
             }),
           });
           const data = await res.json();
           
-          navigate(`/collections/`); 
+          navigate(`/win-walls/`); 
         } catch (err) {
           console.log(err);
         }
@@ -63,7 +62,7 @@ function EditCollectionForm({ collection }) {
     
       if (!token || token===null || token===undefined || token==="undefined"){
         return (
-          <Link to="/login">Please log in to edit this collection</Link>
+          <Link to="/login">Please log in to edit this win wall page.</Link>
         );
       }
   
@@ -76,7 +75,7 @@ function EditCollectionForm({ collection }) {
         <input
             type="text"
             id="title"
-            value={editCollection.title}
+            value={editWinwall.title}
             onChange={handleChange}
           />
         </div>
@@ -86,7 +85,7 @@ function EditCollectionForm({ collection }) {
         <input
             type="url"
             id="image"
-            value={editCollection.image}
+            value={editWinwall.image}
             onChange={handleChange}
           />
         </div>
@@ -100,4 +99,4 @@ function EditCollectionForm({ collection }) {
 }
 
 
-export default EditCollectionForm;
+export default EditWinWallForm;

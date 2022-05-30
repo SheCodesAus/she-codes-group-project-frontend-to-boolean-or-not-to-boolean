@@ -8,6 +8,10 @@ function WinWallForm() {
 
   const token = window.localStorage.getItem("token");
   
+  // const [collectionList, setCollectionList] = useState({
+  //   collection_id:""
+  // })
+  
   const [winwall, setWinwall] = useState({
       collection: "",
       title: "",
@@ -34,7 +38,6 @@ function WinWallForm() {
         event.preventDefault();
         try {
           const res = await fetch(`${process.env.REACT_APP_API_URL}win-walls/`, {
-          // const res = await fetch(`http://127.0.0.1:8000/win-walls/`, {
 
             method: "post",
             headers: {
@@ -78,17 +81,19 @@ function WinWallForm() {
         <input
             type="text"
             id="title"
-            placeholder="Give your win wall a name"
+            placeholder="Give your win wall a title"
             onChange={handleChange}
           />
         </div>
 
-        <div>
+        {/* <div>
             <select id="collection" onChange={handleChange}>
-                <option value="">--Choose a collection--</option>
-            <option value={2}>SheCodes Python 1 Day Workshop</option>
+                <option value="">--Choose a collection--</option>           
+            {collectionList.map((coll) => (
+              <option key={coll.id} value={coll.id}> {coll.title} </option>
+            ))}
             </select>
-        </div>
+        </div> */}
 
         <div>
         <label className="form-text" htmlFor="image">Cover image: </label>
