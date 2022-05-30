@@ -11,16 +11,21 @@ function Hero() {
 return(
     <>
         <section className="hero">
-            <div>
-            <h1>Here we will have some <span class="hero-highlight"> kind </span> 
-            of quote with some <span class="hero-highlight">highlight</span>.
-            text!</h1>
-            <container className="qr-code-hero">
-                <QRGenerator />
-            </container>
-            </div>
+            {/* <container className="hero-container"> */}
             
+                <section className="hero-text-section">
+                    <h1>Here we will have some <span class="hero-highlight"> kind </span> 
+                     of quote with some <span class="hero-highlight">highlight</span>.
+                    text!</h1>
+                </section>
+
+                <section className="qr-code-section qr-code-hero">
+                    <QRGenerator />
+                </section>
+            {/* </container> */}
         </section>
+
+        
 
     </>
 )

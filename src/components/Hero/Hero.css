@@ -44,4 +44,18 @@ div.qr-code {
     margin-top: 0;
 }
 
-/* make sure you check your index.css */
+.hero-container {
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: space-around; */
+}
+
+.qr-code-section {
+    margin-bottom: 16rem;
+    padding: 0.5rem;
+}
+
+.hero-text-section {
+    margin-left: 2rem;
+    padding: 0.5rem;
+}

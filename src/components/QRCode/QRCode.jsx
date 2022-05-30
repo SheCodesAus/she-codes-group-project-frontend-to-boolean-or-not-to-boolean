@@ -1,14 +1,19 @@
 import QRCode from "qrcode.react";
 
+import "./QRCode.css"
+
 export default function QRGenerator() {
    return (
       
-      <div>
-         <QRCode
-            className="qr-code"
-            value="https://www.entertexthere/"style={{ marginRight: 50 }}/>
+      <container>
+         {/* <section className="qr-code-section"> */}
+            <QRCode className="qr-code"
+            value="https://www.entertexthere/"/>
+         {/* </section> */}
+         {/* <section className="hero-text-section"> */}
             <h1>Find out about our workshops</h1>
-      </div>
+         {/* </section> */}
+      </container>
 
          /* <div>
           <QRCode value="https://www.entertexthere/" style={{marginRight: 50 }} />
