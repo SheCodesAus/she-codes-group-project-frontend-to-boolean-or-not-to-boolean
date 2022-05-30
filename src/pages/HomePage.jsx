@@ -30,7 +30,6 @@ export default function HomePage() {
             <p>This is modal body</p>
             <Modal />
         </div>
-        {/* end modal button */}
 
         <Footer />
     </>

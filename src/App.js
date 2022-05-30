@@ -24,6 +24,7 @@ import EditCollectionPage from "./pages/EditCollectionPage";
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import CreateStickyPage from "./pages/StickyNotesPage/CreateStickyPage";
 import EditStickyPage from "./pages/StickyNotesPage/EditStickyPage";
+import UpdateUserAuthListPage from "./pages/AuthTypePages/UpdateUserAuthListPage";
 import ChangeUserToAdminPage from "./pages/AuthTypePages/ChangeUserToAdminPage";
 import ChangeUserToApproverPage from "./pages/AuthTypePages/ChangeUserToApprover";
 
@@ -52,6 +53,8 @@ function App() {
           <Route path="/edit-sticky-note/win-wall/:id/" element={<EditStickyPage />} />
           <Route path="/profile/:id/add-auth-level/" element={<ChangeUserToAdminPage />} />
           <Route path="/profile/:id/make-approver/" element={<ChangeUserToApproverPage />} />
+          <Route path="/shecodes-user-list/" element={<UpdateUserAuthListPage />} />
+
         </Routes>
     </>
     </Router>
