@@ -54,7 +54,7 @@ function EditWinWallForm({ winwall }) {
           });
           const data = await res.json();
           
-          navigate(`/win-walls/`); 
+          navigate(`/collection/${editWinwall.id}`); 
         } catch (err) {
           console.log(err);
         }

@@ -1,26 +1,40 @@
-.collection-card--list {
+.card--list {
     display: flex;
+    margin:0px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     width: 100%;
 }
 
-.collection-card {
-    width: 25%;
+.card {
+    max-height: 400px;
+    /* height: 100%; */
+    max-width: 400px;
+    /* width: 100%; */
+    /* width: 25%; */
     border: 1px solid black;
+    border-radius: 2%;
+    margin: 0px;
     box-shadow: 0px 0px 5px gray;
     text-align: center;
 }
 
-.collection-card img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
+.card--title {
+    margin:10px;
 }
 
-.collection-card--link {
+.card img {
+    max-height: 250px;
+    height: 100%;
+    max-width: 250px;
+    width: 100%;
+    margin:20px;
+    /* object-fit: cover; */
+}
+
+.card--link {
     color: black;
     font-weight: bold;
     text-decoration: none;
