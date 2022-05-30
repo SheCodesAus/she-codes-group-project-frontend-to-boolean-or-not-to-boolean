@@ -1,12 +1,8 @@
 // Home page
 import React, { useState } from "react";
 
-
 //components
-// import AsyncCSVStickyNote from "../components/ExportCSV/ExportCSVStickyNote";
-// import AsyncCSVUser from "../components/ExportCSV/ExportCSVUser";
-import Hero from "../components/Hero/Hero";
-// import QRGenerator from "../components/QRCode/QRCode"
+import Hero from "../components/Hero/HeroHome";
 import Modal from "../components/GlobalModal/GlobalModal";
 import Footer from "../components/Footer/Footer";
 
@@ -34,12 +30,9 @@ export default function HomePage() {
             <p>This is modal body</p>
             <Modal />
         </div>
-            {/* end modal button */}
-            <section>
-                <Footer />
-            </section>
+        {/* end modal button */}
 
-
+        <Footer />
     </>
 
 }

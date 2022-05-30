@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
+max-width: 91.5%;
 padding: 80px 60px;
 background: orange;
 position: absolute;

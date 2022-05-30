@@ -67,7 +67,6 @@ button {
   background-color: var(--secondary);
   padding: 10px 25px;
   border-radius: 25px;
-  /* width: 100px; */
   border: unset;
   font-family: var(--main-font);
   cursor: pointer;
