@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
-import CollectionCard from "../components/CollectionCard/CollectionCard"
-import CreateCollectionCard from "../components/CollectionCard/CreateCollectionCard"
+import CollectionCard from "../../components/CollectionCard/CollectionCard"
+import CreateCollectionCard from "../../components/CollectionCard/CreateCollectionCard"
 
 
 function CollectionListPage(props) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import EditCollectionForm from "../components/EditCollectionForm/EditCollectionForm"
+import EditCollectionForm from "../../components/EditCollectionForm/EditCollectionForm"
 
 function EditCollectionPage() {
 
@@ -10,7 +10,7 @@ function EditCollectionPage() {
     useEffect(() => {
 
         // fetch collection info
-        fetch(`${process.env.REACT_APP_API_URL}collection/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}collection/${id}/`)
         .then((results) => {
             return results.json();
         })
@@ -19,12 +19,15 @@ function EditCollectionPage() {
         });
     }, []);
 
+    if (!collectionData) {
+        return <h1>Loading...</h1>
+    }
 
     return (
     
         <div>
         <h1>Edit collection</h1>
-       <EditCollectionForm data={collectionData} />
+       <EditCollectionForm />
         </div>
     );
 }

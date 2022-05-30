@@ -9,7 +9,7 @@ function CollectionCard(props) {
   
     return (
     <div className="collection-card">
-      <Link to={`/collection/${collectionData.id}`}>
+      <Link to={`/collection/${collectionData.id}/`}>
         <img src={collectionData.image} />
           <h3>{collectionData.title}</h3>
         </Link>

@@ -10,17 +10,20 @@ import "./index.css";
 // Pages
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import CollectionPage from "./pages/CollectionPage"
-import CollectionListPage from "./pages/CollectionListPage"
+import CollectionPage from "./pages/CollectionPages/CollectionPage"
+import CollectionListPage from "./pages/CollectionPages/CollectionListPage"
 import WinWallPage from "./pages/WinWallPage"
 import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 import PageNotFound from "./pages/ErrorPage/PageNotFound";
+import EditWinWallPage from "./pages/EditWinWallPage";
+import EditWinWallForm from "./components/EditWinWallForm/EditWinWallForm";
+
 
 // Admin Specific Pages:
-import CreateCollectionPage from "./pages/CreateCollectionPage"
-import EditCollectionPage from "./pages/EditCollectionPage";
+import CreateCollectionPage from "./pages/CollectionPages/CreateCollectionPage"
+import EditCollectionPage from "./pages/CollectionPages/EditCollectionPage";
 import CreateWinWallPage from "./pages/CreateWinWallPage"
 import CreateStickyPage from "./pages/StickyNotesPage/CreateStickyPage";
 import EditStickyPage from "./pages/StickyNotesPage/EditStickyPage";
@@ -39,8 +42,9 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
+          <Route path="/win-wall/:id/edit" element={<EditWinWallPage />} />
           <Route path="/collections/" element={<CollectionListPage />} />
-          <Route path="/collection/:id" element={<CollectionPage />} />
+          <Route path="/collection/:id/" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/profile/:id/edit-profile" element={<EditProfilePage />} />

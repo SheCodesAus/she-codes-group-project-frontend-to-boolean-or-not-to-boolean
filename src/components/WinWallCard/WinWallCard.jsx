@@ -11,7 +11,9 @@ function WinWallCard(props) {
       <Link to={`/win-wall/${winwallData.id}`}>
         <img src={winwallData.image} />
         <h3>{winwallData.title}</h3>
-      </Link>
+        </Link>
+        <button><Link to={`/win-wall/${winwallData.id}/edit`}>Edit win wall</Link></button>
+
     </div>
   );
 }
