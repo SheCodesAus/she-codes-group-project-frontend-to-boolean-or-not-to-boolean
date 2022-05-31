@@ -5,6 +5,7 @@ import StickyNoteCard from "../components/StickyNoteCard/StickyNoteCard";
 import "./WinWallPage.css";
 import Circle from "../components/images/icons/circle-thumbs-up.png";
 import Bin from "../components/images/icons/remove-circle.png";
+import Comment from "../components/images/icons/comments.png";
 
 
 function WinWallPage() {
@@ -118,8 +119,8 @@ function WinWallPage() {
         </div>
         <div>
             <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
-            <button className="all-btn">
-                Post Win Comment
+            <button className="icon-button">
+            <img src={Comment} />
             </button>
             </Link>
             <button type="submit" onClick={handleSubmitApprove} className="icon-button">

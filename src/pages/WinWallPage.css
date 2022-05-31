@@ -21,14 +21,22 @@ body {
   }
 
 
-.icon-button img{
-    height: 3rem;
-    display: flex;
-    align-self: flex-end;
 
-}
 
 textarea {
     font-family: var(--main-font);
     font-size: medium;
+}
+
+
+.icon-button{
+    background: none;
+}
+
+.icon-button img{
+    height: 3rem;
+    display: flex;
+    align-self: flex-end;
+    background-color: transparent;
+
 }
