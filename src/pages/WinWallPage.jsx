@@ -96,25 +96,23 @@ function WinWallPage() {
     if (isSuperUser || isAdmin || isApprover) {
 
     return (
-        <div>
-        <div>
-            <h1>Win wall Title:  {WinwallData.title} </h1>
-            <img src={WinwallData.image} alt="winwall hero image" />
+        <div className="main-section">
+        <h1>{WinwallData.title} </h1>
+        <p className="main-section--description">All your sticky notes in one place!</p>
+            {/* <img src={WinwallData.image} alt="winwall hero image" /> */}
 
-        </div>
         {/* adding sticky notes to winwall page */}
 
-        <div className="sticky-section">
-        <h3>StickyNotes</h3>
+        {/* <div className="sticky-section">
+        <h3>StickyNotes</h3> */}
+        
         <div className="sticky-board">
-      
     
             {WinwallData.stickynotes.map((stickynoteData, key) => {
             return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
             />;
             })}
     
-        </div>
         </div>
         <div>
             <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
@@ -136,25 +134,20 @@ function WinWallPage() {
         }
     else {
         return (
-            <div>
-            <div>
-                <h1>Win wall Title:  {WinwallData.title} </h1>
-                <img src={WinwallData.image} alt="winwall hero image" />
-    
-            </div>
+            <div className="main-section">
+                <h1>{WinwallData.title} </h1>
+                {/* <img src={WinwallData.image} alt="winwall hero image" /> */}
             {/* adding sticky notes to winwall page */}
     
-            <div className="sticky-section">
-            <h3>StickyNotes</h3>
+            {/* <div className="sticky-section">
+            <h3>StickyNotes</h3> */}
             <div className="sticky-board">
           
-        
                 {WinwallData.stickynotes.map((stickynoteData, key) => {
                 return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
                 />;
                 })}
         
-            </div>
             </div>
             <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
             <button className="all-btn">

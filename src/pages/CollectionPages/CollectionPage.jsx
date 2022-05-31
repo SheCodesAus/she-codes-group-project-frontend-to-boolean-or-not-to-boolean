@@ -27,7 +27,7 @@ function CollectionPage() {
   if (!CollectionData.win_wall_collections) {
     return (
         <div className="collection--list--section">
-        <h1>{CollectionData.title} </h1>
+        <h1>Uh oh. </h1>
         <p className="collection--description">You don't have any win walls yet...</p>
         <CreateWinWallCard />
         </div>
