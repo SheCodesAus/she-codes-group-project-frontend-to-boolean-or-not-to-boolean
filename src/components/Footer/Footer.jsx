@@ -1,109 +1,102 @@
 import React from "react";
-import {
-Box,
-Container,
-Row,
-Column,
-FooterLink,
-Heading,
-} from "./FooterStyles";
+// import { h2 } from "react-router-dom";
 
-const Footer = () => {
+import "./FooterStyles.css"
+
+const FooterDone = () => {
 return (
-	<Box>
+	<section className="box">
         <section>
-            <h1 style={{ color: "var(--primary)",
-				textAlign: "center",
-				marginTop: "-50px", 
-                // marginRight: "100px",
-                marginBottom: "50px"}}>
-		    She Codes WinWall is a space for the She Codes Australia community to share their experiences. 
-	    </h1>
+            <h1>
+		    	She Codes WinWall is a space for the She Codes Australia community to share their experiences. 
+	    	</h1>
         </section>
 
-	<Container>
-		<Row>
-		<Column>
-			<Heading>Some text</Heading>
-			<FooterLink href="#">text</FooterLink>
-			<FooterLink href="#">testing</FooterLink>
-			<FooterLink href="#">more test</FooterLink>
-		</Column> 
-		<Column>
-			<Heading>Some text</Heading>
-			<FooterLink href="#">text</FooterLink>
-			<FooterLink href="#">testing</FooterLink>
-			<FooterLink href="#">more test</FooterLink>
-		</Column> 
+	<container className="container">
+		<div className="row">
+		<section className="column">
+			<h1 className="heading">Some text</h1>
+			<h2 className="footer-link" href="#">text</h2>
+			<h2 className="footer-link" href="#">testing</h2>
+			<h2 className="footer-link" href="#">more test</h2>
+		</section> 
+		<section className="column">
+			<h1 className="heading">Some text</h1>
+			<h2 className="footer-link" href="#">text</h2>
+			<h2 className="footer-link" href="#">testing</h2>
+			<h2 className="footer-link" href="#">more test</h2>
+		</section> 
 		
-		<Column>
-			<Heading>Social Media</Heading>
-			<FooterLink href="#">
+		<section className="column">
+			<h1 className="heading">Some text</h1>
+			<h2 className="footer-link" href="#">
 			<i className="fab fa-facebook-f">
 				<span style={{ marginLeft: "10px" }}>
 				Facebook
 				</span>
 			</i>
-			</FooterLink>
-			<FooterLink href="#">
+			</h2>
+			<h2 className="footer-link" href="#">
 			<i className="fab fa-instagram">
 				<span style={{ marginLeft: "10px" }}>
 				Instagram
 				</span>
 			</i>
-			</FooterLink>
-			<FooterLink href="#">
+			</h2>
+			<h2 className="footer-link" href="#">
 			<i className="fab fa-twitter">
 				<span style={{ marginLeft: "10px" }}>
 				Twitter
 				</span>
 			</i>
-			</FooterLink>
-			<FooterLink href="#">
+			</h2>
+			<h2 className="footer-link" href="#">
 			<i className="fab fa-youtube">
 				<span style={{ marginLeft: "10px" }}>
 				Youtube
 				</span>
 			</i>
-			</FooterLink>
-		</Column>
-		</Row>
-	</Container>
-    <Container>
-        <section style={{ textAlign: "center", fontWeight: "bold", color: "var(--dark-text)"}}>
-                Powered by She Codes Plus. Website by 
-                <FooterLink 
+			</h2>
+		</section>
+		</div>
+	</container>
+	<container className="container">
+        <div className="footer-div heading">
+				<h3>Powered by She Codes Plus. Website by
+				<a className="footer-link"
                 target="_blank" 
-                href="https://www.linkedin.com/in/maria-c-12688b186/"
-                >
+                href="https://www.linkedin.com/in/maria-c-12688b186/">
+                
                     Maria 
-            </FooterLink>  , 
-            
-            <FooterLink 
-                target="_blank" 
-                href="https://www.linkedin.com/in/kristie-brandis-861a781aa/"
-                >
-                    Kris 
-            </FooterLink>  , 
-            
-            <FooterLink 
-                target="_blank" 
-                href="https://www.linkedin.com/in/hannah-bethhannah-becker/"
-                >
-                    Hannah 
-            </FooterLink>  , 
+				</a> 
+				
+				<a 
+					className="footer-link"
+					target="_blank" 
+					href="https://www.linkedin.com/in/kristie-brandis-861a781aa/"
+					>
+						Kris 
+				</a> 
+				
+				<a className="footer-link"
+					target="_blank" 
+					href="https://www.linkedin.com/in/hannah-bethhannah-becker/"
+					>
+						Hannah 
+				</a> 
 
-			<FooterLink 
-                target="_blank" 
-                href="https://www.linkedin.com/in/camille-legoff/"
-                >
-                    Camille 
-            </FooterLink>  . 
+				<a className="footer-link"
+					target="_blank" 
+					href="https://www.linkedin.com/in/camille-legoff/"
+					>
+						Camille 
+				</a> 
 
-             &copy; 2022
-        </section>
-    </Container>
-	</Box>
+				&copy; 2022
+				</h3>
+        </div>
+    </container>
+	</section>
     );
 };
-export default Footer;
+export default FooterDone;
