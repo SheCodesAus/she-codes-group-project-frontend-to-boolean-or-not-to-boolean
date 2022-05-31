@@ -102,14 +102,15 @@ function WinWallForm() {
           />
         </div>
 
-        {/* <div>
+        <div><label className="form-text" htmlFor="title">Collection: </label>
+
             <select id="collection_id" onChange={handleChange}>
                 <option value="">--Choose a collection--</option>           
             {collectionList.map((item) => (
               <option key={item.id} value={item.id}> {item.title} </option>
             ))}
-            </select>
-        </div> */}
+          </select>
+        </div>
 
         <div>
         <label className="form-text" htmlFor="image">Cover image: </label>

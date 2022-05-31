@@ -1,8 +1,7 @@
 import React from "react";
 import WinWallForm from "../components/WinWallForm/WinWallForm"
 import "../pages/WinWallPage.css"
-
-
+import "../components/CollectionCard/CollectionCard.css"
 
 
 function CreateWinWallPage() {
