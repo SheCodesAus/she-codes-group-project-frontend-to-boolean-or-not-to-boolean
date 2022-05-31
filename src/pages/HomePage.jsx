@@ -4,7 +4,7 @@ import React, { useState } from "react";
 //components
 import Hero from "../components/Hero/HeroHome";
 import Modal from "../components/GlobalModal/GlobalModal";
-import Footer from "../components/Footer/Footer";
+import FooterDone from "../components/Footer/Footer";
 
 //styles
 import "../index.css"
@@ -31,7 +31,7 @@ export default function HomePage() {
             <Modal />
         </div>
 
-        <Footer />
+        <FooterDone />
     </>
 
 }
