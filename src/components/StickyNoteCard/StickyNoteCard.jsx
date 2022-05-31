@@ -18,8 +18,20 @@ function StickyNoteCard(props) {
     const isSuperUser = (SuperUser == 'true')
     
     // const { id } = useParams();
-    const { stickynoteData } = props;
-    const isOwner = (UserId == stickynoteData.owner)
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+
+    const { stickynoteData, winwallData } = props;
+    const isOwner = (UserId == {stickynoteData}.owner)
+    const GetStickyStatus = stickynoteData.sticky_status
+    const WallStatus = stickynoteData.win_wall_live
+    const WallClosed = WallStatus == "Closed"
+    const WallLive = WallStatus == "Live"
+    const ApprovedStatus = GetStickyStatus == 'Approved'
+    const ArchivedStatus = GetStickyStatus == 'Archived'
+
+    
 
     const handleSubmitApprove = async (event) => {
         event.preventDefault();
@@ -69,7 +81,24 @@ function StickyNoteCard(props) {
         }
       };
 
-    if (isSuperUser || isAdmin || isApprover) {
+
+      let isAssignedAdmin = false;
+      let isAssignedApprover = false;
+ 
+      for (let index = 0; index < assignments.length; index++) {
+          const element = assignments[index];
+ 
+         const collection_assignment = element.collection_id
+         const winwall_assignment = element.win_wall_id
+         const assigned_approver = element.is_approver
+         const assigned_admin = element.is_admin
+ 
+         isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id ))
+         isAssignedApprover = isAssignedApprover || (assigned_approver == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id ))
+      }
+      
+
+    if ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed) {
     
     return (
        
@@ -94,19 +123,28 @@ function StickyNoteCard(props) {
             </button>
             </Link>
              
-            
-            
-        
             </div>
         
-
-       
-        <div>
-        </div>
         </div>
     );
     }
-    else if (isOwner) {
+
+    else if  ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallLive) {
+
+        return (
+       
+            <div className="stickynote-area">
+               
+        
+                <div className="stickynote-card">
+                 <p>{stickynoteData.win_comment}</p>
+                </div>
+            
+            </div>
+        );
+        }
+
+    else if (isOwner && !WallClosed) {
     
         return (
            
@@ -123,14 +161,26 @@ function StickyNoteCard(props) {
                 </Link>
                  
                 </div>
-            
-    
-           
-            <div>
-            </div>
+        
             </div>
         );
         }
+
+    else if (isOwner && WallClosed) {
+    
+        return (
+               
+            <div className="stickynote-area">
+                
+        
+                <div className="stickynote-card">
+                    <p>{stickynoteData.win_comment}</p> 
+                    
+                </div>
+        
+            </div>
+            );
+            }
 
     else {
         return (
