@@ -76,4 +76,18 @@ button:hover {
   background-color: var(--p-light);
 }
 
+.icon-button {
+  background: none;
+  background-color: transparent;
+  border: none;
+  padding: 2px;
+}
+
+.icon-button img{
+  height: 3rem;
+  display: flex;
+  align-self: flex-end;
+  background-color: transparent;
+
+}
 
