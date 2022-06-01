@@ -30,6 +30,7 @@ import EditStickyPage from "./pages/StickyNotesPage/EditStickyPage";
 import UpdateUserAuthListPage from "./pages/AuthTypePages/UpdateUserAuthListPage";
 import ChangeUserToAdminPage from "./pages/AuthTypePages/ChangeUserToAdminPage";
 import ChangeUserToApproverPage from "./pages/AuthTypePages/ChangeUserToApprover";
+import SheCoderListPage from "./pages/SheCoderListPage/SheCoderListPage";
 
 function App() {
   return (
@@ -57,8 +58,8 @@ function App() {
           <Route path="/edit-sticky-note/win-wall/:id/" element={<EditStickyPage />} />
           <Route path="/profile/:id/add-auth-level/" element={<ChangeUserToAdminPage />} />
           <Route path="/profile/:id/make-approver/" element={<ChangeUserToApproverPage />} />
-          <Route path="/shecodes-user-list/" element={<UpdateUserAuthListPage />} />
-
+          <Route path="/auth-assignments/" element={<UpdateUserAuthListPage />} />
+          <Route path="/shecodes-user-list/" element={<SheCoderListPage />} />
         </Routes>
     </>
     </Router>
