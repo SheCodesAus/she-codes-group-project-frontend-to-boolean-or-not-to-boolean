@@ -9,7 +9,7 @@ function WinWallCard(props) {
     return (
     <div className="winwall-card">
       <Link to={`/win-wall/${winwallData.id}`}>
-        <img src={winwallData.image} />
+        <img src={winwallData.image} alt="winwallimage" />
         <h3>{winwallData.title}</h3>
         </Link>
         <button><Link to={`/win-wall/${winwallData.id}/edit`}>Edit win wall</Link></button>
