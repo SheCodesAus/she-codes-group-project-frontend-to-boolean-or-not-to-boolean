@@ -139,7 +139,7 @@ function WinWallPage() {
       
     
             {WinwallData.stickynotes.map((stickynoteData, key) => {
-            return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
             />;
             })}
     
@@ -182,8 +182,8 @@ function WinWallPage() {
                 <div className="sticky-board">
               
             
-                    {WinwallData.stickynotes.map((stickynoteData, key) => {
-                    return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
+                {WinwallData.stickynotes.map((stickynoteData, key) => {
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
                     />;
                     })}
             
@@ -219,8 +219,8 @@ function WinWallPage() {
                 <div className="sticky-board">
               
             
-                    {WinwallData.stickynotes.map((stickynoteData, key) => {
-                    return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
+                {WinwallData.stickynotes.map((stickynoteData, key) => {
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
                     />;
                     })}
             
@@ -255,8 +255,8 @@ function WinWallPage() {
                 <div className="sticky-board">
                 
             
-                    {WinwallData.stickynotes.map((stickynoteData, key) => {
-                    return <StickyNoteCard key={key} stickynoteData={stickynoteData} 
+                {WinwallData.stickynotes.map((stickynoteData, key) => {
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
                     />;
                     })}
             

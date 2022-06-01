@@ -1,9 +1,11 @@
-import React from "react";
 import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./StickyNoteCard.css";
 import Circle from "../images/icons/circle-thumbs-up.png";
 import Bin from "../images/icons/remove-circle.png";
 import Pencil from "../images/icons/edit-pencil-slant.png";
+import Tick from   "../images/icons/sticky-note-tick.png";
+import Cross from   "../images/icons/sticky-note-cross.png";
 
 function StickyNoteCard(props) {
     // or ProjectCard({ projectData })
@@ -22,7 +24,9 @@ function StickyNoteCard(props) {
     const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
    
 
+
     const { stickynoteData, winwallData } = props;
+    
     const isOwner = (UserId == {stickynoteData}.owner)
     const GetStickyStatus = stickynoteData.sticky_status
     const WallStatus = stickynoteData.win_wall_live
@@ -30,13 +34,15 @@ function StickyNoteCard(props) {
     const WallLive = WallStatus == "Live"
     const ApprovedStatus = GetStickyStatus == 'Approved'
     const ArchivedStatus = GetStickyStatus == 'Archived'
+    const WinWallCollection = winwallData.collection_id
+    const CollectionID = WinWallCollection != null
 
     
 
     const handleSubmitApprove = async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}sticky-note/${stickynoteData.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${stickynoteData.id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -60,7 +66,7 @@ function StickyNoteCard(props) {
       const handleSubmitArchive= async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}sticky-note/${stickynoteData.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${stickynoteData.id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -93,12 +99,13 @@ function StickyNoteCard(props) {
          const assigned_approver = element.is_approver
          const assigned_admin = element.is_admin
  
-         isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id ))
-         isAssignedApprover = isAssignedApprover || (assigned_approver == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id ))
+       
+         isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id || winwallData.collection_id == null ))
+         isAssignedApprover = isAssignedApprover || (assigned_approver == true && (winwall_assignment == stickynoteData.win_wall_id || collection_assignment == winwallData.collection_id || winwallData.collection_id == null ))
       }
       
 
-    if ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed) {
+    if ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed && ApprovedStatus) {
     
     return (
        
@@ -108,26 +115,71 @@ function StickyNoteCard(props) {
             <div className="stickynote-card">
              <p>{stickynoteData.win_comment}</p>
 
-            <button type="submit" onClick={handleSubmitApprove} className="icon-button">
-                {/* Update StickyNote */}
-                <img src={Circle} />
-            </button>
+            
+            <img src={Tick} className="icon-button" />
+            
             <button type="submit" onClick={handleSubmitArchive} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} />
             </button> 
-
-             <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
-            <button className="icon-button">
-                <img src={Pencil} />
-            </button>
-            </Link>
              
             </div>
         
         </div>
     );
     }
+
+    else if  ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed && ArchivedStatus) {
+    
+        return (
+           
+            <div className="stickynote-area">
+               
+        
+                <div className="stickynote-card">
+                 <p>{stickynoteData.win_comment}</p>
+    
+               
+                <img src={Cross} className="icon-button" />
+    
+                
+                 
+                </div>
+            
+            </div>
+        );
+        }
+
+        else if ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed && !ArchivedStatus && !ApprovedStatus) {
+    
+            return (
+               
+                <div className="stickynote-area">
+                   
+            
+                    <div className="stickynote-card">
+                     <p>{stickynoteData.win_comment}</p>
+        
+                    <button type="submit" onClick={handleSubmitApprove} className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Circle} />
+                    </button>
+                    <button type="submit" onClick={handleSubmitArchive} className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Bin} />
+                    </button> 
+        
+                     <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
+                    <button className="icon-button">
+                        <img src={Pencil} />
+                    </button>
+                    </Link>
+                     
+                    </div>
+                
+                </div>
+            );
+            }
 
     else if  ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallLive) {
 
