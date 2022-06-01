@@ -49,6 +49,7 @@ function Nav() {
         window.localStorage.removeItem("is_shecodes_admin");
         window.localStorage.removeItem("is_superuser");
         window.localStorage.removeItem("assignments");
+        window.localStorage.removeItem("id");
 
         // Make sure we navigate back to login page
         navigateToLogin()

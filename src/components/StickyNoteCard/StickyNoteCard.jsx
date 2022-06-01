@@ -116,7 +116,7 @@ function StickyNoteCard(props) {
              <p>{stickynoteData.win_comment}</p>
 
             
-            <img src={Tick} className="icon-button" />
+            <img src={Tick} className="icon-status" />
             
             <button type="submit" onClick={(e) => handleSubmitArchive(e,stickynoteData.id)} className="icon-button">
                 {/* Update StickyNote */}
@@ -140,7 +140,7 @@ function StickyNoteCard(props) {
                  <p>{stickynoteData.win_comment}</p>
     
                
-                <img src={Cross} className="icon-button" />
+                <img src={Cross} className="icon-status" />
     
                 
                  

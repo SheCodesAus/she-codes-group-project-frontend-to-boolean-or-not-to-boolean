@@ -146,11 +146,7 @@ function WinWallPage() {
         </div>
         </div>
         <div>
-            <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
-            <button className="icon-button">
-            <img src={Comment} />
-            </button>
-            </Link>
+           
             <button type="submit" onClick={handleSubmitApprove} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Circle} />
@@ -226,14 +222,7 @@ function WinWallPage() {
             
                 </div>
                 </div>
-                <div>
-                    <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
-                    <button className="icon-button">
-                    <img src={Comment} />
-                    </button>
-                    </Link>
-                
-                </div>
+              
                 </div>
             );
                 }
