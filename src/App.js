@@ -20,6 +20,8 @@ import PageNotFound from "./pages/ErrorPage/PageNotFound";
 import EditWinWallPage from "./pages/EditWinWallPage";
 import EditWinWallForm from "./components/EditWinWallForm/EditWinWallForm";
 
+//components
+import FooterDone from "./components/Footer/Footer";
 
 // Admin Specific Pages:
 import CreateCollectionPage from "./pages/CollectionPages/CreateCollectionPage"
@@ -61,6 +63,7 @@ function App() {
           <Route path="/auth-assignments/" element={<UpdateUserAuthListPage />} />
           <Route path="/shecodes-user-list/" element={<SheCoderListPage />} />
         </Routes>
+      <FooterDone />
     </>
     </Router>
   );
