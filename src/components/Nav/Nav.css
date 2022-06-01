@@ -85,6 +85,10 @@ button.nav-links:hover {
     button.navBar {
         display: none;
     }
+
+    .menuNav {
+        display: none;
+    }
     
 }
 @media screen and (max-width: 960px) {
