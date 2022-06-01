@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import EditCollectionForm from "../../components/EditCollectionForm/EditCollectionForm"
+import "../../pages/WinWallPage.css"
+
 
 function EditCollectionPage() {
 
@@ -25,8 +27,10 @@ function EditCollectionPage() {
 
     return (
     
-        <div>
-        <h1>Edit collection</h1>
+        <div className="main-section">
+            <h1>Collection: "{collectionData.title}" </h1>
+            <p className="main-section--description">Edit the information for this collection page.</p>
+
        <EditCollectionForm />
         </div>
     );

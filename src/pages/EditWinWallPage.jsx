@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import EditWinWallForm from "../components/EditWinWallForm/EditWinWallForm"
+import "./WinWallPage.css"
+
+
 
 function EditWinWallPage() {
 
@@ -25,8 +28,11 @@ function EditWinWallPage() {
 
     return (
     
-        <div>
-        <h1>Edit win wall info</h1>
+        <div className="main-section">
+            <h1>Win wall: "{winwallData.title}"</h1>
+
+            <p className="main-section--description">Edit the information for this win wall page.</p>
+
        <EditWinWallForm />
         </div>
     );

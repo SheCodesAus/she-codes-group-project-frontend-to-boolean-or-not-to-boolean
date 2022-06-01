@@ -76,41 +76,33 @@ function StickyNoteCard(props) {
         <div className="stickynote-area">
            
     
-            <div className="stickynote-card">
+        <div className="stickynote-card">
              <p>{stickynoteData.win_comment}</p>
 
+          <div className="stickynote-buttons"> 
+            
             <button type="submit" onClick={handleSubmitApprove} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Circle} />
             </button>
+          
             <button type="submit" onClick={handleSubmitArchive} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} />
             </button> 
 
-             <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
-            <button className="icon-button">
-                <img src={Pencil} />
-            </button>
-            </Link>
-             
-            
-            
+            <button className="icon-button"> <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}><img src={Pencil} /></Link> </button>
         
-            </div>
-        
-
-       
-        <div>
-        </div>
-        </div>
+          </div>
+          </div>
+         </div>
     );
     }
     else if (isOwner) {
     
         return (
            
-            <div className="stickynote-area">
+          <div className="stickynote-area">
                
         
                 <div className="stickynote-card">
