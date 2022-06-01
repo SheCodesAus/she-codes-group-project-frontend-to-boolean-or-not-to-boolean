@@ -15,19 +15,29 @@ return (
 	<container className="container">
 		<div className="row">
 		<section className="column">
-			<h1 className="heading">Some text</h1>
-			<h2 className="footer-link" href="#">text</h2>
-			<h2 className="footer-link" href="#">testing</h2>
-			<h2 className="footer-link" href="#">more test</h2>
+			<h1 className="heading">SheCodes</h1>
+			<h2 className="footer-link" href="https://shecodes.com.au/">She Codes Official</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/plus/">Plus</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/workshops/">Workshops</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/flash/">Flash</h2>
+
 		</section> 
 		<section className="column">
-			<h1 className="heading">Some text</h1>
-			<h2 className="footer-link" href="#">text</h2>
+			<h1 className="heading">Like t</h1>
 			<h2 className="footer-link" href="#">testing</h2>
 			<h2 className="footer-link" href="#">more test</h2>
+		</section>
+
+		<section className="column">
+			<h1 className="heading">SheCodes</h1>
+			<h2 className="footer-link" href="https://shecodes.com.au/">She Codes Official</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/plus/">Plus</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/workshops/">Workshops</h2>
+			<h2 className="footer-link" href="https://shecodes.com.au/program/flash/">Flash</h2>
+
 		</section> 
 		
-		<section className="column">
+		 <section className="column">
 			<h1 className="heading">Some text</h1>
 			<h2 className="footer-link" href="#">
 			<i className="fab fa-facebook-f">
@@ -56,7 +66,7 @@ return (
 				Youtube
 				</span>
 			</i>
-			</h2>
+			</h2> 
 		</section>
 		</div>
 	</container>
@@ -67,7 +77,7 @@ return (
                 target="_blank" 
                 href="https://www.linkedin.com/in/maria-c-12688b186/">
                 
-                    Maria 
+                    Maria  ,
 				</a> 
 				
 				<a 
@@ -75,21 +85,21 @@ return (
 					target="_blank" 
 					href="https://www.linkedin.com/in/kristie-brandis-861a781aa/"
 					>
-						Kris 
+						Kris  ,
 				</a> 
 				
 				<a className="footer-link"
 					target="_blank" 
 					href="https://www.linkedin.com/in/hannah-bethhannah-becker/"
 					>
-						Hannah 
+						Hannah  ,
 				</a> 
 
 				<a className="footer-link"
 					target="_blank" 
 					href="https://www.linkedin.com/in/camille-legoff/"
 					>
-						Camille 
+						Camille  .
 				</a> 
 
 				&copy; 2022
