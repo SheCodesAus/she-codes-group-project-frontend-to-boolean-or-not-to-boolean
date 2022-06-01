@@ -22,14 +22,16 @@ function CreateStickyPage() {
 
     }, []);
 
-    const WallStatus = WinwallData.is_open
-    const WallClosed = WallStatus == false
-    const WallLive = WallStatus == true
 
 
      if (!WinwallData) {
          return <h3>Loading..</h3>;
      }
+
+    const WallStatus = WinwallData.is_open
+    const WallClosed = WallStatus == false
+    const WallLive = WallStatus == true
+
 
      if (isUserLoggedin && WallLive) {
 
