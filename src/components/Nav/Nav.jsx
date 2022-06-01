@@ -126,7 +126,7 @@ function Nav() {
     const handleClick = () => {
         setMenuExpanded(!isMenuExpanded)
     };
-    const closeMenuExpaded = () => {
+    const closeMenuExpanded = () => {
         setMenuExpanded(false)
     }
 
@@ -154,6 +154,7 @@ function Nav() {
             {/* used href rather than link to get the logo and text to stay in the same line as nav */}
             <a href="/"><img  
             className="logo-img" 
+            alt="win-wall logo"
             src={Logo}></img></a>
             <a href="/" 
             className="logo-text">
@@ -165,13 +166,13 @@ function Nav() {
                 : handleClick}`}>
                 <Link 
                 // link takes you to home
-                    to="/" 
+                    to="/shecodes-user-list/" 
                     className="nav-links" 
                     onClick={
                         () => navigate()
                     }
                 >
-                    HomePage
+                    She Coders
                 </Link>
                 {/* <Link 
                 // takes you to login page
@@ -233,13 +234,14 @@ function Nav() {
                     className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
                     <a href="/"><img  
                     className="logo-img logo-img-hamburger" 
+                    alt="win-wall logo"
                     src={Logo}></img></a>
                     <Link 
-                        to="/" 
+                        to="/shecodes-user-list/" 
                         className="active-link" 
                         onClick={() => closeMenu()}
                     >
-                        HomePage
+                        She Coders
                     </Link>
                     {/* <Link 
                         to="/login"
