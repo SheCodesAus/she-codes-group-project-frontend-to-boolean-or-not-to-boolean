@@ -1,10 +1,13 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 import WinWallForm from "../components/WinWallForm/WinWallForm"
 import "../pages/WinWallPage.css"
 import "../components/CollectionCard/CollectionCard.css"
 
 
 function CreateWinWallPage() {
+
+    const { id } = useParams();
     return (
     
         <div className="main-section">
@@ -12,7 +15,7 @@ function CreateWinWallPage() {
             <p className="main-section--description">
                 Create a new win wall page to organise your sticky notes. </p>
 
-            <WinWallForm />
+            <WinWallForm collectionId={id}/>
         </div>
         
     )

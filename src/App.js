@@ -53,7 +53,7 @@ function App() {
           {/* Admin Specific Pages: */}
           <Route path="/create-collection/" element={<CreateCollectionPage />} />
           <Route path="/collection/:id/edit" element={<EditCollectionPage />} />
-          <Route path="/create-win-wall/" element={<CreateWinWallPage />} />
+          <Route path="/collection/:id/create-win-wall/" element={<CreateWinWallPage />} />
           <Route path="/create-sticky-note/win-wall/:id/" element={<CreateStickyPage />} />
           <Route path="/edit-sticky-note/win-wall/:id/" element={<EditStickyPage />} />
           <Route path="/profile/:id/add-auth-level/" element={<ChangeUserToAdminPage />} />

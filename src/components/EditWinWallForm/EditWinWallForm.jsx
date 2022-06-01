@@ -39,7 +39,7 @@ function EditWinWallForm({ winwall }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}collection/${editWinwall.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-win-wall/${editWinwall.id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -48,6 +48,8 @@ function EditWinWallForm({ winwall }) {
             body: JSON.stringify({
               title: editWinwall.title,
               image: editWinwall.image,
+              start_date:editWinwall.start_date,
+              end_date:editWinwall.end_date,
     
             }),
           });
@@ -64,7 +66,20 @@ function EditWinWallForm({ winwall }) {
           <Link to="/login">Please log in to edit this win wall page.</Link>
         );
       }
-  
+
+
+    // formatting date for editing 
+
+    const startDateInput = new Date (editWinwall.start_date);
+    const endDateInput = new Date (editWinwall.end_date);
+
+    const startMonth = startDateInput.getMonth() < 10 ? '0' + startDateInput.getMonth():startDateInput.getMonth();
+    const startDate = startDateInput.getDate() < 10 ? '0' + startDateInput.getDate():startDateInput.getDate();
+    const startDateFormat = `${startDateInput.getFullYear()}-${startMonth}-${startDate}`
+    
+    const endMonth = endDateInput.getMonth() < 10 ? '0' + endDateInput.getMonth():endDateInput.getMonth();
+    const endDate = endDateInput.getDate() < 10 ? '0' + endDateInput.getDate():endDateInput.getDate();
+    const endDateFormat = `${endDateInput.getFullYear()}-${endMonth}-${endDate}`
 
     return (
         
@@ -85,6 +100,26 @@ function EditWinWallForm({ winwall }) {
             type="url"
             id="image"
             value={editWinwall.image}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+        <label className="form-text" htmlFor="start_date">Start date: </label>
+        <input
+            type="date"
+            id="start_date"
+            value={startDateFormat}
+            onChange={handleChange}
+          />
+        </div>
+            
+        <div>
+        <label className="form-text" htmlFor="end_date">End date: </label>
+        <input
+            type="date"
+            id="end_date"
+            value={endDateFormat}
             onChange={handleChange}
           />
         </div>

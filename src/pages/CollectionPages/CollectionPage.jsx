@@ -29,7 +29,7 @@ function CollectionPage() {
         <div className="collection--list--section">
         <h1>Uh oh. </h1>
         <p className="collection--description">You don't have any win walls yet...</p>
-        <CreateWinWallCard />
+        <CreateWinWallCard collectionId={id}/>
         </div>
         )
 };
@@ -47,7 +47,7 @@ function CollectionPage() {
       <div className="card--list">
       {CollectionData.win_wall_collections.map((winwallData, key) => {
         return <WinWallCard key={key} winwallData={winwallData} />   })}
-          <CreateWinWallCard />
+          <CreateWinWallCard collectionId={id}/>
         </div>
 
 
