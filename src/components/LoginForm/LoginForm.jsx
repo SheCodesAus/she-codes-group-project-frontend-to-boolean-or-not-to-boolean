@@ -63,11 +63,13 @@ const handleSubmit = async (event) => {
             }
           );
           const userdata = await userResponse.json();
-          // console.log(userdata)
+          console.log(userdata)
 
           window.localStorage.setItem("is_approver", userdata.is_approver);
           window.localStorage.setItem("is_shecodes_admin", userdata.is_shecodes_admin);
           window.localStorage.setItem("is_superuser", userdata.is_superuser);
+
+          window.localStorage.setItem("assignments", JSON.stringify(userdata.assignments));
           navigate(`/profile/${data.id}`);  
         }
         } catch (err) {
