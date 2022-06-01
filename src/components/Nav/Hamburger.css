@@ -34,8 +34,6 @@
   .menuNav.showMenu {
     padding-top: 2rem;
     width: 100vh;
-    /* min-width: 100%;  */
-    /* max-width: 100%; */
   }
   
   .menuNav a,
@@ -63,4 +61,18 @@
     border: unset;
   }
 
+  button.nav-links,
+  button.nav-links-mobile {
+    border: unset;
+  }
+
+  button.nav-links {
+text-align: start;
+    }
+
+  .logo-img-hamburger {
+    padding-top: 0;
+    width: 30%;
+    height: 30%;
+  }
   

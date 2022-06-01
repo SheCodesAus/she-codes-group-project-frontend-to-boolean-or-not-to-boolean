@@ -1,13 +1,15 @@
 // Nav Page
 // Imports
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./Button/ChangingButton";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../images/win-wall-logo-optimized.svg';
+// import { Text, StyleSheet } from "react-native";
+
 
 //icons
 //icons that can be used for hamburger menu imported from react
-import { MdClose } from "react-icons/md";
+import { MdClose, MdOutlineDateRange } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 
 // Styles
@@ -32,7 +34,7 @@ function Nav() {
 
     const navigateToProfile = () => {
         let id = window.localStorage.getItem("id")
-        navigate(`/profile-page/${id}`)
+        navigate(`/profile/${id}`)
     }
 
     const navigateToSignUp = () => {
@@ -136,6 +138,12 @@ function Nav() {
         setMenuExpanded(false)      
     }
 
+    //set header as a logo to use {} symbols
+    const winHeader = "Win"
+    const wallHeader = "{Wall}"
+
+    const fullHeader = `${winHeader}${wallHeader}`
+
     return(
         <nav className="navbar-items">
             {/* Logo section */}
@@ -144,7 +152,8 @@ function Nav() {
             className="logo-img" 
             src={Logo}></img></a>
             <a href="/" 
-            className="logo-text">Win Wall</a>                    
+            className="logo-text">
+                {fullHeader}</a>                    
             <ul 
                 className={`nav-menu 
                 ${isMenuExpanded 
@@ -182,6 +191,19 @@ function Nav() {
                 >
                     Collections
                 </Link>
+
+                <Link 
+                // Should be to 'collections' 
+                // not sure on the correct link here - to be confirmed
+                    to="/win-walls/"
+                    className="nav-links"
+                    onClick={
+                        () => navigate()
+                    }
+                >
+                    WinWalls
+                </Link>
+
                 {profileLink(true)}
                 {checkUser(false)} 
                 {checkUser(true)}
@@ -205,6 +227,9 @@ function Nav() {
                 </button>  
                 <ul
                     className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    <a href="/"><img  
+                    className="logo-img logo-img-hamburger" 
+                    src={Logo}></img></a>
                     <Link 
                         to="/" 
                         className="active-link" 
@@ -222,7 +247,7 @@ function Nav() {
                     <Link 
                     // Should be to 'collections' 
                     // not sure on the correct link here - to be confirmed
-                    to="/win-walls/"
+                    to="/collections/"
                     className="active-link"
                     onClick={
                         () => closeMenu()
@@ -230,6 +255,18 @@ function Nav() {
                     >
                         Collections
                     </Link>
+
+                    <Link 
+
+                    to="/win-walls/"
+                    className="active-link"
+                    onClick={
+                        () => closeMenu()
+                    }
+                    >
+                        WinWalls
+                    </Link>
+                    
                 {profileLink(true)}
                 {checkUser(false)} 
                 {/* {checkUser(true)} */}

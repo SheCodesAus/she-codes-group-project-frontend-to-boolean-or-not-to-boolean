@@ -5,6 +5,7 @@ import "./StickyNoteForm.css";
 function StickyNoteForm({ win_wallId }) {
   // State
   const token = window.localStorage.getItem("token");
+  const isUserLoggedin = !(token === null || token === undefined || token === "undefined")
   const navigate = useNavigate();
   const [stickynote, setStickynote] = useState({
     win_comment: "",
@@ -40,14 +41,19 @@ let validateField = (win_comment, value) => {
     event.preventDefault();
 
     if(!stickynote.is_win_comment_valid) return;
+   let headers = {
+    "Content-Type": "application/json",
+   
+    };
+
+    if (isUserLoggedin) {
+      headers.Authorization = `Token ${token}`;
+    }
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}sticky-note/`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}sticky-notes/`, {
         method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Token ${token}`,
-        },
+        headers: headers,
         body: JSON.stringify({
           win_wall_id: win_wallId,
           win_comment: stickynote.win_comment,
@@ -63,11 +69,6 @@ let validateField = (win_comment, value) => {
     }
   };
 
-  if (!token || token===null || token===undefined || token==="undefined") {
-    return (
-      <Link to="/login">at the moment you have to log in to create sticky note</Link>
-    );
-  }
 
   return (
       <div>

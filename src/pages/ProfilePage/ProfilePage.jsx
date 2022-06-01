@@ -58,6 +58,7 @@ function ProfilePage() {
 
             <div className="edit-button-div">
                 <button className="edit-profile-button"><Link to="edit-profile">Edit Profile</Link></button>
+                <button className="update-permission-type"><Link to="/shecodes-user-list/">Update Permissions</Link></button>
             </div>
             {/* Need to write code that shows onlny for admin */}
             <AsyncCSVStickyNote />

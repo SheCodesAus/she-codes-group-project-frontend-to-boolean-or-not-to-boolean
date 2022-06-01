@@ -2,25 +2,61 @@ body {
     display: flex;
 }
 
+.main-section {
+    margin:50px;
+}
+
+.main-section--description {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
 .sticky-section{
     display: flex;
     align-content: center;
     width: 100em;
 }
 
-.sticky-board{
+/* .sticky-board{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content:baseline; */
+    justify-content:baseline;
     align-items: flex-start;
     align-content: flex-start;
     align-self: center;
     margin-top: 10px;
     width: 90em;
+  } */
+
+
+  .sticky-board {
+    display: flex;
+    margin:0px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
   }
 
+
+
+
 textarea {
-    font-family: "Comic Sans MS", "Comic Sans";
+    font-family: var(--main-font);
     font-size: medium;
+}
+
+
+.icon-button{
+    background: none;
+}
+
+.icon-button img{
+    height: 3rem;
+    display: flex;
+    align-self: flex-end;
+    background-color: transparent;
+
 }

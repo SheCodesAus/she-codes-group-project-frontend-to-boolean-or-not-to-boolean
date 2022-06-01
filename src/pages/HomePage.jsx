@@ -1,25 +1,37 @@
 // Home page
-import React from "react";
-import AsyncCSVStickyNote from "../components/ExportCSV/ExportCSVStickyNote";
-import AsyncCSVUser from "../components/ExportCSV/ExportCSVUser";
-import Hero from "../components/Hero/Hero";
-import QRGenerator from "../components/QRCode/QRCode"
+import React, { useState } from "react";
+
+//components
+import Hero from "../components/Hero/HeroHome";
+import Modal from "../components/GlobalModal/GlobalModal";
+import FooterDone from "../components/Footer/Footer";
 
 //styles
 import "../index.css"
+import "./HomePage.css"
 
 export default function HomePage() {
+    //function for shoing modal
+    const [show, setShow] = useState(false);
+
     return <>
+        {/* start hero section */}
         <div>
-        <Hero />
+            <Hero />
         </div>
-        <h3>
-        Under Construction..
-        </h3>;
-        <AsyncCSVUser />
-        <AsyncCSVStickyNote />
-        <QRGenerator />
-       
+        {/* end hero section */}
+
+        {/* start modal button*/}
+        <div className="ModalApp">
+            <button onClick={() => setShow(true) }>Show Modal</button>
+            {/* we pass the title as a prop and the content as a child because 
+            we will have multiple elements inside the content in the future. */}
+            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
+            <p>This is modal body</p>
+            <Modal />
+        </div>
+
+        <FooterDone />
     </>
 
 }

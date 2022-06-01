@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
-import CollectionCard from "../components/CollectionCard/CollectionCard"
+import CollectionCard from "../../components/CollectionCard/CollectionCard"
+import CreateCollectionCard from "../../components/CollectionCard/CreateCollectionCard"
+import "../../components/CollectionCard/CollectionCard.css"
+import "./CollectionListPage.css"
 
 function CollectionListPage(props) {
 
@@ -40,22 +43,27 @@ useEffect(() => {
 
         return (
             <div>
-            <h1>You don't have any collection yet...</h1>
+                <h1>You don't have any collection yet...</h1>
+                <CreateCollectionCard />
+
             
-            <Link to={`/create-collection/`}>Create your first collection!</Link>
+            {/* <Link to={`/create-collection/`}>Create your first collection!</Link> */}
             </div>
             )
     };
 
 // If collection exists, then display them in a list:
 return (
-    <div>
-     <h1>Collections</h1>   
-    <h2>Here are your latest collections of win walls.</h2>
+    <div className="collection--list--section">
+    <h1>Collections</h1>   
+    <p className="collection--description">Here are your latest collections of win walls.</p>
         
-    <div className="collection-card--list">
-    {collectionList.map((collectionData, key) => {
-    return<CollectionCard key={key} collectionData={collectionData}/>;            })}
+        <div className="card--list">
+        {collectionList.map((collectionData, key) => {
+        return <CollectionCard key={key} collectionData={collectionData} />; })}
+        <CreateCollectionCard />
+      
+   
     </div>
         
 </div>               
@@ -63,4 +71,7 @@ return (
 }
 
 export default CollectionListPage;
+
+
+
 

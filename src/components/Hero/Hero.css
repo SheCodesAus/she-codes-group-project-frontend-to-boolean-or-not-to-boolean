@@ -1,3 +1,15 @@
+/* body * {
+    color:                      hsla(210, 100%, 100%, 0.88)     !important;
+    background:                 hsla(210, 100%,  50%, 0.33)       !important;
+    outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
+}
+
+.debug-center {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+} */
+
 .hero {
     height: 500px;
     width: 100%;
@@ -7,6 +19,7 @@
     align-items: center;  
     background: linear-gradient(to top, #3204fdba, #9907facc), url("https://spacecubed.com/wp-content/uploads/2020/06/pssmileproduction_shecodes-115-scaled.jpg") no-repeat center;
     text-align: center;
+    align-items: space-between;
 }
 
 .hero-highlight {
@@ -15,4 +28,34 @@
     text-shadow: var(--hero-highlight);
 }
 
-/* make sure you check your index.css */
+.qr-code-hero {
+    /* padding: 0; */
+    align-items: flex-end;
+}
+
+.qr-code {
+    /* padding: 50px; */
+    margin: 5px;
+    color: var(--primary);
+    background-color: var(--primary);
+}
+
+div.qr-code {
+    margin-top: 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: space-around; */
+}
+
+.qr-code-section {
+    margin-bottom: 16rem;
+    padding: 0.5rem;
+}
+
+.hero-text-section {
+    margin-left: 2rem;
+    padding: 0.5rem;
+}

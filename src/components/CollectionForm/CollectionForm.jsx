@@ -11,7 +11,7 @@ function CollectionForm() {
       title: "",
       image: "",
       is_exported: "",
-      slug: "",
+      // slug: "",
     });
 
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ function CollectionForm() {
             title: collection.title,
             image: collection.image,
             is_exported: false,
-            // slug: 
+            // slug: collection.slug,
               
             }),
           });
@@ -61,7 +61,7 @@ function CollectionForm() {
     
     return (
         
-        <form>
+        <form className="form">
        <div>
         <label className="form-text" htmlFor="title">Title: </label>
         <input
@@ -81,6 +81,16 @@ function CollectionForm() {
             onChange={handleChange}
           />
         </div>
+
+        {/* <div>
+        <label className="form-text" htmlFor="image">Custom URL: </label>
+        <input
+            type="text"
+            id="slug"
+            placeholder="Enter a custom URL"
+            onChange={handleChange}
+          />
+        </div> */}
                     
         <button type="submit" onClick={handleSubmit}>
         + Create a Collection

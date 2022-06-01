@@ -34,8 +34,7 @@ body {
   p {
     
     font-weight: normal;
-    /* font-family: "Reenie Beanie", Sans-serif; */
-    font-family: "Comic Sans MS", "Comic Sans";
+    font-family: var(--main-font)
     /* font-size: 1.5em; */
    
   }
@@ -49,22 +48,24 @@ body {
 
   
   .stickynote-area{
-    display: flex;
-    flex-direction: row;
-   
+    max-height: 400px;
+    max-width: 400px;
+    margin:0px;
+  
   }
 
 
   
-  .stickynote-area .stickynote-card p{
+  .stickynote-area .stickynote-card {
+    display: flex;
     text-decoration:none;
     color:#000;
     background:#ffc;
     /* display:block; */
-    height:12em;
-    width:12em;
+    height:15em;
+    width:15em;
     padding:1em;
-    font-size: x-small;
+   
     /* box-shadow: 5px 5px 7px rgba(201, 159, 62, 0.7); */
     transition: transform .15s linear;
   }
@@ -76,21 +77,60 @@ body {
     transform: rotate(-2deg);
   } */
 
-  .stickynote-area:nth-child(odd) .stickynote-card p{
+  .stickynote-area:nth-child(odd) .stickynote-card {
     transform: rotate(3deg);
     box-shadow: 5px 5px 7px rgba(201, 159, 62, 0.7);
     color: #6300AF;
+    flex-direction:column;
   }
 
-  .stickynote-area:nth-child(even) .stickynote-card p{
+  .stickynote-area:nth-child(even) .stickynote-card {
     transform: rotate(-3deg);
     background-color: #c0a2d7;
     box-shadow: 5px 5px 7px rgba(125, 59, 160, 0.7);
+    flex-direction:column;
+
   }
 
-  .stickynote-area .stickynote-card p:hover,.stickynote-area .stickynote-card p:focus{
+  .stickynote-area .stickynote-card:hover,.stickynote-area .stickynote-card:focus{
     box-shadow:10px 10px 7px rgba(204, 148, 57, 0.7);
     transform: scale(1.25);
     position:relative;
     z-index:5;
   }
+
+  .stickynote-area .stickynote-card p{
+    display: flex;
+    padding-bottom: 10rem;
+    font-size: large;
+    justify-content: center;
+    align-content:center;
+    
+  }
+
+  .stickynote-area .stickynote-card .icon-button, .stickynote-area .stickynote-card a {
+    display: flex;
+    /* align-self: flex-end; */
+    height: 2rem;
+    background-color:transparent;
+    margin:0px;
+    padding:0px;
+  }
+
+  .stickynote-buttons {
+    flex-direction: column;
+    width: fit-content;
+
+  }
+
+  .stickynote-message {
+    flex-direction: row;
+    width: fit-content;
+  }
+  
+
+  .stickynote-area .stickynote-card .icon-button img{
+    height: 2rem;
+    
+}
+
