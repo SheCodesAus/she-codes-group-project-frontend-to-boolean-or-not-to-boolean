@@ -4,7 +4,6 @@ import React, { useState } from "react";
 //components
 import Hero from "../components/Hero/HeroHome";
 import Modal from "../components/GlobalModal/GlobalModal";
-import FooterDone from "../components/Footer/Footer";
 
 //styles
 import "../index.css"
@@ -31,7 +30,6 @@ export default function HomePage() {
             <Modal />
         </div>
 
-        <FooterDone />
     </>
 
 }
