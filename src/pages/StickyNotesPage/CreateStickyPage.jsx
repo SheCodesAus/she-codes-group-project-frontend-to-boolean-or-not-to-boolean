@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import StickyNoteForm from "../../components/StickyNoteForm/StickyNoteForm";
-
+import "../../pages/WinWallPage.css"
 
 function CreateStickyPage() {
 
@@ -30,13 +30,12 @@ function CreateStickyPage() {
      if (isUserLoggedin) {
 
     return (
-        <div>
-        <div>
-            <h1>Win wall Title:  {WinwallData.title} </h1>
-           
+        <div className="main-section">
+        <h1>{WinwallData.title} </h1>
+        <p className="main-section--description">Create a new sticky note</p>
 
-        </div>
-        <div>
+           
+        <div className="sticky-board">
              <StickyNoteForm win_wallId={id}/>
         </div>
         <div className="my-project-card">

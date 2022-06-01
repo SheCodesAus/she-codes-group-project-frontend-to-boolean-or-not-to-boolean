@@ -13,12 +13,11 @@ function EditWinWallForm({ winwall }) {
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
-        .then((results) => {
+          .then((results) => {
         return results.json();
         })
-        
         .then((data) => {
-            setEditWinwall(data);
+          setEditWinwall(data);
         });
       
         }, [id]);
@@ -54,7 +53,7 @@ function EditWinWallForm({ winwall }) {
           });
           const data = await res.json();
           
-          navigate(`/win-walls/`); 
+          navigate(`/collection/${editWinwall.id}`); 
         } catch (err) {
           console.log(err);
         }
