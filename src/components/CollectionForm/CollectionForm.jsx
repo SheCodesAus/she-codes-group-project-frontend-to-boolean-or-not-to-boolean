@@ -61,7 +61,7 @@ function CollectionForm() {
     
     return (
         
-        <form>
+        <form className="form">
        <div>
         <label className="form-text" htmlFor="title">Title: </label>
         <input

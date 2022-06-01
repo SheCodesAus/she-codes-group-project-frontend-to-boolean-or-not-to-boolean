@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import CollectionCard from "../../components/CollectionCard/CollectionCard"
 import CreateCollectionCard from "../../components/CollectionCard/CreateCollectionCard"
-
+import "../../components/CollectionCard/CollectionCard.css"
+import "./CollectionListPage.css"
 
 function CollectionListPage(props) {
 
@@ -53,11 +54,11 @@ useEffect(() => {
 
 // If collection exists, then display them in a list:
 return (
-    <div>
+    <div className="collection--list--section">
     <h1>Collections</h1>   
-    <h2>Here are your latest collections of win walls.</h2>
+    <p className="collection--description">Here are your latest collections of win walls.</p>
         
-        <div className="collection-card--list">
+        <div className="card--list">
         {collectionList.map((collectionData, key) => {
         return <CollectionCard key={key} collectionData={collectionData} />; })}
         <CreateCollectionCard />
