@@ -14,9 +14,9 @@ return(
             {/* <container className="hero-container"> */}
             
                 <section className="hero-text-section">
-                    <h1>Here we will have some <span class="hero-highlight"> kind </span> 
-                     of quote with some <span class="hero-highlight">highlight</span>.
-                    text!</h1>
+                    <h1 className="hero-text">Share your <span class="hero-highlight"> wins </span> 
+                     with the <span class="hero-highlight">She Codes </span>
+                    community</h1>
                 </section>
 
                 <section className="qr-code-section qr-code-hero">
