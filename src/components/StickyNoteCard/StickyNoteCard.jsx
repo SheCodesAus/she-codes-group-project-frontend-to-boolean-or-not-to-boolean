@@ -27,7 +27,7 @@ function StickyNoteCard(props) {
 
     const { stickynoteData, winwallData } = props;
     
-    const isOwner = (UserId == {stickynoteData}.owner)
+    const isOwner = (UserId == stickynoteData.owner)
     const GetStickyStatus = stickynoteData.sticky_status
     const WallStatus = stickynoteData.win_wall_live
     const WallClosed = WallStatus == "Closed"
@@ -196,7 +196,7 @@ function StickyNoteCard(props) {
         );
         }
 
-    else if (isOwner && !WallClosed) {
+    else if (isOwner && WallLive) {
     
         return (
            
