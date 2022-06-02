@@ -28,12 +28,12 @@ function CreateStickyPage() {
          return <h3>Loading..</h3>;
      }
 
-    const WallStatus = WinwallData.is_open
-    const WallClosed = WallStatus == false
-    const WallLive = WallStatus == true
+    const WallStatus = WinwallData.is_open;
+    const WallClosed = WallStatus == false;
+    const WallLive = WallStatus == true;
 
 
-     if (isUserLoggedin && WallLive) {
+    if (isUserLoggedin && WallLive) {
 
     return (
         <div className="main-section">
@@ -67,10 +67,6 @@ function CreateStickyPage() {
             <h1>{WinwallData.title} </h1>
            
     
-               
-            <div className="sticky-board">
-                 <StickyNoteForm win_wallId={id}/>
-            </div>
             <div className="my-project-card">
                 <Link to={`/win-wall/${WinwallData.id}/`}>
                 <button className="sticky-note-btn">
@@ -87,7 +83,7 @@ function CreateStickyPage() {
             );
         }
 
-    else if    ( WallLive) {
+    else if  (!isUserLoggedin && WallLive) {
 
             return (
                 <div>
@@ -119,7 +115,7 @@ function CreateStickyPage() {
                 );
             }
 
-    else {
+    else if  (!isUserLoggedin && WallClosed) {
         return (
             <div>
             <div>
