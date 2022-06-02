@@ -41,7 +41,7 @@ function EditCollectionForm({ collection }) {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}collection/${editCollection.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-collection/${editCollection.id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -54,6 +54,7 @@ function EditCollectionForm({ collection }) {
             }),
           });
           const data = await res.json();
+          console.log(data);
           
           navigate(`/collections/`); 
         } catch (err) {

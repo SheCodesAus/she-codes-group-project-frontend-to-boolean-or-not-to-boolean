@@ -54,6 +54,7 @@ function EditWinWallForm({ winwall }) {
             }),
           });
           const data = await res.json();
+          console.log(data);
           
           navigate(`/collection/${editWinwall.id}`); 
         } catch (err) {
