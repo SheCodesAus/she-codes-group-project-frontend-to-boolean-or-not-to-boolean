@@ -18,7 +18,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 import PageNotFound from "./pages/ErrorPage/PageNotFound";
 import EditWinWallPage from "./pages/EditWinWallPage";
-import EditWinWallForm from "./components/EditWinWallForm/EditWinWallForm";
+import LiveWinWallsPage from "./pages/LiveWinWallsPage/LiveWinWallsPage";
 
 //components
 import FooterDone from "./components/Footer/Footer";
@@ -46,6 +46,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/win-wall/:id/" element={<WinWallPage />} />
           <Route path="/win-wall/:id/edit" element={<EditWinWallPage />} />
+          <Route path="/live-win-walls/" element={<LiveWinWallsPage />} />
           <Route path="/collections/" element={<CollectionListPage />} />
           <Route path="/collection/:id/" element={<CollectionPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />

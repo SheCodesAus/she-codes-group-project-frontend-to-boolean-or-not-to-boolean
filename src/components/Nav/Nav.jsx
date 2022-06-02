@@ -201,13 +201,13 @@ function Nav() {
                 <Link 
                 // Should be to 'collections' 
                 // not sure on the correct link here - to be confirmed
-                    to="/win-walls/"
+                    to="/live-win-walls/"
                     className="nav-links"
                     onClick={
                         () => navigate()
                     }
                 >
-                    WinWalls
+                    Live WinWalls
                 </Link>
 
                 {profileLink(true)}
@@ -265,13 +265,13 @@ function Nav() {
 
                     <Link 
 
-                    to="/win-walls/"
+                    to="/live-win-walls/"
                     className="active-link"
                     onClick={
                         () => closeMenu()
                     }
                     >
-                        WinWalls
+                        Live WinWalls
                     </Link>
                     
                 {profileLink(true)}
