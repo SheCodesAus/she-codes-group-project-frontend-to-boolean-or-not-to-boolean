@@ -50,6 +50,7 @@ function Nav() {
         window.localStorage.removeItem("is_superuser");
         window.localStorage.removeItem("assignments");
         window.localStorage.removeItem("id");
+        window.localStorage.removeItem("username");
 
         // Make sure we navigate back to login page
         navigateToLogin()

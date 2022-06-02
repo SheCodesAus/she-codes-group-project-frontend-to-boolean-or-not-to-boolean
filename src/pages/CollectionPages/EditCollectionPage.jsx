@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
+// Imports
 import EditCollectionForm from "../../components/EditCollectionForm/EditCollectionForm"
 import "../../pages/WinWallPage.css"
 
@@ -23,7 +25,8 @@ function EditCollectionPage() {
 
     // Life changing: INSTANTLY navigate away if not one of these:
     if (!isAdmin && !isApprover && !isSuperUser) {
-        navigate(`/collections/`);}
+        navigate(`/collections/`);
+    }
 
     useEffect(() => {
         // fetch collection info
