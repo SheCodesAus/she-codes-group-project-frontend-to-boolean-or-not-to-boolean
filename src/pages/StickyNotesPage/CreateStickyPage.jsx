@@ -23,11 +23,17 @@ function CreateStickyPage() {
     }, []);
 
 
+
      if (!WinwallData) {
          return <h3>Loading..</h3>;
      }
 
-     if (isUserLoggedin) {
+    const WallStatus = WinwallData.is_open
+    const WallClosed = WallStatus == false
+    const WallLive = WallStatus == true
+
+
+     if (isUserLoggedin && WallLive) {
 
     return (
         <div className="main-section">
@@ -53,6 +59,66 @@ function CreateStickyPage() {
     
         );
     }
+
+    else if (isUserLoggedin && WallClosed) {
+
+        return (
+            <div className="main-section">
+            <h1>{WinwallData.title} </h1>
+           
+    
+               
+            <div className="sticky-board">
+                 <StickyNoteForm win_wallId={id}/>
+            </div>
+            <div className="my-project-card">
+                <Link to={`/win-wall/${WinwallData.id}/`}>
+                <button className="sticky-note-btn">
+                    View Win Wall
+                </button>
+                </Link>
+                
+    
+            </div>
+    
+            </div>
+           
+        
+            );
+        }
+
+    else if    ( WallLive) {
+
+            return (
+                <div>
+                <div>
+                    <h1>Win wall Title:  {WinwallData.title} </h1>
+                   
+        
+                </div>
+                <div>
+                     <StickyNoteForm win_wallId={id}/>
+                </div>
+                <div className="my-project-card">
+                    <Link to={`/win-wall/${WinwallData.id}/`}>
+                    <button className="sticky-note-btn">
+                        View Win Wall
+                    </button>
+                    </Link>
+                    <Link to={`/sign-up/`}>
+                    <button className="sticky-note-btn">
+                        Register
+                    </button>
+                    </Link>
+        
+                </div>
+        
+                </div>
+               
+            
+                );
+            }
+
     else {
         return (
             <div>
