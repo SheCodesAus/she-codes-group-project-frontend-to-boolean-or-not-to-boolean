@@ -29,7 +29,7 @@ function SheCoderListPage() {
                 <h2>Are you an Administrator? Follow this link to edit user permissions: <Link to="/auth-assignments/">Admin Permissions</Link></h2>
             </div>
 
-            <div id="genius-list">
+            <div className="coder-list">
                 {sheCodersList.map((userData, key) => {
                     return <SheCoderCard 
                         key={`/profile-${userData.id}`} 
