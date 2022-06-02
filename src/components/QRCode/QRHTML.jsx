@@ -2,7 +2,7 @@ import QRCode from "qrcode.react";
 
 import "./QRCode.css"
 
-export default function QRGenerator() {
+export default function QRHTML() {
    return (
       
       <container>
@@ -16,3 +16,6 @@ export default function QRGenerator() {
       </container>
       );
 }
+
+
+
