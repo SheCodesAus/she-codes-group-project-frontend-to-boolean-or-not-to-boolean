@@ -39,10 +39,10 @@ function StickyNoteCard(props) {
 
     
 
-    const handleSubmitApprove = async (event) => {
+    const handleSubmitApprove = async (event,id) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${stickynoteData.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -63,10 +63,10 @@ function StickyNoteCard(props) {
         }
       };
 
-      const handleSubmitArchive= async (event) => {
+      const handleSubmitArchive= async (event,id) => {
         event.preventDefault();
         try {
-          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${stickynoteData.id}/`, {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}admin-sticky-note/${id}/`, {
             method: "put",
             headers: {
               "Content-Type": "application/json",
@@ -118,7 +118,7 @@ function StickyNoteCard(props) {
             
             <img src={Tick} className="icon-button" />
             
-            <button type="submit" onClick={handleSubmitArchive} className="icon-button">
+            <button type="submit" onClick={(e) => handleSubmitArchive(e,stickynoteData.id)} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} />
             </button> 
@@ -160,11 +160,11 @@ function StickyNoteCard(props) {
                     <div className="stickynote-card">
                      <p>{stickynoteData.win_comment}</p>
         
-                    <button type="submit" onClick={handleSubmitApprove} className="icon-button">
+                    <button type="submit" onClick={(e) => handleSubmitApprove(e,stickynoteData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Circle} />
                     </button>
-                    <button type="submit" onClick={handleSubmitArchive} className="icon-button">
+                    <button type="submit" onClick={(e) => handleSubmitArchive(e,stickynoteData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Bin} />
                     </button> 
