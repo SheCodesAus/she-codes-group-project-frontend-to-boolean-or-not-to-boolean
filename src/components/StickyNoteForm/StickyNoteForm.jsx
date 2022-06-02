@@ -13,6 +13,10 @@ function StickyNoteForm({ win_wallId }) {
     error_message: ""
   });
 
+  const WallStatus = stickynote.win_wall_live
+  const WallClosed = WallStatus == "Closed"
+  const WallLive = WallStatus == "Live"
+
 let validateField = (win_comment, value) => {
     let errorMsg = null;
     switch (win_comment) {
@@ -68,7 +72,7 @@ let validateField = (win_comment, value) => {
       console.log(err);
     }
   };
-
+ if (WallLive){
 
   return (
       <div>
@@ -94,5 +98,15 @@ let validateField = (win_comment, value) => {
   </div>
   );
 }
+
+else {
+
+  return (
+    <div>
+      <h2>Win Wall is now Closed</h2>
+    </div>
+      );
+
+}}
 
 export default StickyNoteForm;

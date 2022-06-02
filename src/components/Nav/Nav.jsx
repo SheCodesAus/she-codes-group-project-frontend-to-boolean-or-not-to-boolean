@@ -45,6 +45,11 @@ function Nav() {
     const handleSignOut = () => {
         // Remove login token token to remove logged in user data
         window.localStorage.removeItem("token");
+        window.localStorage.removeItem("is_approver");
+        window.localStorage.removeItem("is_shecodes_admin");
+        window.localStorage.removeItem("is_superuser");
+        window.localStorage.removeItem("assignments");
+        window.localStorage.removeItem("id");
 
         // Make sure we navigate back to login page
         navigateToLogin()

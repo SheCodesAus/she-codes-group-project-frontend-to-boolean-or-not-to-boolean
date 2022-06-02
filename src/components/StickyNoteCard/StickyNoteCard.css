@@ -108,14 +108,25 @@ body {
     
   }
 
+  .stickynote-area .stickynote-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+   
+    align-content:center;
+    
+  }
+
   .stickynote-area .stickynote-card .icon-button, .stickynote-area .stickynote-card a {
     display: flex;
-    /* align-self: flex-end; */
+    align-self: flex-end;
     height: 2rem;
     background-color:transparent;
     margin:0px;
     padding:0px;
   }
+
+
 
   .stickynote-buttons {
     flex-direction: column;
@@ -131,6 +142,15 @@ body {
 
   .stickynote-area .stickynote-card .icon-button img{
     height: 2rem;
+    align-self: flex-end;
     
 }
+
+.stickynote-area .stickynote-card .icon-status{
+  height: 3rem;
+  align-self: flex-start;
+  
+}
+
+
 

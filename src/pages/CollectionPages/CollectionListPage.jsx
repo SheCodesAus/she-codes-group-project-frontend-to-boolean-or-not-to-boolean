@@ -18,7 +18,7 @@ function CollectionListPage(props) {
 
 //    ACTIONS & HELPERS
 useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}collections/`)
+    fetch(`${process.env.REACT_APP_API_URL}view-collections/`)
     .then((results) => {
     return results.json();
     })
