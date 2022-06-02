@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 
 // Imports
 import { Link } from "react-router-dom";
+import SuperUser from "../../components/images/icons/super-logo.png";
+import AdminUser from "../../components/images/icons/system-admin.png";
+import Approver from "../../components/images/icons/task-completed-2.png";
+import WonderWoman from "../../components/images/icons/wonder-woman-2.png"
 
 //components
 import AsyncCSVUser from "../../components/ExportCSV/ExportCSVUser";
@@ -45,7 +49,6 @@ function ProfilePage() {
                     <li className="email"><i className="fa fa-envelope"></i> {userData.email}</li>
                     <li className="website">Follow Me:<br></br>
                         <a href={userData.social_link} target="_blank" rel="noopener noreferrer">
-                            <i className="fa fa-globe"></i>
                         </a>                
                     </li>
                 </ul>
@@ -53,6 +56,19 @@ function ProfilePage() {
                 <div className="bio-section">
                     <h4 className="about-title">About: </h4>
                     <p className="bio-section">{userData.bio}</p>
+                </div>
+
+                <div>
+                <h4>{userData.is_superuser && 
+                    <img src={SuperUser} alt="super-user"/>}
+                </h4>
+                <h4>{userData.is_shecodes_admin &&                 
+                    <img src={AdminUser} alt="admin-user"/>}
+                </h4>
+                <h4>{userData.is_approver && 
+                    <img src={Approver} alt="approver-user"/>}
+                </h4>
+                <h4><img src={WonderWoman} alt="user"/></h4>
                 </div>
             </div>
 
