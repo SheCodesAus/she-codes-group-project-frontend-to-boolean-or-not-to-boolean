@@ -1,0 +1,47 @@
+.shecoder-card {
+    width: 500px;
+    height: auto;
+    border: 1px solid #4845c7;
+    box-shadow: 0px 0px 5px #ffa300;;
+    text-align: center;
+    padding-bottom: 10px;
+    line-height: 1.2em;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+  }
+  
+.shecoder-card img {
+    padding-top: 10px;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+
+#avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.shecoder-card h3 {
+  padding: 3px;
+  color: #4845c7;
+  text-decoration: none;
+}
+
+.shecoder-card h4 {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.auth-graphics {
+    display: inline-block;
+}
+
+Tooltip {
+  display: inline-block;
+}

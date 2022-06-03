@@ -6,7 +6,7 @@ import Bin from "../../components/images/icons/remove-circle.png";
 import SuperUserImg from "../../components/images/icons/super-logo.png";
 import AdminUserImg from "../../components/images/icons/system-admin.png";
 import ApproverImg from "../../components/images/icons/task-completed-2.png";
-import WonderWomanImg from "../../components/images/icons/wonder-woman-2.png"
+import SheCoderImg from "../../components/images/icons/external-developer-web-development-flaticons-flat-flat-icons.png"
 import Tooltip from "../../components/ToolTips/ToolTip";
 
 function UpdateUserAuthListPage() {
@@ -287,7 +287,7 @@ function UpdateUserAuthListPage() {
             </li>
             <Tooltip content="   You are amazing " direction="right">
             <li>
-                <img src={WonderWomanImg} alt="user"/>
+                <img src={SheCoderImg} alt="user"/>
             </li>
             </Tooltip>
             {/* Checking that Only the Super User can press button */}

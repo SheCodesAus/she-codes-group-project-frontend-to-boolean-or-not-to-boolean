@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 // Imports
 import { Link } from "react-router-dom";
 
+// Styles
+import "./SheCoderList.css";
+
 // Components
 import SheCoderCard from "../../components/SheCoderCard/SheCoderCard";
 
@@ -30,8 +33,8 @@ function SheCoderListPage() {
 
     return (
         <div className="coder-list-wrapper">
-            <div id="intro-text">
-                <h1>Meet the She Coders!</h1>
+            <div className="intro-text">
+                <h1>Meet the &#123;<span> She Coders </span>&#125;</h1>
                 {(IsAdmin || IsSuperUser) && <button><Link to="/auth-assignments/">Update Permissions</Link></button>}
             </div>
 

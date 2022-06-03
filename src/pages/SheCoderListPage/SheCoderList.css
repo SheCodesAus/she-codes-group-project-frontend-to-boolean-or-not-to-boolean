@@ -1,0 +1,20 @@
+.coder-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.intro-text {
+  font-size: 30px;
+  text-align: center;
+  color: #551A8B;
+  padding: 20px;
+}
+
+.intro-text span {
+  color: #ffa300;
+}
+
+.coder-list-wrapper {
+  margin-bottom: 20px;
+}

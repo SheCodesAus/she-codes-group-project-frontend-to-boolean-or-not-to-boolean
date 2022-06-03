@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import SuperUserImg from "../../components/images/icons/super-logo.png";
 import AdminUserImg from "../../components/images/icons/system-admin.png";
 import ApproverImg from "../../components/images/icons/task-completed-2.png";
-import WonderWomanImg from "../../components/images/icons/wonder-woman-2.png"
+import SheCoderImg from "../../components/images/icons/external-developer-web-development-flaticons-flat-flat-icons.png"
 
 //components
 import AsyncCSVUser from "../../components/ExportCSV/ExportCSVUser";
@@ -76,7 +76,7 @@ function ProfilePage() {
                     <h4>{userData.is_approver && 
                         <img src={ApproverImg} alt="approver-user"/>}
                     </h4>
-                    <h4><img src={WonderWomanImg} alt="user"/></h4>
+                    <h4><img src={SheCoderImg} alt="user"/></h4>
                 </div>
             </div>
 
