@@ -4,6 +4,20 @@ import EditStickyNoteForm from "../../components/EditStickyNoteForm/EditStickyFo
 
 
 function EditStickyPage() {
+
+    const token = window.localStorage.getItem("token");
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+    const Approver = window.localStorage.getItem("is_approver");
+   
+    const isAdmin = (Admin == 'true')
+    const isApprover = (Approver == 'true')
+    const isSuperUser = (SuperUser == 'true')
+
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+    
     
     const [stickynote, setStickynote] = useState();
     const [WinwallData, setWinwallData] = useState();
@@ -40,7 +54,7 @@ function EditStickyPage() {
      const WallClosed = WallStatus == false
      const WallLive = WallStatus == true
  
-    if (WallLive) {
+    if (WallLive & isAdmin || isApprover || isSuperUser) {
     return (
         <div>
         <div>
@@ -55,6 +69,31 @@ function EditStickyPage() {
        
     
     );}
+
+    else  if (WallClosed & isAdmin || isApprover || isSuperUser) {
+        return (
+            <div>
+            <div>
+                <h1>Win wall Title:  {WinwallData.title} </h1>
+               
+            </div>
+            <div>
+                 <EditStickyNoteForm win_wallId={id}/>
+            </div>
+    
+            </div>
+           
+        
+        );}
+
+     else  if (WallClosed & !isAdmin || !isApprover || !isSuperUser) {
+        return (
+            <div>
+                <h2>Win Wall is now Closed</h2>
+            </div>
+           
+        
+        );}
     else {
         return (
             <div>
