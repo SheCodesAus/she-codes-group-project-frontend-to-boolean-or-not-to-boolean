@@ -2,11 +2,27 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import ChangeUserToApproverForm from "../../components/AuthLevelForms/ChangeUserToApproverForm";
 
 function ChangeUserToApproverPage() {
+
+    // Navigation Links
+    const navigate = useNavigate();
+
+    // Auth Checks
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+   
+    const IsAdmin = (Admin == 'true');
+    const IsSuperUser = (SuperUser == 'true');
+
+    if (!IsAdmin && !IsSuperUser) {
+        navigate(`/shecodes-user-list/`);
+    }
+
     // State
     const [userData, setUserData] = useState();
 

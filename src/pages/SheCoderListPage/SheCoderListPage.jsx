@@ -8,6 +8,12 @@ import SheCoderCard from "../../components/SheCoderCard/SheCoderCard";
 
 function SheCoderListPage() {
 
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+   
+    const IsAdmin = (Admin == 'true');
+    const IsSuperUser = (SuperUser == 'true');
+
     // States
     const [sheCodersList, setSheCodersList] = useState([]);
 
@@ -26,7 +32,7 @@ function SheCoderListPage() {
         <div className="coder-list-wrapper">
             <div id="intro-text">
                 <h1>Meet the She Coders!</h1>
-                <h2>Are you an Administrator? Follow this link to edit user permissions: <Link to="/auth-assignments/">Admin Permissions</Link></h2>
+                {(IsAdmin || IsSuperUser) && <button><Link to="/auth-assignments/">Update Permissions</Link></button>}
             </div>
 
             <div className="coder-list">
