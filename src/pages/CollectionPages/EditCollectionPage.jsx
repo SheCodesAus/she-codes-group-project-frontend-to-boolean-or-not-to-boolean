@@ -65,9 +65,9 @@ function EditCollectionPage() {
             <h1>Collection: "{collectionData.title}" </h1>
             <p className="main-section--description">Edit the information for this collection page.</p>
 
-       <EditCollectionForm />
+            <EditCollectionForm />
 
-       <button onClick={DeleteCollection}>Delete Collection</button>
+            <button onClick={DeleteCollection}>Delete Collection</button>
         </div>
     );
 }

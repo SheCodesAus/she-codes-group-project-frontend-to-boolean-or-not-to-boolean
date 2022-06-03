@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {Link} from "react-router-dom";
+
+// Components
 import WinWallCard from "../../components/WinWallCard/WinWallCard"
 import CreateWinWallCard from "../../components/WinWallCard/CreateWinWallCard";
 import "../../components/CollectionCard/CollectionCard.css"
-import "./CollectionListPage.css"
+
+// Styles
+import "./CollectionPage.css"
 
 function CollectionPage() {
 
@@ -38,17 +42,18 @@ function CollectionPage() {
 
   return (
 
-   <div className="collection--list--section">
-      <div>
-      <h1>{CollectionData.title}</h1>
-      <p className="collection--description">Browse {CollectionData.title}' latest win walls.</p> 
+   <div className="collection--section">
+     
+      <div className="collection-intro-txt">
+        <h1>&#123;<span>{CollectionData.title}</span>&#125;</h1>
+        <p className="collection--description">Browse {CollectionData.title}' latest win walls.</p> 
       </div>
       
       <div className="card--list">
-      {CollectionData.win_wall_collections.map((winwallData, key) => {
-        return <WinWallCard key={key} winwallData={winwallData} />   })}
+        {CollectionData.win_wall_collections.map((winwallData, key) => {
+          return <WinWallCard key={key} winwallData={winwallData} />   })}
           <CreateWinWallCard collectionId={id}/>
-        </div>
+      </div>
 
 
    </div>

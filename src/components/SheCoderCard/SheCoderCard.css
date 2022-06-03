@@ -2,7 +2,8 @@
     width: 500px;
     height: auto;
     border: 1px solid #4845c7;
-    box-shadow: 0px 0px 5px #ffa300;;
+    box-shadow: 0px 0px 5px #ffa300;
+    border-radius: 2%;
     text-align: center;
     padding-bottom: 10px;
     line-height: 1.2em;
@@ -10,6 +11,7 @@
     flex-direction: column;
     align-content: stretch;
     justify-content: center;
+    margin: 0%;
   }
   
 .shecoder-card img {

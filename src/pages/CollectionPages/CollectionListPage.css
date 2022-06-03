@@ -1,8 +1,31 @@
 .collection--list--section {
     margin:50px;
+    text-align: center;
+}
+
+.collection-intro-txt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .collection--description {
     margin-top: 30px;
     margin-bottom: 50px;
+}
+
+.card--list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.collection--list--section h1 {
+    color: #551A8B;
+    font-size: 60px;
+    padding-bottom: 36px;
+}
+
+.collection--list--section span {
+    color: #ffa300;
 }
