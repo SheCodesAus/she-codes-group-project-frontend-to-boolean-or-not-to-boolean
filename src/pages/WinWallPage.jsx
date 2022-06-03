@@ -136,9 +136,10 @@ function WinWallPage() {
         <section className="win-wall-title-section">
             <container className="title-section">
                 <h1 className="ww-title">{WinwallData.title} </h1>
-                <h2>Win wall Status: Closed </h2>
-                <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
-
+                <h2>Win Wall Status: Closed </h2>
+                <div className="win-img-div">
+                            <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+                </div>
             </container>
             {/* adding sticky notes to winwall page */}
 
@@ -182,7 +183,9 @@ function WinWallPage() {
                 <container className="win-wall-text">
                     <h1 className="ww-title">{WinwallData.title} </h1>
                     <h2>Win Wall Status: Live </h2>
-                    <img className="profile-image" src={WinwallData.image} alt="winwall hero" />       
+                    <div className="win-img-div">
+                        <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+                    </div>
                 </container>
                 {/* adding sticky notes to winwall page */}
                 {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
@@ -217,8 +220,10 @@ function WinWallPage() {
                 <section className="win-wall-title-section">
                     <container className="win-wall-text">
                         <h1 className="ww-title">{WinwallData.title} </h1>
-                        <h2>Win wall Status: Closed </h2>
-                        <img className="profile-image" src={WinwallData.image} alt="winwall hero" />        
+                        <h2>Win Wall Status: Closed </h2>
+                        <div className="win-img-div">
+                            <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+                        </div>
                     </container>
                     {/* adding sticky notes to winwall page */}
                     {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
@@ -244,14 +249,15 @@ function WinWallPage() {
                 <section className="win-wall-title-section">
                     <container className="win-wall-text">
                         <h1 className="ww-title">{WinwallData.title} </h1>
-                        <h2>Win wall Status: Live </h2>
-                        <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
-            
+                        <h2>Win Wall Status: Live </h2>
+                        <div className="win-img-div">
+                            <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+                        </div>
                     </container>
                 {/* adding sticky notes to winwall page */}
         
                 <div className="sticky-section">
-                <h3 className="win-wall-text">Stick yNotes</h3>
+                <h3 className="win-wall-text">Sticky Notes</h3>
                 <div className="sticky-board">
                 
             
@@ -278,11 +284,10 @@ function WinWallPage() {
             <section className="win-wall-title-section">
                 <container className="win-wall-text">
                 <h1 className="ww-title">{WinwallData.title} </h1>
-                <h2>Win wall Status: .. </h2>
-
-
-                <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
-    
+                <h2>Win Wall Status: .. </h2>
+                <div className="win-img-div">
+                    <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+                </div>
             </container>
             {/* adding sticky notes to winwall page */}
             {/* <h3 className="win-wall-text">Sticky Notes</h3> */}

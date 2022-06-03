@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
-    width: 100%;
+    width: max-content;
     cursor: pointer;
 
 }
@@ -69,4 +69,12 @@ h3.title-sticky  {
     padding: 3rem;
     width: 250px;
     height: 250px;
+}
+
+.win-wall-text {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
