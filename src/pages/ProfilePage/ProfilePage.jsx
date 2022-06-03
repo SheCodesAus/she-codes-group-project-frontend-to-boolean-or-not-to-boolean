@@ -86,12 +86,19 @@ function ProfilePage() {
                 {(IsAdmin || IsSuperUser) &&
                     <button className="view-users-list"><Link to="/shecodes-user-list/">View Users</Link></button>}
             </div>
+            
 
-            {(IsAdmin || IsSuperUser) &&
-                <div>
-                    <AsyncCSVStickyNote />
-                    <AsyncCSVUser />
-                </div>}
+            {(IsSuperUser) &&
+                <section className="export-data">
+                    <h3>Export data as a csv file</h3>
+                    <container>
+                        <AsyncCSVStickyNote />
+
+                    </container>
+                    <container>
+                        <AsyncCSVUser />         
+                    </container>
+                </section>}
         </div>
     );
 }
