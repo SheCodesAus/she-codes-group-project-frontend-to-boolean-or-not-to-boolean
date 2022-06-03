@@ -33,6 +33,7 @@ import UpdateUserAuthListPage from "./pages/AuthTypePages/UpdateUserAuthListPage
 import ChangeUserToAdminPage from "./pages/AuthTypePages/ChangeUserToAdminPage";
 import ChangeUserToApproverPage from "./pages/AuthTypePages/ChangeUserToApprover";
 import SheCoderListPage from "./pages/SheCoderListPage/SheCoderListPage";
+import CreateUserAssignmentPage from "./pages/AuthTypePages/CreateUserAssignmentPage";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path="/profile/:id/make-approver/" element={<ChangeUserToApproverPage />} />
           <Route path="/auth-assignments/" element={<UpdateUserAuthListPage />} />
           <Route path="/shecodes-user-list/" element={<SheCoderListPage />} />
+          <Route path="/users/:id/assignments/" element={<CreateUserAssignmentPage />} />
         </Routes>
       <FooterDone />
     </>
