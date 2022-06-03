@@ -2,7 +2,9 @@ import { upload } from "@testing-library/user-event/dist/upload";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import StickyNoteCard from "../components/StickyNoteCard/StickyNoteCard";
+
 import "./WinWallPage.css";
+
 import Circle from "../components/images/icons/circle-thumbs-up.png";
 import Bin from "../components/images/icons/remove-circle.png";
 import Comment from "../components/images/icons/comments.png";
