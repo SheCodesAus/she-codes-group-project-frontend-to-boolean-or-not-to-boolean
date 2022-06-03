@@ -257,7 +257,7 @@ function WinWallPage() {
                 {/* adding sticky notes to winwall page */}
         
                 <div className="sticky-section">
-                <h3 className="win-wall-text">Sticky Notes</h3>
+                {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
                 <div className="sticky-board">
                 
             

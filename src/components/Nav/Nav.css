@@ -159,4 +159,31 @@ a.nav-links:hover {
         border: none;
     }
 
+
 }
+
+@media screen and (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+
+    .logo-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* .nav-hamburger {
+        margin-right: 10px;
+    } */
+
+    button.navBar {
+        margin-right: 1px;
+        padding-left: 140px;
+    }
+
+    .navBar:hover {
+       background: transparent;
+       align-items: flex-end;
+    }
+}
+    

@@ -112,10 +112,10 @@ function StickyNoteCard(props) {
     
     return (
        
-        <div className="stickynote-area">
+        <container className="stickynote-area">
            
     
-            <div className="stickynote-card">
+            <section className="stickynote-card">
              <p>{stickynoteData.win_comment}</p>
 
              <Tooltip content="   Approved  " direction="top">
@@ -129,9 +129,9 @@ function StickyNoteCard(props) {
             </button> 
             </Tooltip>
              
-            </div>
+            </section>
         
-        </div>
+        </container>
     );
     }
 
@@ -139,10 +139,10 @@ function StickyNoteCard(props) {
     
         return (
            
-            <div className="stickynote-area">
+            <container className="stickynote-area">
                
         
-                <div className="stickynote-card">
+                <section className="stickynote-card">
                  <p>{stickynoteData.win_comment}</p>
     
                  <Tooltip content="   Archived  " direction="top">
@@ -150,9 +150,9 @@ function StickyNoteCard(props) {
                 </Tooltip>
                 
                  
-                </div>
+                </section>
             
-            </div>
+            </container>
         );
         }
 
@@ -160,10 +160,10 @@ function StickyNoteCard(props) {
     
             return (
                
-                <div className="stickynote-area">
+                <container className="stickynote-area">
                    
             
-                    <div className="stickynote-card">
+                    <section className="stickynote-card">
                      <p>{stickynoteData.win_comment}</p>
         
                      <Tooltip content="   Approve  " direction="top">
@@ -187,9 +187,9 @@ function StickyNoteCard(props) {
                     </Link>
                     </Tooltip>
                      
-                    </div>
+                    </section>
                 
-                </div>
+                </container>
             );
             }
 
@@ -197,14 +197,14 @@ function StickyNoteCard(props) {
 
         return (
        
-            <div className="stickynote-area">
+            <container className="stickynote-area">
                
         
-                <div className="stickynote-card">
+                <section className="stickynote-card">
                  <p>{stickynoteData.win_comment}</p>
-                </div>
+                </section>
             
-            </div>
+            </container>
         );
         }
 
@@ -212,10 +212,10 @@ function StickyNoteCard(props) {
     
         return (
            
-            <div className="stickynote-area">
+            <container className="stickynote-area">
                
         
-                <div className="stickynote-card">
+                <section className="stickynote-card">
                  <p>{stickynoteData.win_comment}</p> 
     
                  <Tooltip content="   Edit  " direction="top">
@@ -226,9 +226,9 @@ function StickyNoteCard(props) {
                     </Link>
                 </Tooltip>
                  
-                </div>
+                </section>
         
-            </div>
+            </container>
         );
         }
 
@@ -236,29 +236,29 @@ function StickyNoteCard(props) {
     
         return (
                
-            <div className="stickynote-area">
+            <section className="stickynote-area">
                 
         
-                <div className="stickynote-card">
+                <container className="stickynote-card">
                     <p>{stickynoteData.win_comment}</p> 
                     
-                </div>
+                </container>
         
-            </div>
+            </section>
             );
             }
 
     else {
         return (
        
-        <div className="stickynote-area">
+        <section className="stickynote-area">
            
     
-            <div className="stickynote-card">
+            <container className="stickynote-card">
              <p>{stickynoteData.win_comment}</p> 
        
-        </div>
-        </div>
+        </container>
+        </section>
     );
     }
 }
