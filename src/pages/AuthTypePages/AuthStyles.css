@@ -1,0 +1,60 @@
+/* body * {
+    color:                      hsla(210, 100%, 100%, 0.88)     !important;
+    background:                 hsla(210, 100%,  50%, 0.33)       !important;
+    outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
+}
+
+.debug-center {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+} */
+
+.auth-section {
+    margin: 5rem;
+    color: var(--primary);
+    
+}
+
+.auth-section li {
+    list-style-type: none;
+}
+
+.username-dropdown select{
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin: 2rem;
+    font-weight: bold;
+    background-color: var(--s-light);
+    border: 2px solid var(--primary);
+}
+
+.ul-auth {
+    align-items: center;
+}
+
+.auth-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 180px;
+    border: 4px dotted var(--secondary);
+    background-color: var(--p-light);
+}
+
+.auth-section-icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+.auth-section-icons li {
+    padding: 2rem;
+}
+
+/* section.auth-section {
+    display: flex;
+    align-items: center;
+}
+ */

@@ -9,6 +9,9 @@ import ApproverImg from "../../components/images/icons/task-completed-2.png";
 import SheCoderImg from "../../components/images/icons/external-developer-web-development-flaticons-flat-flat-icons.png"
 import Tooltip from "../../components/ToolTips/ToolTip";
 
+
+//styles
+import "./AuthStyles.css"
 function UpdateUserAuthListPage() {
 
     // Navigation Links
@@ -265,6 +268,9 @@ function UpdateUserAuthListPage() {
 
     return (
     <>
+    <section className="auth-section">
+        <h1>Choose the user that you would like to provide access to:</h1>
+    
     <div className="username-dropdown">
         <select onChange={onSelectedUserChange}>
             <option value="" disabled selected>Select She Codes User </option>
@@ -275,21 +281,28 @@ function UpdateUserAuthListPage() {
                 </option>
             ))}
         </select>
-
         {userData &&
-        <ul>
-            <li>{userData.username}</li>
-            <li>{userData.is_superuser && 
-                <img src={SuperUserImg} alt="super-user"/>}
-            </li>
-            <li>{userData.is_shecodes_admin &&                 
-                <img src={AdminUserImg} alt="admin-user"/>}
-            </li>
-            <Tooltip content="   You are amazing " direction="right">
-            <li>
-                <img src={SheCoderImg} alt="user"/>
-            </li>
-            </Tooltip>
+            <ul className="ul-auth">
+                    <li>{userData.username}</li>
+                    <div className="auth-section-icons">
+
+                    <li>{userData.is_superuser && 
+                        <img className="auth-icon" src={SuperUserImg} alt="super-user"/>}
+                    </li>
+                    <li>{userData.is_shecodes_admin &&                 
+                        <img className="auth-icon" src={AdminUserImg} alt="admin-user"/>}
+                    </li>
+                    </div>
+                    <div className="auth-section-icons">
+                    <Tooltip content="   You are amazing " direction="right">
+                    <li>
+                        <img className="auth-icon" src={SheCoderImg} alt="user"/>
+                    </li>
+                    </Tooltip>
+                    </div>
+
+
+               
             {/* Checking that Only the Super User can press button */}
             <li>{(IsSuperUser) &&
                 <button className="update-auth-type" 
@@ -312,9 +325,11 @@ function UpdateUserAuthListPage() {
             <li>Is {!isAssignedApprover && "not an "}Approver</li> */}
             {assignment()}
 
-        </ul>
+        </ul>       
         }
     </div>
+    </section>
+
     </>
     )
 }
