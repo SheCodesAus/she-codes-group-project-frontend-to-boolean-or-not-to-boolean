@@ -11,13 +11,26 @@
 } */
 
 .auth-section {
-    margin: 5rem;
+    margin: 25px;
     color: var(--primary);
-    
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
 }
 
 .auth-section li {
     list-style-type: none;
+}
+
+.auth-assign-tables {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
 }
 
 .username-dropdown select{
@@ -35,6 +48,10 @@
     align-items: center;
 }
 
+.name-title {
+    padding-bottom: 10px;
+}
+
 .auth-icon {
     width: 100px;
     height: 100px;
@@ -46,11 +63,11 @@
 .auth-section-icons {
     display: flex;
     justify-content: space-evenly;
-    margin: 2rem;
+    margin: 1.5rem;
 }
 
 .auth-section-icons li {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 /* section.auth-section {

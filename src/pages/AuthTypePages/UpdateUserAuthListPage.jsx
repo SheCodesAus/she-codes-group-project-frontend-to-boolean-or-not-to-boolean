@@ -154,16 +154,11 @@ function UpdateUserAuthListPage() {
         
         getUserData(userId)
          
-          
-          
         } catch (err) {
           console.log(err);
         }
       };
   
-
-
-
     const assignment = () => {
 
         if(!userData)
@@ -173,85 +168,86 @@ function UpdateUserAuthListPage() {
         return (
             <>
             <br></br>
-            <h3>User Assignments</h3>
-            <br></br>
-            <table  class="tg">
-                <thead>
+            <div className="auth-assign-tables">
+                <h3>User Assignments</h3>
+                <br></br>
+                <table  class="tg">
+                    <thead>
+                        <tr>
+                            <td>Win Wall ID</td>
+                            <td>Win Wall Title</td>
+                            <td>Is Approver</td>
+                            <td>Is Admin</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                
+                <tbody>
+                {userData.assignments.filter((a) => a.win_wall_id != null).map( (a) => (
                     <tr>
-                        <td>Win Wall ID</td>
-                        <td>Win Wall Title</td>
-                        <td>Is Approver</td>
-                        <td>Is Admin</td>
-                        <td>Delete</td>
-                    </tr>
-                </thead>
-            
-            <tbody>
-            {userData.assignments.filter((a) => a.win_wall_id != null).map( (a) => (
-                <tr>
-                    <td>{a.win_wall_id}</td>
-                    <td>{winwallList.find(w => w.id == a.win_wall_id).title}</td>
-                    <td>{a.is_approver ? 'Yes' : 'No'}</td>
-                    <td>{a.is_admin ? 'Yes' : 'No'}</td>
-                    <Tooltip content=" Delete " direction="right">
-                    <td> 
-                        <button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
-                        {/* Update StickyNote */}
-                        <img src={Bin} />
-                    </button>
+                        <td>{a.win_wall_id}</td>
+                        <td>{winwallList.find(w => w.id == a.win_wall_id).title}</td>
+                        <td>{a.is_approver ? 'Yes' : 'No'}</td>
+                        <td>{a.is_admin ? 'Yes' : 'No'}</td>
+                        <Tooltip content=" Delete " direction="right">
+                        <td> 
+                            <button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
+                            {/* Update StickyNote */}
+                            <img src={Bin} alt="bin"/>
+                        </button>
+                        
+                        </td>
+                        </Tooltip>
                     
-                    </td>
-                    </Tooltip>
-                
-                {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
-                
-                </tr>
-
-
-            ))}
-            </tbody>
-            </table>
-
-            <br></br>
-            <br></br>
-
-            <table class="tg">
-                <thead>
-                    <tr>
-                        <td>Collection ID of WinWalls</td>
-                        <td>Collection Title</td>
-                        <td>Is Approver</td>
-                        <td>Is Admin</td>
-                        <td>Delete</td>
+                    {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
+                    
                     </tr>
-                </thead>
-            
-            <tbody>
-            {userData.assignments.filter(a => a.collection_id != null).map( (a) => (
-                <tr>
-                    <td>{a.collection_id}</td>
-                    <td>{collectionList.find(c => c.id == a.collection_id).title}</td>
-                    <td>{a.is_approver ? 'Yes' : 'No'}</td>
-                    <td>{a.is_admin ? 'Yes' : 'No'}</td>
-                    <Tooltip content=" Delete " direction="right">
-                    <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
-                        {/* Update StickyNote */}
-                        <img src={Bin} />
-                    </button>
-                    </td>
-                    </Tooltip>
-                
-                {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
-                
-                </tr>
 
 
-            ))}
-            </tbody>
-            </table>
+                ))}
+                </tbody>
+                </table>
+
+                <br></br>
+                <br></br>
+
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <td>Collection ID of WinWalls</td>
+                            <td>Collection Title</td>
+                            <td>Is Approver</td>
+                            <td>Is Admin</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                
+                <tbody>
+                {userData.assignments.filter(a => a.collection_id != null).map( (a) => (
+                    <tr>
+                        <td>{a.collection_id}</td>
+                        <td>{collectionList.find(c => c.id == a.collection_id).title}</td>
+                        <td>{a.is_approver ? 'Yes' : 'No'}</td>
+                        <td>{a.is_admin ? 'Yes' : 'No'}</td>
+                        <Tooltip content=" Delete " direction="right">
+                        <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
+                            {/* Update StickyNote */}
+                            <img src={Bin} alt="bin" />
+                        </button>
+                        </td>
+                        </Tooltip>
+                    
+                    {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
+                    
+                    </tr>
+
+
+                ))}
+                </tbody>
+                </table>
+            </div>
 
            <br></br>
-
 
             <Link to={`/users/${userData.id}/assignments/`}>
                 {/* Checks that only the Admin/Super User can change assignments */}
@@ -264,12 +260,10 @@ function UpdateUserAuthListPage() {
         )
     }
 
-    
-
     return (
     <>
     <section className="auth-section">
-        <h1>Choose the user that you would like to provide access to:</h1>
+        <h1>Choose the She Coder that you would like to assign access levels to:</h1>
     
     <div className="username-dropdown">
         <select onChange={onSelectedUserChange}>
@@ -283,8 +277,10 @@ function UpdateUserAuthListPage() {
         </select>
         {userData &&
             <ul className="ul-auth">
-                    <li>{userData.username}</li>
-                    <img id="avatar" src={userData.avatar}></img>
+                    <li>
+                        <h1 className="name-title">{userData.username}</h1>
+                    </li>
+                        <img id="avatar" src={userData.avatar} alt="user-pic"></img>
                     <div className="auth-section-icons">
 
                     <li>{userData.is_superuser && 
@@ -301,8 +297,6 @@ function UpdateUserAuthListPage() {
                     </li>
                     </Tooltip>
                     </div>
-
-
                
             {/* Checking that Only the Super User can press button */}
             <li>{(IsSuperUser) &&
@@ -330,7 +324,6 @@ function UpdateUserAuthListPage() {
         }
     </div>
     </section>
-
     </>
     )
 }
