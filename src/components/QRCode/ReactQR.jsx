@@ -11,7 +11,7 @@ export default function ReactWall() {
     return (
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>React</button>
-            <Modal title="React" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
+            <Modal title="React" children={<QRGenerator value="https://shrouded-wave-23056.herokuapp.com/collection/7/"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
     )

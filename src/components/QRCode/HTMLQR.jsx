@@ -11,7 +11,7 @@ export default function HTMLcssWall() {
     return (
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>HTML/CSS</button>
-            <Modal title="HTML/CSS" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
+            <Modal title="HTML/CSS" children={<QRGenerator value="https://shrouded-wave-23056.herokuapp.com/collection/3/"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container> 
     )

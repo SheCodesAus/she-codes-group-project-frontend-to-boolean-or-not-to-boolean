@@ -11,7 +11,7 @@ export default function DjangoWall() {
     return (
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Django</button>
-            <Modal  onClose={() => setShow(false)} title="Django" children={<QRGenerator value="https://www.google.com"r/>} show={show}/>
+            <Modal  onClose={() => setShow(false)} title="Django" children={<QRGenerator value="https://shrouded-wave-23056.herokuapp.com/collection/2/"r/>} show={show}/>
             <Modal />
         </container>  
     )

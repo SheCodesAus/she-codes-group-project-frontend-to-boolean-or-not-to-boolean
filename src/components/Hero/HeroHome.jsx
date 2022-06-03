@@ -7,7 +7,7 @@ import QRGenerator from "../QRCode/QRCode";
 //styles
 import "./Hero.css"
 
-function Hero() {
+const Hero = props => {
 return(
     <>
         <section className="hero">
@@ -20,7 +20,7 @@ return(
                 </section>
 
                 <section className="qr-code-section qr-code-hero">
-                    <QRGenerator />
+                    <QRGenerator value="https://shrouded-wave-23056.herokuapp.com/live-win-walls/" />
                 </section>
             {/* </container> */}
         </section>

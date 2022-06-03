@@ -11,7 +11,7 @@ export default function PythonWall() {
     return (
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Python</button>
-            <Modal title="Python" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
+            <Modal title="Python" children={<QRGenerator value="https://shrouded-wave-23056.herokuapp.com/collection/5/"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
     )
