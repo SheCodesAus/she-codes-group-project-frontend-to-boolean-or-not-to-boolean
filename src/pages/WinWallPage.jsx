@@ -27,7 +27,7 @@ function WinWallPage() {
     const [WinwallData, setWinwallData] = useState();
    
     const { id } = useParams();
-    useEffect(() => {
+    const reload  = () => {
         fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
         .then((results) => {
         return results.json();
@@ -35,9 +35,14 @@ function WinWallPage() {
             .then((data) => {
          setWinwallData(data);
          console.log("data", data);
-         });
+         });}
+
+    useEffect(() => {
+        reload()
 
     }, []);
+
+   
 
 
      if (!WinwallData) {
@@ -82,14 +87,14 @@ function WinWallPage() {
               Authorization: `Token ${token}`,
             },
             body: JSON.stringify({
-              is_approved: true,
+                bulk_approve: true,
               
     
             }),
           });
           const data = await res.json();
           console.log(data);
-          
+          reload()
           
         } catch (err) {
           console.log(err);
@@ -106,13 +111,14 @@ function WinWallPage() {
               Authorization: `Token ${token}`,
             },
             body: JSON.stringify({
-              is_archived: true,
+                bulk_archive: true,
               
     
             }),
           });
           const data = await res.json();
           console.log(data);
+          reload()
           
           
         } catch (err) {
