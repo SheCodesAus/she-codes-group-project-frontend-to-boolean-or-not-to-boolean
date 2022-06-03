@@ -78,3 +78,21 @@ h3.title-sticky  {
     flex-direction: column;
     justify-content: center;
 }
+
+@media screen and (max-width: 480px) {
+    h1,
+    p,
+    .ww-title {
+        font-size: 30px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sticky-board {
+        max-width: 400px;
+    }
+
+}

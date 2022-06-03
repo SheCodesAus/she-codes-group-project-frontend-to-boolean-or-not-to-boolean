@@ -18,6 +18,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
+}
+
+.card:hover {
+    box-shadow: var(--box-shadow-main)
+
 }
 
 .collection--list--section h1 {
@@ -28,4 +34,20 @@
 
 .collection--list--section span {
     color: #ffa300;
+}
+
+@media screen and (max-width: 480px) {
+    .collection--list--section h1 {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .card--list,
+    .card {
+        max-width: 90%;
+        margin: 1px;
+        margin-left: -10px;
+    }
+
+    
 }

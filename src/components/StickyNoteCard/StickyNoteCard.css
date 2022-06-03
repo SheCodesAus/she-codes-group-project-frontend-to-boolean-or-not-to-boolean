@@ -46,12 +46,11 @@ body {
     flex-direction: row;
   } */
 
-  
+
   .stickynote-area{
     max-height: 400px;
     max-width: 400px;
     margin:0px;
-  
   }
 
 
@@ -151,6 +150,23 @@ body {
   align-self: flex-start;
   
 }
+
+@media screen and (max-width: 480px) {
+
+  .stickynote-area,
+  .stickynote-card {
+    width: 50%;
+    size-adjust: 50%;
+  }
+
+  .stickynote-area .stickynote-card {
+    height: 50%;
+    width: 50%;
+  }
+
+}
+
+
 
 
 
