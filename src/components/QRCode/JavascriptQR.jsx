@@ -11,7 +11,7 @@ export default function JavascriptWall() {
     return (
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Javascript</button>
-            <Modal title="Javascript" children={<QRGenerator value="http://localhost:3000/collection/6/"/>} onClose={() => setShow(false)} show={show} />
+            <Modal title="Javascript" children={<QRGenerator value="https://shrouded-wave-23056.herokuapp.com/create-sticky-note/win-wall/10/" />} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
     )

@@ -17,19 +17,6 @@ body {
     width: 100em;
 }
 
-/* .sticky-board{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:baseline;
-    align-items: flex-start;
-    align-content: flex-start;
-    align-self: center;
-    margin-top: 10px;
-    width: 90em;
-  } */
-
-
   .sticky-board {
     display: flex;
     margin:0px;
@@ -38,14 +25,14 @@ body {
     justify-content: flex-start;
     gap: 15px;
     width: 100%;
-  }
+}
 
 
 
 
 textarea {
     font-family: var(--main-font);
-    font-size: medium;
+    font-size: 1.2rem;
 }
 
 
