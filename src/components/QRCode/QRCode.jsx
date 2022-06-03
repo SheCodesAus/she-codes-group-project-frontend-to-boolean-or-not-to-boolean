@@ -5,7 +5,7 @@ import "./QRCode.css"
 const QRGenerator = props => {
    return (
       
-      <container>
+      <container className="container-qr">
             <QRCode className="qr-code"
             value={props.value}/>  
       </container>

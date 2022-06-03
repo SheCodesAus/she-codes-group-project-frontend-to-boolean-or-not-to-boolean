@@ -1,6 +1,6 @@
 /* Styling home page */
-/* 
-body * {
+
+/* body * {
     color:                      hsla(210, 100%, 100%, 0.88)     !important;
     background:                 hsla(210, 100%,  50%, 0.33)       !important;
     outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
@@ -22,14 +22,43 @@ body * {
     font-size: 50px;
     font-weight: var(--bolder-font);
     margin-bottom: 3rem;
+    /* text-shadow: var(--hero-highlight); */
+    background-color: var(--secondary);
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 .home-text {
     color: var(--primary);
 }
 
-p.alt-color-text {
-    color: orange;
+.alt-color-text {
+    color: var(--primary);
+    background-color: var(--secondary);
+    text-decoration: underline;
     font-weight: bold;
 }
 
+.modal-section,
+.modal-container {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+p {
+    color: var(--primary);
+}
+
+.home-modal-body {
+    font-size: 1.5rem;
+}
+
+container.ModalApp button{
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
