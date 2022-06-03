@@ -176,20 +176,8 @@ function Nav() {
                 >
                     She Coders
                 </Link>
-                {/* <Link 
-                // takes you to login page
-                    to="/login"
-                    className="nav-links"
-                    onClick={
-                        () => navigate()
-                    }
-                >
-                    Login
-                </Link> */}
                 
                 <Link 
-                // Should be to 'collections' 
-                // not sure on the correct link here - to be confirmed
                     to="/collections/"
                     className="nav-links"
                     onClick={
@@ -200,8 +188,6 @@ function Nav() {
                 </Link>
 
                 <Link 
-                // Should be to 'collections' 
-                // not sure on the correct link here - to be confirmed
                     to="/live-win-walls/"
                     className="nav-links"
                     onClick={
@@ -253,8 +239,6 @@ function Nav() {
                         Login
                     </Link> */}
                     <Link 
-                    // Should be to 'collections' 
-                    // not sure on the correct link here - to be confirmed
                     to="/collections/"
                     className="active-link"
                     onClick={

@@ -61,11 +61,41 @@ button.nav-links {
     border: unset;
     font-family: var(--main-font);
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #551A8B;
 }
 
 .btn:hover,
 button.nav-links:hover {
     background-color: var(--p-light);
+    color: #ffff;
+}
+
+a.nav-links {
+    background-color: var(--secondary);
+    padding: 10px 25px;
+    margin:10px;
+    border-radius: 25px;
+    border: unset;
+    font-family: var(--main-font);
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #551A8B;
+}
+
+.btn:hover,
+a.nav-links:hover {
+    background-color: var(--p-light);
+    color: #ffff;
+    font-weight: 400;
 }
 
 .profile-link:hover {
