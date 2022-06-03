@@ -33,11 +33,11 @@ function LiveWinWallsPage() {
     return (
         <div className="winwall-list-wrapper">
             <div className="intro-text">
-                <h1>View Live Win Walls!</h1>
+                <h1>View Live &#123;<span>Win Walls</span>&#125;</h1>
                 <h2>Check out what other people are currently saying!</h2>
             </div>
 
-            <div className="winwall-list">
+            <div className="live-winwall-list">
                 {liveWinWallsList.filter(IsOpen).map((winwallData, key) => {
                     return <LiveWinWallCard
                         key={`/win-walls-${winwallData.id}`} 

@@ -284,6 +284,7 @@ function UpdateUserAuthListPage() {
         {userData &&
             <ul className="ul-auth">
                     <li>{userData.username}</li>
+                    <img id="avatar" src={userData.avatar}></img>
                     <div className="auth-section-icons">
 
                     <li>{userData.is_superuser && 

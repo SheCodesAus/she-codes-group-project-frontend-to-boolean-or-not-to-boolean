@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Styles
+import "./LiveWinWallCard.css";
 
 function WinWallCard(props) {
   
@@ -8,7 +10,7 @@ function WinWallCard(props) {
   
     return (
 
-    <div className="winwall-card">
+    <div className="live-winwall-card">
       <Link to={`/win-wall/${winwallData.id}`}>
         <img src={winwallData.image} alt="winwallimage" />
         <h3>{winwallData.title}</h3>

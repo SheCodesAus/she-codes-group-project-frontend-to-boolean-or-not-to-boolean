@@ -1,9 +1,7 @@
-body {
-    display: flex;
-}
 
-.main-section {
-    margin:50px;
+.profile-image{
+    border-radius: 180px;
+    padding: 3rem;
 }
 
 .main-section--description {
@@ -14,21 +12,8 @@ body {
 .sticky-section{
     display: flex;
     align-content: center;
-    width: 100em;
+    
 }
-
-/* .sticky-board{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:baseline;
-    align-items: flex-start;
-    align-content: flex-start;
-    align-self: center;
-    margin-top: 10px;
-    width: 90em;
-  } */
-
 
   .sticky-board {
     display: flex;
@@ -38,14 +23,16 @@ body {
     justify-content: flex-start;
     gap: 15px;
     width: 100%;
-  }
+    cursor: pointer;
+
+}
 
 
 
 
 textarea {
     font-family: var(--main-font);
-    font-size: medium;
+    font-size: 1.2rem;
 }
 
 
@@ -59,4 +46,25 @@ textarea {
     align-self: flex-end;
     background-color: transparent;
 
+}
+
+h3.title-sticky  {
+    color: var(--primary);
+    font-size: 2rem;
+    margin: 10px;
+    padding: 2rem;
+}
+
+.win-wall-title-section {
+    color: var(--primary);
+    padding: 3rem;
+    margin-bottom: 100px;
+}
+
+.ww-title {
+    margin-bottom: 2rem;
+    background-color: var(--secondary);
+    text-decoration: underline;
+    /* font-family: var(--highlight-text); */
+    font-size: 50px;
 }
