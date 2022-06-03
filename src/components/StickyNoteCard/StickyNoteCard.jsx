@@ -6,6 +6,7 @@ import Bin from "../images/icons/remove-circle.png";
 import Pencil from "../images/icons/edit-pencil-slant.png";
 import Tick from   "../images/icons/sticky-note-tick.png";
 import Cross from   "../images/icons/sticky-note-cross.png";
+import Tooltip from "../../components/ToolTips/ToolTip";
 
 function StickyNoteCard(props) {
     // or ProjectCard({ projectData })
@@ -57,7 +58,7 @@ function StickyNoteCard(props) {
           });
           const data = await res.json();
           console.log(data);
-          
+          props.reload()
           
         } catch (err) {
           console.log(err);
@@ -81,6 +82,7 @@ function StickyNoteCard(props) {
           });
           const data = await res.json();
           console.log(data);
+          props.reload()
           
           
         } catch (err) {
@@ -116,13 +118,16 @@ function StickyNoteCard(props) {
             <div className="stickynote-card">
              <p>{stickynoteData.win_comment}</p>
 
-            
+             <Tooltip content="   Approved  " direction="top">
             <img src={Tick} className="icon-status" />
+            </Tooltip>
             
+            <Tooltip content="   Archive  " direction="top">
             <button type="submit" onClick={(e) => handleSubmitArchive(e,stickynoteData.id)} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} />
             </button> 
+            </Tooltip>
              
             </div>
         
@@ -140,9 +145,9 @@ function StickyNoteCard(props) {
                 <div className="stickynote-card">
                  <p>{stickynoteData.win_comment}</p>
     
-               
+                 <Tooltip content="   Archived  " direction="top">
                 <img src={Cross} className="icon-status" />
-    
+                </Tooltip>
                 
                  
                 </div>
@@ -161,20 +166,26 @@ function StickyNoteCard(props) {
                     <div className="stickynote-card">
                      <p>{stickynoteData.win_comment}</p>
         
+                     <Tooltip content="   Approve  " direction="top">
                     <button type="submit" onClick={(e) => handleSubmitApprove(e,stickynoteData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Circle} />
                     </button>
+                    </Tooltip>
+
+                    <Tooltip content="   Archive  " direction="top">
                     <button type="submit" onClick={(e) => handleSubmitArchive(e,stickynoteData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Bin} />
                     </button> 
-        
+                    </Tooltip>
+                    <Tooltip content="   Edit  " direction="top">
                      <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
                     <button className="icon-button">
                         <img src={Pencil} />
                     </button>
                     </Link>
+                    </Tooltip>
                      
                     </div>
                 
@@ -207,11 +218,13 @@ function StickyNoteCard(props) {
                 <div className="stickynote-card">
                  <p>{stickynoteData.win_comment}</p> 
     
+                 <Tooltip content="   Edit  " direction="top">
                  <Link to={`/edit-sticky-note/win-wall/${stickynoteData.id}/`}>
-                <button className="icon-button">
-                    <img src={Pencil} />
-                </button>
-                </Link>
+                    <button className="icon-button">
+                        <img src={Pencil} />
+                    </button>
+                    </Link>
+                </Tooltip>
                  
                 </div>
         

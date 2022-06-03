@@ -7,6 +7,7 @@ import SuperUserImg from "../../components/images/icons/super-logo.png";
 import AdminUserImg from "../../components/images/icons/system-admin.png";
 import ApproverImg from "../../components/images/icons/task-completed-2.png";
 import WonderWomanImg from "../../components/images/icons/wonder-woman-2.png"
+import Tooltip from "../../components/ToolTips/ToolTip";
 
 function UpdateUserAuthListPage() {
 
@@ -189,11 +190,15 @@ function UpdateUserAuthListPage() {
                     <td>{winwallList.find(w => w.id == a.win_wall_id).title}</td>
                     <td>{a.is_approver ? 'Yes' : 'No'}</td>
                     <td>{a.is_admin ? 'Yes' : 'No'}</td>
-                    <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
+                    <Tooltip content=" Delete " direction="right">
+                    <td> 
+                        <button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Bin} />
                     </button>
+                    
                     </td>
+                    </Tooltip>
                 
                 {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
                 
@@ -225,11 +230,13 @@ function UpdateUserAuthListPage() {
                     <td>{collectionList.find(c => c.id == a.collection_id).title}</td>
                     <td>{a.is_approver ? 'Yes' : 'No'}</td>
                     <td>{a.is_admin ? 'Yes' : 'No'}</td>
+                    <Tooltip content=" Delete " direction="right">
                     <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
                         {/* Update StickyNote */}
                         <img src={Bin} />
                     </button>
                     </td>
+                    </Tooltip>
                 
                 {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
                 
@@ -278,9 +285,11 @@ function UpdateUserAuthListPage() {
             <li>{userData.is_shecodes_admin &&                 
                 <img src={AdminUserImg} alt="admin-user"/>}
             </li>
+            <Tooltip content="   You are amazing " direction="right">
             <li>
                 <img src={WonderWomanImg} alt="user"/>
             </li>
+            </Tooltip>
             {/* Checking that Only the Super User can press button */}
             <li>{(IsSuperUser) &&
                 <button className="update-auth-type" 

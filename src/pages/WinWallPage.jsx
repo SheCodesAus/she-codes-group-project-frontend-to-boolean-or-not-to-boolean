@@ -6,6 +6,7 @@ import "./WinWallPage.css";
 import Circle from "../components/images/icons/circle-thumbs-up.png";
 import Bin from "../components/images/icons/remove-circle.png";
 import Comment from "../components/images/icons/comments.png";
+import Tooltip from "../components/ToolTips/ToolTip";
 
 
 function WinWallPage() {
@@ -145,22 +146,32 @@ function WinWallPage() {
       
     
             {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
             />;
             })}
     
         </div>
         </div>
         <div>
-           
-            <button type="submit" onClick={handleSubmitApprove} className="icon-button">
+            <Tooltip content="   Approve all  " direction="top">
+            
+            <button type="submit" onClick={handleSubmitApprove}  className="icon-button">
                 {/* Update StickyNote */}
+
                 <img src={Circle} alt="circle"/>
+
             </button>
+            </Tooltip>
+            
+            <Tooltip content="   Archive all  " direction="top">
             <button type="submit" onClick={handleSubmitArchive} className="icon-button">
                 {/* Update StickyNote */}
                 <img src={Bin} alt="bin"/>
             </button>
+            </Tooltip>
+            
+          
+            
         </div>
         </div>
     );
@@ -185,7 +196,7 @@ function WinWallPage() {
               
             
                 {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
                     />;
                     })}
             
@@ -222,7 +233,7 @@ function WinWallPage() {
               
             
                 {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
                     />;
                     })}
             
@@ -251,7 +262,7 @@ function WinWallPage() {
                 
             
                 {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
                     />;
                     })}
             
@@ -287,7 +298,7 @@ function WinWallPage() {
           
         
                 {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData}
+                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
                 />;
                 })}
         

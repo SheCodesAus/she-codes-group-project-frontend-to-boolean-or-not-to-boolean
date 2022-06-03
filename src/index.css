@@ -82,13 +82,20 @@ button:hover {
   background-color: transparent;
   border: none;
   padding: 2px;
+  align-self: center;
+  
+
+  
 }
 
 .icon-button img{
   height: 3rem;
   display: flex;
-  align-self: flex-end;
+  align-self:center;
   background-color: transparent;
+  
+  padding-left: 2px;
+  padding-right: 2px;
 
 }
 
