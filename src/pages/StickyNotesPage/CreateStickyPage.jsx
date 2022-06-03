@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import StickyNoteForm from "../../components/StickyNoteForm/StickyNoteForm";
+
 import "../../pages/WinWallPage.css"
+import "./CreateSticky.css"
 
 function CreateStickyPage() {
 
@@ -36,25 +38,20 @@ function CreateStickyPage() {
     if (isUserLoggedin && WallLive) {
 
     return (
-        <div className="main-section">
-        <h1>{WinwallData.title} </h1>
-        <p className="main-section--description">Create a new sticky note</p>
-
-           
-        <div className="sticky-board">
-             <StickyNoteForm win_wallId={id}/>
-        </div>
-        <div className="my-project-card">
-            <Link to={`/win-wall/${WinwallData.id}/`}>
-            <button className="sticky-note-btn">
-                View Win Wall
-            </button>
-            </Link>
-            
-
-        </div>
-
-        </div>
+        <section className="main-section">
+            <h1 className="create-sticky-text">{WinwallData.title} </h1>
+            <p className="main-section--description">Create a new sticky note</p>  
+            <div className="sticky-board">
+                <StickyNoteForm win_wallId={id}/>
+            </div>
+            <div className="my-project-card">
+                <Link to={`/win-wall/${WinwallData.id}/`}>
+                <button className="sticky-note-btn">
+                    View Win Wall
+                </button>
+                </Link>
+            </div>
+        </section>
        
     
         );
@@ -63,7 +60,7 @@ function CreateStickyPage() {
     else if (isUserLoggedin && WallClosed) {
 
         return (
-            <div className="main-section">
+            <section className="main-section">
             <h1>{WinwallData.title} </h1>
            
     
@@ -77,7 +74,7 @@ function CreateStickyPage() {
     
             </div>
     
-            </div>
+            </section>
            
         
             );
@@ -86,7 +83,7 @@ function CreateStickyPage() {
     else if  (!isUserLoggedin && WallLive) {
 
             return (
-                <div>
+                <section>
                 <div>
                     <h1>Win wall Title:  {WinwallData.title} </h1>
                    
@@ -109,7 +106,7 @@ function CreateStickyPage() {
         
                 </div>
         
-                </div>
+                </section>
                
             
                 );
@@ -117,7 +114,7 @@ function CreateStickyPage() {
 
     else if  (!isUserLoggedin && WallClosed) {
         return (
-            <div>
+            <section>
             <div>
                 <h1>Win wall Title:  {WinwallData.title} </h1>
                
@@ -140,7 +137,7 @@ function CreateStickyPage() {
     
             </div>
     
-            </div>
+            </section>
            
         
             );
