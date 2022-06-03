@@ -108,7 +108,7 @@ let validateField = (win_comment, value) => {
         <textarea
         
           id="win_comment"
-          placeholder="Enter your Win!"
+          placeholder="Enter your Win & Tell us your Name!"
           onChange={handleChange}
         />
      
