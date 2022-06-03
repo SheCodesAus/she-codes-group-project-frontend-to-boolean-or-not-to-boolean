@@ -11,6 +11,24 @@ function CollectionCard(props) {
    
     const IsAdmin = (Admin == 'true');
     const IsSuperUser = (SuperUser == 'true');
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+  //  created is assigned admin in case we want to give edit access later 
+   
+    let isAssignedAdmin = false;
+    
+ 
+      for (let index = 0; index < assignments.length; index++) {
+        const element = assignments[index];
+ 
+        const collection_assignment = element.collection_id
+        const assigned_admin = element.is_admin
+ 
+       
+        isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (collection_assignment == collectionData.id))
+        
+      }
   
     return (
     <div className="card">

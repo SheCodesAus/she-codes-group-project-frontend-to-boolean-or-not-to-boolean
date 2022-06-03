@@ -15,6 +15,9 @@ function CollectionListPage(props) {
    
     const IsAdmin = (Admin == 'true');
     const IsSuperUser = (SuperUser == 'true');
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
 
 
 //    STATES
@@ -49,6 +52,20 @@ useEffect(() => {
             </div>
             )
     };
+
+    let isAssignedAdmin = false;
+    let isAssignedApprover = false;
+
+    for (let index = 0; index < assignments.length; index++) {
+        const element = assignments[index];
+
+        const collection_assignment = element.collection_id
+        const assigned_admin = element.is_admin
+
+        // created is assigned in case we want to use it later 
+        isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (collection_assignment == collectionList.id ))
+        
+     }
 
         // If collection exists, then display them in a list:
         return (
