@@ -19,6 +19,7 @@ import EditProfilePage from "./pages/ProfilePage/EditProfilePage";
 import PageNotFound from "./pages/ErrorPage/PageNotFound";
 import EditWinWallPage from "./pages/EditWinWallPage";
 import LiveWinWallsPage from "./pages/LiveWinWallsPage/LiveWinWallsPage";
+import Hero from "./components/Hero/HeroHome";
 
 //components
 import FooterDone from "./components/Footer/Footer";
@@ -40,6 +41,8 @@ function App() {
     <Router>
     <>
       <Nav />
+      <Hero />
+
         <Routes>
           {/* Any User Pages */}
           <Route path="/" element={<HomePage />} />
