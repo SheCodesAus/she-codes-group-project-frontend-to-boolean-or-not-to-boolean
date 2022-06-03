@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //Components
 import EditProfileForm from "../../components/EditProfileForm/EditProfileForm";
@@ -10,8 +11,22 @@ function EditProfilePage(){
 
     //Hooks
     const { id } = useParams();
+    const navigate = useNavigate();
 
-    // network in use effect
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+    const UserId = window.localStorage.getItem("id");
+   
+    const IsAdmin = (Admin == 'true');
+    const IsSuperUser = (SuperUser == 'true');
+    const IsLoggedInUser = (UserId === id);
+
+    // Life changing: INSTANTLY navigate away if not one of these:
+    if (!IsAdmin && !IsSuperUser && !IsLoggedInUser) {
+        navigate(`/profile/${id}`);
+    }
+
+    // Network in use effect
     useEffect(() => {
 
         // fetch user info
