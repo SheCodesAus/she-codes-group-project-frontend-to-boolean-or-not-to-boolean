@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { CSSTransition } from 'react-transition-group';
+import QRGenerator from "../QRCode/QRCode";
 
 //styles
 import "./GlobalModal.css";
@@ -32,6 +33,7 @@ const Modal = props => {
         <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClose}>
             <div className="content" onClick={e => e.stopPropagation()}>
                 <div className="modal-content">
+                    <QRGenerator />
                     <div className="modal-header">
                         <h4 className="modal-title">{props.title}</h4>
                         <div className="modal-body">{props.children}</div>

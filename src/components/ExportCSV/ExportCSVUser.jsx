@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { CSVLink } from "react-csv";
 
+//styles
+import "./ExportCSV.css"
+
 //headers for user data that will be exported
 const headers = [
     { label: "id", key: "id" },
@@ -24,13 +27,9 @@ class AsyncCSVUser extends Component {
   }
 
   getUserList = async () => {
-    // need to confirm correct link for this and if I need to configure DRF
     const res = await fetch('https://shielded-wildwood-05412.herokuapp.com/users/');
     return await res.json();
   }
-
-  // fetch => {
-
   
   
   downloadReport = async () => {
@@ -46,15 +45,15 @@ class AsyncCSVUser extends Component {
     const { data } = this.state;
 
     return (
-      <div>
+      <div className="csv-data">
         <input 
         className="btn" 
         type="button" 
-        value="Download users" 
+        value="Users" 
         onClick={this.downloadReport} />
         <CSVLink
           headers={headers}
-          filename="Clue_Mediator_Report_Async.csv"
+          filename="user_data.csv"
           data={data}
           ref={this.csvLinkEl}
         />
