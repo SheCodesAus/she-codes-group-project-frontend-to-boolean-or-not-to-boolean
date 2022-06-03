@@ -56,7 +56,7 @@ function EditWinWallForm({ winwall }) {
           const data = await res.json();
           console.log(data);
           
-          navigate(`/collection/${editWinwall.id}`); 
+          navigate(`/collection/${editWinwall.collection_id}`); 
         } catch (err) {
           console.log(err);
         }
@@ -64,7 +64,7 @@ function EditWinWallForm({ winwall }) {
     
       if (!token || token===null || token===undefined || token==="undefined"){
         return (
-          <Link to="/login">Please log in to edit this win wall page.</Link>
+          <Link to="/login">Please Log In to edit this Win Wall page.</Link>
         );
       }
 
@@ -106,7 +106,7 @@ function EditWinWallForm({ winwall }) {
         </div>
 
         <div>
-        <label className="form-text" htmlFor="start_date">Start date: </label>
+        <label className="form-text" htmlFor="start_date">Start Date: </label>
         <input
             type="date"
             id="start_date"

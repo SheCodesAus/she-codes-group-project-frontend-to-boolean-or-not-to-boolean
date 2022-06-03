@@ -8,6 +8,12 @@ import "./CollectionListPage.css"
 
 function CollectionListPage(props) {
 
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+   
+    const IsAdmin = (Admin == 'true');
+    const IsSuperUser = (SuperUser == 'true');
+
 
 //    STATES
     const [collectionList, setCollectionList] = useState([]);
@@ -27,19 +33,9 @@ useEffect(() => {
  });
 
 }, []);
-    
-// Log in to see collections
-    
-//     if (!token || token === null || token === undefined || token === "undefined") {
-//     return (
-//       <Link to="/login">Please login to see your saved collections.</Link>
-//     );
-// }   
 
 // If no collection yet, then display this message:
-    
     if (!collectionList) {
-    
 
         return (
             <div>
@@ -52,23 +48,21 @@ useEffect(() => {
             )
     };
 
-// If collection exists, then display them in a list:
-return (
-    <div className="collection--list--section">
-    <h1>Collections</h1>   
-    <p className="collection--description">Here are your latest collections of win walls.</p>
-        
-        <div className="card--list">
-        {collectionList.map((collectionData, key) => {
-        return <CollectionCard key={key} collectionData={collectionData} />; })}
-        <CreateCollectionCard />
-      
-   
-    </div>
-        
-</div>               
-)
-}
+        // If collection exists, then display them in a list:
+        return (
+            <div className="collection--list--section">
+            <h1>Collections</h1>   
+            <p className="collection--description">Here are your latest collections of win walls.</p>
+                
+                <div className="card--list">
+                {collectionList.map((collectionData, key) => {
+                return <CollectionCard key={key} collectionData={collectionData} />; })}
+                
+                {(IsAdmin || IsSuperUser) &&<CreateCollectionCard />}
+            </div>  
+        </div>               
+        )
+        }
 
 export default CollectionListPage;
 

@@ -128,7 +128,7 @@ function WinWallPage() {
         <div>
             <h1>Win wall Title:  {WinwallData.title} </h1>
             <h2>Win wall Status: Closed </h2>
-            <img src={WinwallData.image} alt="winwall hero image" />
+            <img src={WinwallData.image} alt="winwall hero" />
 
         </div>
         {/* adding sticky notes to winwall page */}
@@ -149,11 +149,11 @@ function WinWallPage() {
            
             <button type="submit" onClick={handleSubmitApprove} className="icon-button">
                 {/* Update StickyNote */}
-                <img src={Circle} />
+                <img src={Circle} alt="circle"/>
             </button>
             <button type="submit" onClick={handleSubmitArchive} className="icon-button">
                 {/* Update StickyNote */}
-                <img src={Bin} />
+                <img src={Bin} alt="bin"/>
             </button>
         </div>
         </div>
@@ -168,7 +168,7 @@ function WinWallPage() {
                 <div>
                     <h1>Win wall Title:  {WinwallData.title} </h1>
                     <h2>Win wall Status: Live </h2>
-                    <img src={WinwallData.image} alt="winwall hero image" />
+                    <img src={WinwallData.image} alt="winwall hero" />
         
                 </div>
                 {/* adding sticky notes to winwall page */}
@@ -188,7 +188,7 @@ function WinWallPage() {
                 <div>
                     <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
                     <button className="icon-button">
-                    <img src={Comment} />
+                    <img src={Comment} alt="comment"/>
                     </button>
                     </Link>
                 
@@ -205,7 +205,7 @@ function WinWallPage() {
                 <div>
                     <h1>Win wall Title:  {WinwallData.title} </h1>
                     <h2>Win wall Status: Closed </h2>
-                    <img src={WinwallData.image} alt="winwall hero image" />
+                    <img src={WinwallData.image} alt="winwall hero" />
         
                 </div>
                 {/* adding sticky notes to winwall page */}
@@ -234,7 +234,7 @@ function WinWallPage() {
                 <div>
                     <h1>Win wall Title:  {WinwallData.title} </h1>
                     <h2>Win wall Status: Live </h2>
-                    <img src={WinwallData.image} alt="winwall hero image" />
+                    <img src={WinwallData.image} alt="winwall hero" />
         
                 </div>
                 {/* adding sticky notes to winwall page */}
@@ -254,7 +254,7 @@ function WinWallPage() {
                 <div>
                     <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
                     <button className="icon-button">
-                    <img src={Comment} />
+                    <img src={Comment} alt="comment"/>
                     </button>
                     </Link>
                 
@@ -270,7 +270,7 @@ function WinWallPage() {
                 <h2>Win wall Status: .. </h2>
 
 
-                <img src={WinwallData.image} alt="winwall hero image" />
+                <img src={WinwallData.image} alt="winwall hero" />
     
             </div>
             {/* adding sticky notes to winwall page */}
