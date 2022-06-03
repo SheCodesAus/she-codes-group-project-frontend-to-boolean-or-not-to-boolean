@@ -1,0 +1,11 @@
+.winwall-list-wrapper {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.live-winwall-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 
+// Styles
+//styles
+import "./LiveWinWallsPage.css"
+
 // Components
 import LiveWinWallCard from "../../components/LiveWinWallCard/LiveWinWallCard";
 
