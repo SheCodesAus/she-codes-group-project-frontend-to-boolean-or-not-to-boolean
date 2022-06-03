@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Bin from "../../components/images/icons/remove-circle.png";
 
 function UpdateUserAuthListPage() {
     // Navigation Links
@@ -57,6 +58,49 @@ function UpdateUserAuthListPage() {
         })
     };
 
+    const [collectionList, setCollection] = useState();
+
+  useEffect(() => {
+      fetch(`${process.env.REACT_APP_API_URL}view-collections/`)
+      .then((results) => {
+          console.log("results",results);    
+      return results.json();
+      })
+      
+      .then((data) => {
+        setCollection(data);
+         
+      });
+     
+    
+      }, []);
+  
+      
+  const [winwallList, setWinwallList] = useState();
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}win-walls/`)
+    .then((results) => {
+        console.log("results",results);    
+    return results.json();
+    })
+    
+    .then((data) => {
+        setWinwallList(data);
+       
+    });
+   
+  
+    }, []);
+
+    if (!collectionList) {
+        return <h3>Loading..</h3>;
+    }
+    
+    if (!winwallList) {
+        return <h3>Loading..</h3>;
+    }
+
     if (!usernameList) {
         return <h1>Loading User List...</h1>
     }
@@ -71,72 +115,30 @@ function UpdateUserAuthListPage() {
     }
 
 
-    // console.log("user", userData);
-
-    // const assignmentsString = userData.assignments;
-    // const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
-    
-    // let isAssignedAdmin = false;
-    // let isAssignedApprover = false;
- 
-    // for (let index = 0; index < assignments.length; index++) {
-    //       const element = assignments[index];
-
-    //     const collection_assignment = element.collection_id
-    //     const winwall_assignment = element.win_wall_id
-    //     const assigned_approver = element.is_approver
-    //     const assigned_admin = element.is_admin
-
-    //     isAssignedAdmin = isAssignedAdmin || (assigned_admin == true )
-    //     isAssignedApprover = isAssignedApprover || (assigned_approver == true )
-    // }
-
-    // const assignmentsString = userData.assignments;
-    // const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
-    
-    // let isAssignedAdmin = false;
-    // let isAssignedApprover = false;
- 
-    // for (let index = 0; index < assignments.length; index++) {
-    //       const element = assignments[index];
-
-    // const collection_assignment = element.collection_id
-    // const winwall_assignment = element.win_wall_id
-    // const assigned_approver = element.is_approver
-    // const assigned_admin = element.is_admin
-
-    // isAssignedAdmin = isAssignedAdmin || (assigned_admin == true )
-    // isAssignedApprover = isAssignedApprover || (assigned_approver == true )
-
-    //   }
-
-    const wallAssignment = (a) => {
-        if (a.win_wall_id == null && a.collection_id == null) {
-            return (
-                'No WinWall'
-            )
+   
+    const handleDelete = async (event,assignmentId, userId) => {
+        const token = window.localStorage.getItem("token");
+        if (!token)return;
+        event.preventDefault();
+        try {
+          const res = await fetch(`${process.env.REACT_APP_API_URL}assignment/${assignmentId}/`, {
+            method: "delete",
+            headers: {
+            
+              Authorization: `Token ${token}`,
+            },
+           
+          });
+        
+        getUserData(userId)
+         
+          
+          
+        } catch (err) {
+          console.log(err);
         }
-
-        else if (a.collection_id == null && a.win_wall_id != null ) {
-            return (
-                'WinWall ' + a.win_wall_id
-            )
-        }
-
-        else if (a.collection_id != null) {
-            return (
-                'All WinWalls in Collection ' + a.collection_id
-            )
-        }
-
-        else{
-            return (
-                <></>
-            )
-        }
-
-      
-    }
+      };
+  
 
 
 
@@ -154,7 +156,8 @@ function UpdateUserAuthListPage() {
             <table  class="tg">
                 <thead>
                     <tr>
-                        <td>Win Wall</td>
+                        <td>Win Wall ID</td>
+                        <td>Win Wall Title</td>
                         <td>Is Approver</td>
                         <td>Is Admin</td>
                         <td>Delete</td>
@@ -165,9 +168,14 @@ function UpdateUserAuthListPage() {
             {userData.assignments.filter((a) => a.win_wall_id != null).map( (a) => (
                 <tr>
                     <td>{a.win_wall_id}</td>
+                    <td>{winwallList.find(w => w.id == a.win_wall_id).title}</td>
                     <td>{a.is_approver ? 'Yes' : 'No'}</td>
                     <td>{a.is_admin ? 'Yes' : 'No'}</td>
-                    <td>X</td>
+                    <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Bin} />
+                    </button>
+                    </td>
                 
                 {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
                 
@@ -184,7 +192,8 @@ function UpdateUserAuthListPage() {
             <table class="tg">
                 <thead>
                     <tr>
-                        <td>Collection of WinWalls</td>
+                        <td>Collection ID of WinWalls</td>
+                        <td>Collection Title</td>
                         <td>Is Approver</td>
                         <td>Is Admin</td>
                         <td>Delete</td>
@@ -195,9 +204,14 @@ function UpdateUserAuthListPage() {
             {userData.assignments.filter(a => a.collection_id != null).map( (a) => (
                 <tr>
                     <td>{a.collection_id}</td>
+                    <td>{collectionList.find(c => c.id == a.collection_id).title}</td>
                     <td>{a.is_approver ? 'Yes' : 'No'}</td>
                     <td>{a.is_admin ? 'Yes' : 'No'}</td>
-                    <td>X</td>
+                    <td><button type="submit" onClick={(e)=> handleDelete(e,a.id,userData.id)} className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Bin} />
+                    </button>
+                    </td>
                 
                 {/* <li>Is  {a.is_admin ? '' : 'Not'} an Admin for {wallAssignment(a)}  {a.is_approver ? '' : 'Not'} Approver for {wallAssignment(a)} </li> */}
                 
