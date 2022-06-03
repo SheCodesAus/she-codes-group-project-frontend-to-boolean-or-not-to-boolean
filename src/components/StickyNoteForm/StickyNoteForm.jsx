@@ -45,7 +45,7 @@ let validateField = (win_comment, value) => {
     let errorMsg = null;
     switch (win_comment) {
       case "win_comment":
-        if (!value) errorMsg = "Please enter your Win Comment.";
+        if (!value) errorMsg = "Please enter your Win Comment, if you choose you can also add your name.";
         else if (value.length > 200 )errorMsg = 'Max Length is 200';
         break;
   }
