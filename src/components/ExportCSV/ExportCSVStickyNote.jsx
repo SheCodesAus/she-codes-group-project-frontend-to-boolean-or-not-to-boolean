@@ -24,7 +24,6 @@ class AsyncCSVStickyNote extends Component {
     }
   
     getUserList = async () => {
-        // need to confirm correct link for this and if I need to configure DRF
       const res = await fetch('https://shielded-wildwood-05412.herokuapp.com/sticky-note/');
         return await res.json();
     }
@@ -42,15 +41,15 @@ class AsyncCSVStickyNote extends Component {
       const { data } = this.state;
   
       return (
-        <div>
+        <div className="csv-data">
           <input 
           className="btn" 
           type="button" 
-          value="Export to CSV (Async)" 
+          value="Sticky Notes" 
           onClick={this.downloadReport} />
           <CSVLink
             headers={headers}
-            filename="Clue_Mediator_Report_Async.csv"
+            filename="sticky_note_data.csv"
             data={data}
             ref={this.csvLinkEl}
           />

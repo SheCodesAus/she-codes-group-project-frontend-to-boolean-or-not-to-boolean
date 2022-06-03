@@ -1,0 +1,15 @@
+.csv-data {
+    padding: 0 2.5rem;
+    color: var(--primary);
+}
+.csv-data input {
+    width: 150px;
+    color: var(--primary); 
+    font-weight: bold; 
+    font-size: 1rem;     
+}
+
+.csv-data input:hover {
+    color: var(--secondary);
+}
+
