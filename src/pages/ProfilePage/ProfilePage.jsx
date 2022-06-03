@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Tooltip from "../../components/ToolTips/ToolTip"
 
 // Imports
 import { Link } from "react-router-dom";
@@ -71,16 +72,24 @@ function ProfilePage() {
                 </div>
 
                 <div className="auth-graphics">
+                <Tooltip content="Superuser" direction="bottom">
                     <h4>{userData.is_superuser && 
                         <img src={SuperUserImg} alt="super-user"/>}
                     </h4>
+                </Tooltip>
+                <Tooltip content="Admin" direction="bottom">
                     <h4>{userData.is_shecodes_admin &&                 
                         <img src={AdminUserImg} alt="admin-user"/>}
                     </h4>
+                </Tooltip>
+                <Tooltip content="Approver" direction="bottom">
                     <h4>{userData.is_approver && 
                         <img src={ApproverImg} alt="approver-user"/>}
                     </h4>
+                </Tooltip>
+                <Tooltip content="Amazing She Coder!" direction="bottom">
                     <h4><img src={SheCoderImg} alt="user"/></h4>
+                </Tooltip>
                 </div>
             </div>
 
