@@ -90,7 +90,7 @@ function CreateUserAssignmentForm({user}) {
       });
       const data = await res.json();
       console.log(data);
-      navigate('/shecodes-user-list/');
+      navigate('/auth-assignments/');
     } catch (err) {
       console.log(err);
     }
