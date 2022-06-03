@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
+// Imports
+import SuperUserImg from "../../components/images/icons/super-logo.png";
+import AdminUserImg from "../../components/images/icons/system-admin.png";
+import ApproverImg from "../../components/images/icons/task-completed-2.png";
+import WonderWomanImg from "../../components/images/icons/wonder-woman-2.png"
+
 function UpdateUserAuthListPage() {
+
     // Navigation Links
     const navigate = useNavigate();
 
@@ -15,6 +22,17 @@ function UpdateUserAuthListPage() {
 
     const navigateToPersonYouWantToMakeApprover = () => {
         navigate(`/profile/${userData.id}/make-approver/`)
+    }
+
+    // Auth Checks
+    const SuperUser = window.localStorage.getItem("is_superuser");
+    const Admin = window.localStorage.getItem("is_shecodes_admin");
+   
+    const IsAdmin = (Admin == 'true');
+    const IsSuperUser = (SuperUser == 'true');
+
+    if (!IsAdmin && !IsSuperUser) {
+        navigate(`/shecodes-user-list/`);
     }
 
     // Network in use Effect
@@ -212,9 +230,11 @@ function UpdateUserAuthListPage() {
 
 
             <Link to={`/users/${userData.id}/assignments/`}>
+                {/* Checks that only the Admin/Super User can change assignments */}
+                    {(IsAdmin || IsSuperUser) &&
                     <button className="update-auth-type">
                     Add User Assignments
-                    </button>
+                    </button>}
             </Link>
             </>
         )
@@ -238,20 +258,31 @@ function UpdateUserAuthListPage() {
         {userData &&
         <ul>
             <li>{userData.username}</li>
-            <li>Is {!userData.is_superuser && "not a "}Superuser</li>
-            <li>Is {!userData.is_shecodes_admin && "not a "}Global Administrator</li>
-                <li>
-                    <button className="update-auth-type" 
-                            onClick={navigateToPersonYouWantToMakeAdmin}>
-                        Update Admin Permissions
-                    </button>
-                </li>
-            <li>Is {!userData.is_approver && "not a "}Global Approver</li>
+            <li>{userData.is_superuser && 
+                <img src={SuperUserImg} alt="super-user"/>}
+            </li>
+            <li>{userData.is_shecodes_admin &&                 
+                <img src={AdminUserImg} alt="admin-user"/>}
+            </li>
             <li>
+                <img src={WonderWomanImg} alt="user"/>
+            </li>
+            {/* Checking that Only the Super User can press button */}
+            <li>{(IsSuperUser) &&
+                <button className="update-auth-type" 
+                        onClick={navigateToPersonYouWantToMakeAdmin}>
+                    Update Admin Permissions
+                </button>}
+            </li>
+            <li>{userData.is_approver && 
+                <img src={ApproverImg} alt="approver-user"/>}
+            </li>
+            {/* Checking that Only the SuperUser/Admin can press button */}
+            <li>{(IsAdmin || IsSuperUser) &&
                 <button className="update-to-approver"
                         onClick={navigateToPersonYouWantToMakeApprover}>
                     Update Approver Permission
-                </button>
+                </button>}
             </li>
     
             {/* <li>Is {!isAssignedAdmin && "not an "}Administrator</li>

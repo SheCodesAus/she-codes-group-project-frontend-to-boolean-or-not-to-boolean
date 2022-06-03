@@ -84,7 +84,7 @@ function ProfilePage() {
                 {(IsAdmin || IsSuperUser || IsLoggedInUser) &&
                     <button className="edit-profile-button"><Link to="edit-profile">Edit Profile</Link></button>}
                 {(IsAdmin || IsSuperUser) &&
-                    <button className="update-permission-type"><Link to="/shecodes-user-list/">Update Permissions</Link></button>}
+                    <button className="view-users-list"><Link to="/shecodes-user-list/">View Users</Link></button>}
             </div>
 
             {(IsAdmin || IsSuperUser) &&
