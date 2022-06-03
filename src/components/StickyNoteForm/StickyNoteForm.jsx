@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./StickyNoteForm.css";
 
 function StickyNoteForm({ win_wallId }) {
@@ -13,9 +13,33 @@ function StickyNoteForm({ win_wallId }) {
     error_message: ""
   });
 
-  const WallStatus = stickynote.win_wall_live
-  const WallClosed = WallStatus == "Closed"
-  const WallLive = WallStatus == "Live"
+  const [WinwallData, setWinwallData] = useState();
+   
+  const { id } = useParams();
+  useEffect(() => {
+      fetch(`${process.env.REACT_APP_API_URL}win-wall/${id}/`)
+      .then((results) => {
+      return results.json();
+       })
+          .then((data) => {
+       setWinwallData(data);
+       console.log("data", data);
+       });
+
+  }, []);
+
+
+   if (!WinwallData) {
+       return <h3>Loading..</h3>;
+   }
+
+
+  const WallStatus = WinwallData.is_open;
+  const WallClosed = WallStatus == false;
+  const WallLive = WallStatus == true;
+
+
+
 
 let validateField = (win_comment, value) => {
     let errorMsg = null;
@@ -72,6 +96,7 @@ let validateField = (win_comment, value) => {
       console.log(err);
     }
   };
+
  if (WallLive){
 
   return (
@@ -99,14 +124,14 @@ let validateField = (win_comment, value) => {
   );
 }
 
-else {
+else if (WallClosed){ 
 
   return (
     <div>
       <h2>Win Wall is now Closed</h2>
     </div>
-      );
+      );}
 
-}}
+  }
 
 export default StickyNoteForm;
