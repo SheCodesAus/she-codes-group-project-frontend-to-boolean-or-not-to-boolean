@@ -144,12 +144,6 @@ function Nav() {
         setMenuExpanded(false)      
     }
 
-    //set header as a logo to use {} symbols
-    const winHeader = "Win"
-    const wallHeader = "{Wall}"
-
-    const fullHeader = `${winHeader}${wallHeader}`
-
     return(
         <nav className="navbar-items">
             {/* Logo section */}
@@ -160,7 +154,7 @@ function Nav() {
             src={Logo}></img></a>
             <a href="/" 
             className="logo-text">
-                {fullHeader}</a>                    
+                Win&#123;<span>Wall</span>&#125;</a>                    
             <ul 
                 className={`nav-menu 
                 ${isMenuExpanded 

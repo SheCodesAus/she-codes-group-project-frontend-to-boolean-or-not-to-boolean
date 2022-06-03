@@ -15,7 +15,10 @@
     align-items: center;
     font-size: 1.2rem;
     /* box-shadow: 0px 4px 20px 0px #00000033; */
+}
 
+.navbar-items span {
+    color: #ffa300;
 }
 
 nav,
@@ -127,9 +130,8 @@ a.nav-links:hover {
     }
 
     .nav-menu { 
-            display: none;
+        display: none;
     }  
-
 
     button.nav-links {
         text-align: center;

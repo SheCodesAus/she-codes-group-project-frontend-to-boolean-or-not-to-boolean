@@ -34,7 +34,7 @@ function SheCoderListPage() {
     return (
         <div className="coder-list-wrapper">
             <div className="intro-text">
-                <h1>Meet the &#123;<span> She Coders </span>&#125;</h1>
+                <h1>Meet the &#123;<span>She Coders</span>&#125;</h1>
                 {(IsAdmin || IsSuperUser) && <button><Link to="/auth-assignments/">Update Permissions</Link></button>}
             </div>
 

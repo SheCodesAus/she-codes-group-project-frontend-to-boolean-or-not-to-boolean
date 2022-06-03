@@ -47,6 +47,7 @@
     font-weight: bold;
     font-size: 20px;
     border: unset;
+    text-align: center;
   }
 
   .menuNav button {
@@ -55,26 +56,36 @@
 
   .menuNav a:hover,
   .menuNav button:hover {
-    background-color: var(--p-dark);
+    /* background-color: var(--p-dark); */
     color: var(--light-font);
     font-weight: var(--bolder-font);
-    font-size: 30px;
+    /* font-size: 30px; */
     border: unset;
+  }
+
+  a.active-link:hover {
+    background-color: var(--p-dark);
+    border-radius: 4px;
   }
 
   button.nav-links,
   button.nav-links-mobile {
     border: unset;
+    text-align: center;
+    margin: auto;
   }
 
   button.nav-links {
-    text-align: center;
-    
+    text-align: center; 
   }
 
   .logo-img-hamburger {
     padding-top: 0;
-    width: 30%;
-    height: 30%;
+    width: 55%;
+    height: 55%;
+  }
+
+  .logo-img-hamburger:hover {
+    background-color: none;
   }
   
