@@ -199,7 +199,7 @@ function WinWallPage() {
                 <div>
                     <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
                     <button className="icon-button">
-                    <img src={Comment} alt="comment"/>
+                    <img src={Comment} />
                     </button>
                     </Link>
                 
@@ -263,7 +263,7 @@ function WinWallPage() {
                 <div>
                     <Link to={`/create-sticky-note/win-wall/${WinwallData.id}/`}>
                     <button className="icon-button">
-                    <img src={Comment} alt="comment"/>
+                    <img src={Comment} />
                     </button>
                     </Link>
                 

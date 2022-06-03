@@ -13,6 +13,11 @@ function WinWallForm({ collectionId }) {
     const isAdmin = (Admin == 'true')
     const isApprover = (Approver == 'true')
     const isSuperUser = (SuperUser == 'true')
+
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+    
     const navigate = useNavigate();
 
   
@@ -58,7 +63,22 @@ function WinWallForm({ collectionId }) {
             }),
           });
           const data = await res.json();
-        if (!isSuperUser || !isAdmin || !isApprover) {
+
+    let isAssignedAdmin = false;
+    
+
+    for (let index = 0; index < assignments.length; index++) {
+        const element = assignments[index];
+
+        const collection_assignment = element.collection_id
+        const winwall_assignment = element.win_wall_id
+        
+        const assigned_admin = element.is_admin
+
+        isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (winwall_assignment == winwall.id || collection_assignment == winwall.collection_id ))
+    }
+
+        if (!isSuperUser || !isAdmin || !isAssignedAdmin) {
             return (
               <Link to="/login">Please login to create a win wall.</Link>
             );

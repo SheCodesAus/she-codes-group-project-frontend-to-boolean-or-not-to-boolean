@@ -17,6 +17,10 @@ function EditCollectionPage() {
     const isApprover = (Approver == 'true')
     const isSuperUser = (SuperUser == 'true')
 
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+
     const [collectionData, setCollectionData] = useState();
     
     const { id } = useParams();
@@ -24,9 +28,7 @@ function EditCollectionPage() {
     const navigate = useNavigate();
 
     // Life changing: INSTANTLY navigate away if not one of these:
-    if (!isAdmin && !isApprover && !isSuperUser) {
-        navigate(`/collections/`);
-    }
+    
 
     useEffect(() => {
         // fetch collection info
@@ -39,8 +41,30 @@ function EditCollectionPage() {
         });
     }, []);
 
+
+
     if (!collectionData) {
         return <h1>Loading...</h1>
+    }
+
+    // created assignedadmin access in case we want to give them edit access in future 
+
+    let isAssignedAdmin = false;
+    
+ 
+      for (let index = 0; index < assignments.length; index++) {
+        const element = assignments[index];
+ 
+        const collection_assignment = element.collection_id
+        const assigned_admin = element.is_admin
+ 
+       
+        isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (collection_assignment == collectionData.id))
+        
+      }
+
+    if (!isAdmin && !isSuperUser) {
+        navigate(`/collections/`);
     }
 
     function DeleteCollection() {

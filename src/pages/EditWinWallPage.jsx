@@ -21,10 +21,13 @@ function EditWinWallPage() {
     const isApprover = (Approver == 'true')
     const isSuperUser = (SuperUser == 'true')
 
+    const assignmentsString = window.localStorage.getItem("assignments");
+    const assignments = assignmentsString ? JSON.parse(assignmentsString) : [];
+   
+    
+
     // INSTANTLY navigate away if not one of these:
-    if (!isAdmin && !isApprover && !isSuperUser) {
-        navigate(`/collections/`);
-    }
+    
 
     useEffect(() => {
 
@@ -38,8 +41,30 @@ function EditWinWallPage() {
         });
     }, []);
 
+    
+
+
     if (!winwallData) {
         return <h1>Loading...</h1>
+    }
+
+    let isAssignedAdmin = false;
+    let isAssignedApprover = false;
+
+    for (let index = 0; index < assignments.length; index++) {
+        const element = assignments[index];
+
+        const collection_assignment = element.collection_id
+        const winwall_assignment = element.win_wall_id
+        const assigned_approver = element.is_approver
+        const assigned_admin = element.is_admin
+
+        isAssignedAdmin = isAssignedAdmin || (assigned_admin == true && (winwall_assignment == winwallData.id || collection_assignment == winwallData.collection_id ))
+        isAssignedApprover = isAssignedApprover || (assigned_approver == true && (winwall_assignment == winwallData.id || collection_assignment == winwallData.collection_id ))
+     }
+
+     if (!isAdmin && !isApprover && !isSuperUser && !isAssignedAdmin && !isAssignedApprover) {
+        navigate(`/collections/`);
     }
 
     function DeleteWinWall() {
