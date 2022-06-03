@@ -2,42 +2,49 @@
 Not final - just beginnings of styling */
 
 form {
+    margin: 4rem 0;
     display: inline-block;
     padding: 3rem;
     max-width: 50vw;
     margin-left: 25vw;
     border: 2px dotted var(--secondary);
     border-radius: 20px;
+    color: var(--primary);
+    font-weight: bold;
 }
 
 input {
-    color: var(--dark-font);
+    color: var(--primary);
     margin: 0.4rem;
     border-radius: 10px;
+    margin: 10px;
+    border: 2px solid var(--primary);
+    padding: 0 5px;
 }
 
-input:placeholder {
-    color: var(--primary);
+input::placeholder {
+    color: var(--s-dark);
+    opacity: 50%;
 }
 
 .form-text {
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: bold;
 }
 
 form button {
     padding: 10px 25px;
     border-radius: 25px;
-    font-size: 12px;
+    font-size: 1rem;
     background-color: var(--secondary);
     margin-top: 2rem;
-    color: var(--dark-font);
+    color: var(--primary);
     font-weight: bold;
     border: unset;
 }
 
 form button:hover {
-    background-color: var(--primary-shadow);
-    color: var(--secondary-shadow)
+    background-color: var(--primary);
+    color: var(--secondary)
 }
 
