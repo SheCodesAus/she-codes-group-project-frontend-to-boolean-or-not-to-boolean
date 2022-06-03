@@ -24,7 +24,7 @@ class AsyncCSVStickyNote extends Component {
     }
   
     getUserList = async () => {
-      const res = await fetch('https://shielded-wildwood-05412.herokuapp.com/sticky-note/');
+      const res = await fetch('https://shielded-wildwood-05412.herokuapp.com/sticky-notes/');
         return await res.json();
     }
   
