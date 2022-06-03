@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 
 //components
-import Hero from "../components/Hero/HeroHome";
 import Modal from "../components/GlobalModal/GlobalModal";
+import QRGenerator from "../components/QRCode/QRCode";
 
 //styles
 import "../index.css"
@@ -34,15 +34,17 @@ export default function HomePage() {
             <button onClick={() => setShow(true) }>Django</button>
             {/* we pass the title as a prop and the content as a child because 
             we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal 
+            onClose={() => setShow(false)} 
+            show={show}
+            />
             <Modal />
         </container>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Flash</button>
             {/* we pass the title as a prop and the content as a child because 
             we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
+            <Modal title="Flash testing"onClose={() => setShow(false)} show={show} />
             {/* <p>This is modal body</p> */}
             <Modal />
         </container>
@@ -50,7 +52,7 @@ export default function HomePage() {
             <button onClick={() => setShow(true) }>Python</button>
             {/* we pass the title as a prop and the content as a child because 
             we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
+            <Modal title="My Modal" onClose={() => setShow(false)} show={show} />
             {/* <p>This is modal body</p> */}
             <Modal />
         </container>
