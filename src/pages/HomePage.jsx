@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 
 //components
-import Modal from "../components/GlobalModal/GlobalModal";
-import QRGenerator from "../components/QRCode/QRCode";
+import DjangoWall from "../components/QRCode/DjangoQR";
+import PythonWall from "../components/QRCode/PythonQR"
+import FlashWall from "../components/QRCode/FlashQR"
+import HTMLWall from "../components/QRCode/HTMLQR"
+import JavascriptWall from "../components/QRCode/JavascriptQR"
+import ReactWall from "../components/QRCode/ReactQR"
 
 //styles
 import "../index.css"
@@ -11,7 +15,7 @@ import "./HomePage.css"
 
 export default function HomePage() {
     //function for shoing modal
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
     return <>
         <div className="home-text">
@@ -30,36 +34,12 @@ export default function HomePage() {
         {/* start modal buttons*/}
         <section className="modal-section">
             <h2>Looking for your event? Click on the subject you studied to be taken to you sticky note</h2>
-        <container className="ModalApp">
-            <button onClick={() => setShow(true) }>Django</button>
-            <Modal  onClose={() => setShow(false)} title="Django" children={<QRGenerator value="https://www.google.com"r/>} show={show}/>
-            <Modal />
-        </container>
-         <container className="ModalApp">
-            <button onClick={() => setShow(true) }>Flash</button>
-            <Modal title="Flash" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
-            <Modal />
-        </container>
-        <container className="ModalApp">
-            <button onClick={() => setShow(true) }>Python</button>
-            <Modal title="Python" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
-            <Modal />
-        </container>
-        <container className="ModalApp">
-            <button onClick={() => setShow(true) }>Javascript</button>
-            <Modal title="Javascript" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
-            <Modal />
-        </container>
-        <container className="ModalApp">
-            <button onClick={() => setShow(true) }>React</button>
-            <Modal title="React" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
-            <Modal />
-        </container>
-        <container className="ModalApp">
-            <button onClick={() => setShow(true) }>HTML/CSS</button>
-            <Modal title="HTML/CSS" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
-            <Modal />
-        </container>
+            < DjangoWall />
+            < FlashWall />
+            < PythonWall />
+            < HTMLWall />
+            < JavascriptWall />
+            < ReactWall />
         </section>
 
 
