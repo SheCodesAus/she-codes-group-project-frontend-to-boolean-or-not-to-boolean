@@ -32,52 +32,32 @@ export default function HomePage() {
             <h2>Looking for your event? Click on the subject you studied to be taken to you sticky note</h2>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Django</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal 
-            onClose={() => setShow(false)} 
-            show={show}
-            />
+            <Modal  onClose={() => setShow(false)} title="Django" children={<QRGenerator value="https://www.google.com"r/>} show={show}/>
             <Modal />
         </container>
-        <container className="ModalApp">
+         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Flash</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal title="Flash testing"onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal title="Flash" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Python</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal" onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal title="Python" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>Javascript</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal title="Javascript" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>React</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal title="React" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
         <container className="ModalApp">
             <button onClick={() => setShow(true) }>HTML/CSS</button>
-            {/* we pass the title as a prop and the content as a child because 
-            we will have multiple elements inside the content in the future. */}
-            <Modal title="My Modal"onClose={() => setShow(false)} show={show} />
-            {/* <p>This is modal body</p> */}
+            <Modal title="HTML/CSS" children={<QRGenerator value="https://www.google.com"/>} onClose={() => setShow(false)} show={show} />
             <Modal />
         </container>
         </section>
