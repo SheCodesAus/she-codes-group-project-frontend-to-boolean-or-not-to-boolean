@@ -129,51 +129,46 @@ function WinWallPage() {
     
     if ((isSuperUser || isAdmin || isApprover || isAssignedAdmin || isAssignedApprover) && WallClosed) {
 
-
+     //return data starts here
     return (
-        <div>
-        <div>
-            <h1>Win wall Title:  {WinwallData.title} </h1>
-            <h2>Win wall Status: Closed </h2>
-            <img src={WinwallData.image} alt="winwall hero" />
+        <section className="win-wall-title-section">
+            <container className="title-section">
+                <h1 className="ww-title">{WinwallData.title} </h1>
+                <h2>Win wall Status: Closed </h2>
+                <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
 
-        </div>
-        {/* adding sticky notes to winwall page */}
+            </container>
+            {/* adding sticky notes to winwall page */}
 
-        <div className="sticky-section">
-        <h3>StickyNotes</h3>
-        <div className="sticky-board">
-      
+            <section className="sticky-section">
+                {/* <h3 className="title-sticky">StickyNotes</h3> */}
+                <container className="sticky-board">
+        
+        
+                {WinwallData.stickynotes.map((stickynoteData, key) => {
+                    return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
+                />;
+                })}
     
-            {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
-            />;
-            })}
-    
-        </div>
-        </div>
-        <div>
-            <Tooltip content="   Approve all  " direction="top">
-            
-            <button type="submit" onClick={handleSubmitApprove}  className="icon-button">
-                {/* Update StickyNote */}
+                </container>
+            </section>
 
-                <img src={Circle} alt="circle"/>
-
-            </button>
-            </Tooltip>
-            
-            <Tooltip content="   Archive all  " direction="top">
-            <button type="submit" onClick={handleSubmitArchive} className="icon-button">
-                {/* Update StickyNote */}
-                <img src={Bin} alt="bin"/>
-            </button>
-            </Tooltip>
-            
-          
-            
-        </div>
-        </div>
+            <container>
+                <Tooltip content="   Approve all  " direction="top">               
+                    <button type="submit" onClick={handleSubmitApprove}  className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Circle} alt="circle"/>
+                    </button>
+                </Tooltip>
+                
+                <Tooltip content="   Archive all  " direction="top">
+                    <button type="submit" onClick={handleSubmitArchive} className="icon-button">
+                        {/* Update StickyNote */}
+                        <img src={Bin} alt="bin"/>
+                    </button>
+                </Tooltip>    
+            </container>
+        </section>
     );
         }
 
@@ -181,17 +176,16 @@ function WinWallPage() {
 
 
             return (
-                <div>
-                <div>
-                    <h1>Win wall Title:  {WinwallData.title} </h1>
-                    <h2>Win wall Status: Live </h2>
-                    <img src={WinwallData.image} alt="winwall hero" />
-        
-                </div>
+            <section className="win-wall-title-section">
+                <container className="win-wall-text">
+                    <h1 className="ww-title">{WinwallData.title} </h1>
+                    <h2>Win Wall Status: Live </h2>
+                    <img className="profile-image" src={WinwallData.image} alt="winwall hero" />       
+                </container>
                 {/* adding sticky notes to winwall page */}
-        
+                {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
+
                 <div className="sticky-section">
-                <h3>StickyNotes</h3>
                 <div className="sticky-board">
               
             
@@ -210,7 +204,7 @@ function WinWallPage() {
                     </Link>
                 
                 </div>
-                </div>
+            </section>
             );
                 }
 
@@ -218,46 +212,44 @@ function WinWallPage() {
 
 
             return (
-                <div>
-                <div>
-                    <h1>Win wall Title:  {WinwallData.title} </h1>
-                    <h2>Win wall Status: Closed </h2>
-                    <img src={WinwallData.image} alt="winwall hero" />
-        
-                </div>
-                {/* adding sticky notes to winwall page */}
-        
-                <div className="sticky-section">
-                <h3>StickyNotes</h3>
-                <div className="sticky-board">
-              
-            
-                {WinwallData.stickynotes.map((stickynoteData, key) => {
-                return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
-                    />;
-                    })}
-            
-                </div>
-                </div>
-              
-                </div>
+                <section className="win-wall-title-section">
+                    <container className="win-wall-text">
+                        <h1 className="ww-title">{WinwallData.title} </h1>
+                        <h2>Win wall Status: Closed </h2>
+                        <img className="profile-image" src={WinwallData.image} alt="winwall hero" />        
+                    </container>
+                    {/* adding sticky notes to winwall page */}
+                    {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
+
+                    <div className="sticky-section">
+                    <div className="sticky-board">
+                
+                
+                    {WinwallData.stickynotes.map((stickynoteData, key) => {
+                    return <StickyNoteCard key={key} stickynoteData={stickynoteData} winwallData={WinwallData} reload={reload}
+                        />;
+                        })}
+                
+                    </div>
+                    </div>     
+                </section>
             );
                 }
      else if  ((!isSuperUser && !isAdmin && !isApprover && !isAssignedAdmin && !isAssignedApprover) && WallLive) {
 
 
             return (
-                <div>
-                <div>
-                    <h1>Win wall Title:  {WinwallData.title} </h1>
-                    <h2>Win wall Status: Live </h2>
-                    <img src={WinwallData.image} alt="winwall hero" />
-        
-                </div>
+                <section className="win-wall-title-section">
+                    <container className="win-wall-text">
+                        <h1 className="ww-title">{WinwallData.title} </h1>
+                        <h2>Win wall Status: Live </h2>
+                        <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
+            
+                    </container>
                 {/* adding sticky notes to winwall page */}
         
                 <div className="sticky-section">
-                <h3>StickyNotes</h3>
+                <h3 className="win-wall-text">Stick yNotes</h3>
                 <div className="sticky-board">
                 
             
@@ -276,24 +268,24 @@ function WinWallPage() {
                     </Link>
                 
                 </div>
-                </div>
+                </section>
             );
                 }
     else {
         return (
-            <div>
-            <div>
-                <h1>Win wall Title:  {WinwallData.title} </h1>
+            <section className="win-wall-title-section">
+                <container className="win-wall-text">
+                <h1 className="ww-title">{WinwallData.title} </h1>
                 <h2>Win wall Status: .. </h2>
 
 
-                <img src={WinwallData.image} alt="winwall hero" />
+                <img className="profile-image" src={WinwallData.image} alt="winwall hero" />
     
-            </div>
+            </container>
             {/* adding sticky notes to winwall page */}
-    
+            {/* <h3 className="win-wall-text">Sticky Notes</h3> */}
+
             <div className="sticky-section">
-            <h3>StickyNotes</h3>
             <div className="sticky-board">
           
         
@@ -309,7 +301,7 @@ function WinWallPage() {
                 <div>
                     <AsyncCSVStickyNote />
                 </div>} */}
-            </div>
+            </section>
         );
             }
 
