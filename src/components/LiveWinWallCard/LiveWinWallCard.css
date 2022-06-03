@@ -1,0 +1,26 @@
+.live-winwall-card {
+    max-height: 400px;
+    max-width: 400px;
+    border: 1px solid black;
+    border-radius: 2%;
+    margin: 0px;
+    box-shadow: 0px 0px 5px gray;
+    text-align: center;
+    border: 1px solid #4845c7;
+    box-shadow: 0px 0px 5px #ffa300;;
+    padding-bottom: 10px;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+}
+
+.live-winwall-card img {
+    max-height: 250px;
+    height: max-content;
+    max-width: 250px;
+    width: 100%;
+    margin:20px;
+    border-radius: 10%;
+}

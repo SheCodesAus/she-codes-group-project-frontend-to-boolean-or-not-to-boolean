@@ -9,3 +9,7 @@
     justify-content: center;
     gap: 10px;
 }
+
+.intro-text h2 {
+    font-size: 20px;
+}
