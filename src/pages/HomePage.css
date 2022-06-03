@@ -1,6 +1,6 @@
 /* Styling home page */
-
-/* body * {
+/* 
+body * {
     color:                      hsla(210, 100%, 100%, 0.88)     !important;
     background:                 hsla(210, 100%,  50%, 0.33)       !important;
     outline:    0.25rem solid hsla(210, 100%, 100%, 0.50)     !important;
@@ -11,3 +11,25 @@
     justify-content:    center;
     align-items:        center;
 } */
+
+
+.home-text p {
+    padding: 6rem;
+    font-size: 30px;
+}
+.highlight-text {
+    font-family: var(--highlight-text);
+    font-size: 50px;
+    font-weight: var(--bolder-font);
+    margin-bottom: 3rem;
+}
+
+.home-text {
+    color: var(--primary);
+}
+
+p.alt-color-text {
+    color: orange;
+    font-weight: bold;
+}
+
