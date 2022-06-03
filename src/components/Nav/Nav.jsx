@@ -108,7 +108,7 @@ function Nav() {
         <button 
         className="nav-links" 
         onClick={navigateToProfile}>
-            Profile
+            Your Profile
         </button>;
 
         const signUpButton = 

@@ -90,7 +90,7 @@ function CreateAccountForm() {
     },
     {
         id: "password2",
-        label: "Password: ",
+        label: "Confirm Password: ",
         placeholder: "Re-enter Password",
         type: "password",
     },

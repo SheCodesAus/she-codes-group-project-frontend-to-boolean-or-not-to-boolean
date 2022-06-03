@@ -8,6 +8,9 @@ import AdminUserImg from "../../components/images/icons/system-admin.png";
 import ApproverImg from "../../components/images/icons/task-completed-2.png";
 import SheCoderImg from "../../components/images/icons/external-developer-web-development-flaticons-flat-flat-icons.png"
 
+//styles
+import "./ProfilePage.css"
+
 //components
 import AsyncCSVUser from "../../components/ExportCSV/ExportCSVUser";
 import AsyncCSVStickyNote from "../../components/ExportCSV/ExportCSVStickyNote";
@@ -48,25 +51,26 @@ function ProfilePage() {
     return (
         <div className="user-profile-container">
             <div className="profile-header">
-                <h1>{userData.username}'s Page!</h1>
+                <h1>&#123;<span>{userData.username}</span>&#125;'s Page!</h1>
             </div>
 
             <div className="user-profile-info">
                 <ul className="user-input">
                     <li><img className="avatar" src={userData.avatar} alt="profile avatar"/></li>
-                    <li className="email"><i className="fa fa-envelope"></i> {userData.email}</li>
-                    <li className="website">Follow Me:<br></br>
+                    <li className="email"><i className="fa fa-envelope"></i>&#123; {userData.email} &#125;</li>
+                    <li className="website">
                         <a href={userData.social_link} target="_blank" rel="noopener noreferrer">
+                            Follow Me!
                         </a>                
                     </li>
                 </ul>
 
                 <div className="bio-section">
                     <h4 className="about-title">About: </h4>
-                    <p className="bio-section">{userData.bio}</p>
+                    <p className="bio-txt">{userData.bio}</p>
                 </div>
 
-                <div>
+                <div className="auth-graphics">
                     <h4>{userData.is_superuser && 
                         <img src={SuperUserImg} alt="super-user"/>}
                     </h4>

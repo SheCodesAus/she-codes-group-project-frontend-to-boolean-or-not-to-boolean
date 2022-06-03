@@ -1,0 +1,57 @@
+.user-profile-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.website {
+    padding-top: 10px;
+}
+.website:hover {
+    text-decoration: underline;
+}
+
+.profile-header h1 {
+    padding: 10px;
+    color: #551A8B;
+}
+.profile-header span {
+    color: #ffa300;
+}
+
+.bio-txt {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 17px;
+    width: auto;
+}
+
+.about-title {
+    padding-bottom: 5px;
+}
+
+.user-input {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.auth-graphics h4 {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.auth-graphics img {
+    padding-top: 10px;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
