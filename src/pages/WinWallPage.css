@@ -79,20 +79,95 @@ h3.title-sticky  {
     justify-content: center;
 }
 
+
+
 @media screen and (max-width: 480px) {
-    h1,
-    p,
+
+
+    .main-section--description {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .sticky-section{
+        display: flex;
+        align-content: center;
+        
+    }
+    
+    .sticky-board {
+        display: flex;
+        margin:0px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        width: max-content;
+        cursor: pointer;
+    
+    }
+    
+    
+    
+    
+    textarea {
+        font-family: var(--main-font);
+        font-size: 1.2rem;
+    }
+    
+    
+    .icon-button{
+        background: none;
+    }
+    
+    .icon-button img{
+        height: 3rem;
+        display: flex;
+        align-self: flex-end;
+        background-color: transparent;
+    
+    }
+    
+    h3.title-sticky  {
+        color: var(--primary);
+        font-size: 2rem;
+        margin: 10px;
+        padding: 2rem;
+    }
+    
+    .win-wall-title-section {
+        color: var(--primary);
+        padding: 3rem;
+        margin-bottom: 60px;
+    }
+    
     .ww-title {
+        margin-bottom: 2rem;
+        background-color: var(--secondary);
+        text-decoration: underline;
+        /* font-family: var(--highlight-text); */
         font-size: 30px;
     }
-
+    
+    
     .profile-image {
+        border-radius: 180px;
+        padding: 3rem;
         width: 150px;
         height: 150px;
+    }
+    
+    .win-wall-text {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .sticky-board {
         max-width: 400px;
     }
+
 
 }
