@@ -63,3 +63,17 @@ div.qr-code {
 .hero-text {
     font-size: 50px;
 }
+
+@media screen and (max-width: 480px) {
+ .hero-highlight {
+     font-size: 30px;
+ }
+
+ .hero-text {
+     font-size: 30px;
+ }
+
+ .hero {
+     max-width: 100%;
+ }
+}

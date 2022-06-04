@@ -80,6 +80,7 @@ h3.title-sticky  {
 }
 
 
+
 @media screen and (max-width: 480px) {
 
 
@@ -152,8 +153,8 @@ h3.title-sticky  {
     .profile-image {
         border-radius: 180px;
         padding: 3rem;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
     
     .win-wall-text {
@@ -162,6 +163,10 @@ h3.title-sticky  {
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .sticky-board {
+        max-width: 400px;
     }
 
 
