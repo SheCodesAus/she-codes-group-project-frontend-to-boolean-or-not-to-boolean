@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+//styles
+import "./ProfilePage.css"
+
 //Components
 import EditProfileForm from "../../components/EditProfileForm/EditProfileForm";
 
@@ -47,7 +50,7 @@ function EditProfilePage(){
     return (
         <>
         <div className="edit-act-container">
-            <div id="editprofile-form">
+            <div className="editprofile-form">
                 <h1>Edit Your Your Profile</h1>
             </div>
             <EditProfileForm user={userData} />
