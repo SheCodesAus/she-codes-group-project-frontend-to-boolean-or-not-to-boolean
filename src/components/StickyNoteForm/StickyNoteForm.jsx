@@ -100,7 +100,7 @@ let validateField = (win_comment, value) => {
  if (WallLive){
 
   return (
-      <div>
+      <div className="sticky-container">
     <form className="sticky-note">
      
       

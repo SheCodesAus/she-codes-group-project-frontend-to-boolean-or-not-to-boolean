@@ -31,3 +31,29 @@ button.sticky-note-btn:hover {
 /* .my-project-card {
     padding: 3rem;
 } */
+
+
+
+@media screen and (max-width: 480px) {
+
+    .sticky-note{
+      align-self:flex-start;
+    }
+
+    .sticky-container {
+      align-self: center;
+    }
+
+    button.sticky-note-btn {
+       
+        margin-left: 1%;
+       
+    }
+  
+   
+    form{
+      margin-left: 5px;
+  }
+  
+  
+  }
